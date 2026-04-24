@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Hurley · Career Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #1a1e22;
+    --paper: #f0f2f4;
+    --cream: #e2e7ec;
+    --gold: #4a6b7a;
+    --gold-light: #6a9aad;
+    --rust: #c0443a;
+    --slate: #2e4a5a;
+    --muted: #5a6470;
+    --rule: #b0bcc6;
+    --white: #f8fafc;
+    --yellow: #d4a82a;
+    --yellow-light: #e8c84a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--ink);
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 56px;
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rule);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--yellow-light); }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 120px 3rem 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .hero-left {}
+
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .hero-contact {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 2;
+  }
+
+  .hero-contact a { color: var(--gold); text-decoration: none; }
+  .hero-contact a:hover { text-decoration: underline; }
+
+  .hero-right {
+    padding-bottom: 0.5rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .stat {
+    background: var(--white);
+    padding: 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .stat-note {
+    font-size: 0.7rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+  }
+
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--rule);
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  /* ─── NARRATIVE ─── */
+  .narrative p {
+    max-width: 720px;
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
+    color: var(--ink);
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding-left: 1.8rem;
+    margin: 2.5rem 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--slate);
+    max-width: 600px;
+    margin-bottom: 0 !important;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline {
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 140px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--rule);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 137px;
+    top: 8px;
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .timeline-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-align: right;
+    padding-top: 3px;
+    line-height: 1.5;
+  }
+
+  .timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-content .company {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ─── CAMPAIGNS CATALOGUE ─── */
+  .campaigns-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 720px;
+    margin-bottom: 3rem;
+  }
+
+  .campaign-group {
+    margin-bottom: 4rem;
+  }
+
+  .campaign-group-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .campaign-group-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .campaign-group-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Campaign Cards */
+  .campaign-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .campaign-card {
+    background: var(--white);
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+  }
+
+  .campaign-card:hover {
+    background: #e8eff4;
+    z-index: 1;
+  }
+
+  .campaign-card-inner {
+    padding: 1.8rem 1.8rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-studio {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .card-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+
+  .campaign-card:hover .card-arrow { opacity: 1; }
+
+  /* ─── CASE STUDY MODAL ─── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,18,9,0.85);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    background: var(--white);
+    max-width: 780px;
+    width: 100%;
+    transform: translateY(20px);
+    transition: transform 0.25s;
+    position: relative;
+  }
+
+  .modal-overlay.open .modal {
+    transform: translateY(0);
+  }
+
+  .modal-header {
+    background: var(--ink);
+    padding: 2.5rem 2.8rem 2rem;
+    position: relative;
+  }
+
+  .modal-studio {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.5rem; right: 1.8rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rule);
+    background: none;
+    border: 1px solid rgba(200,191,173,0.3);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .modal-close:hover {
+    color: var(--paper);
+    border-color: var(--rule);
+  }
+
+  .modal-body {
+    padding: 2.5rem 2.8rem 3rem;
+  }
+
+  .modal-section {
+    margin-bottom: 2rem;
+  }
+
+  .modal-section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .modal-body p {
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+  }
+
+  .modal-body ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .modal-body ul li {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 0.5rem 0 0.5rem 1.2rem;
+    border-bottom: 1px solid var(--cream);
+    position: relative;
+  }
+
+  .modal-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .modal-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 0.8rem;
+  }
+
+  .modal-metric {
+    background: var(--cream);
+    padding: 1.2rem;
+  }
+
+  .modal-metric-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .modal-metric-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .modal-channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .modal-channel {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--slate);
+    color: var(--white);
+    border-radius: 2px;
+  }
+
+  /* ─── INNOVATIONS GRID ─── */
+  .innovations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .innovation-item {
+    background: var(--white);
+    padding: 1.8rem;
+  }
+
+  .innovation-item.featured {
+    background: var(--rust);
+  }
+
+  .innovation-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .innovation-item.featured .innovation-label { color: var(--yellow-light); }
+  .innovation-item.featured .innovation-title { color: var(--white); }
+  .innovation-item.featured .innovation-desc { color: rgba(248,250,252,0.82); }
+
+  .innovation-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .innovation-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── CLIENTS GRID ─── */
+  .clients-section {
+    background: var(--ink);
+    padding: 5rem 3rem;
+  }
+
+  .clients-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .clients-inner h2 { color: var(--paper); }
+  .clients-inner .section-num { color: var(--gold); }
+  .clients-inner .section-header { margin-bottom: 3rem; }
+
+  .client-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .client-category-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(200,191,173,0.2);
+  }
+
+  .client-list {
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.8;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  /* ─── AWARDS ─── */
+  .awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+  }
+
+  .award-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 2rem;
+    padding: 1.5rem 1.8rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--white);
+  }
+
+  .award-item:last-child { border-bottom: none; }
+  .award-item:hover { background: #e8eff4; }
+
+  .award-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    padding-top: 3px;
+  }
+
+  .award-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .award-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    border-top: 2px solid var(--gold);
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-contact {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    line-height: 2.2;
+  }
+
+  .footer-contact a { color: var(--gold); text-decoration: none; }
+
+  /* ─── UTILITY ─── */
+  .rule-gold {
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin: 0;
+  }
+
+  .rule-thin {
+    height: 1px;
+    background: var(--rule);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 3rem; padding: 100px 1.5rem 60px; }
+    .section { padding: 4rem 1.5rem; }
+    .timeline::before { left: 0; }
+    .timeline-item { grid-template-columns: 1fr; padding-left: 1.5rem; }
+    .timeline-item::before { left: -3px; }
+    .timeline-date { text-align: left; }
+    .innovations-grid { grid-template-columns: 1fr; }
+    .modal-body, .modal-header { padding: 1.8rem; }
+    .modal-title { font-size: 1.5rem; }
+    .award-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .clients-section { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav>
+  <a href="#" class="nav-name">Jeff Hurley</a>
+  <ul class="nav-links">
+    <li><a href="#narrative">About</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#campaigns">Campaigns</a></li>
+    <li><a href="#innovations">First-Evers</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#awards">Awards</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Career Portfolio · 1995–2026</div>
+    <h1>Jeff<br>Hurley</h1>
+    <p class="hero-sub">Thirty years building<br>the things that didn't exist yet.</p>
+    <div class="hero-contact">
+      617.755.2783<br>
+      <a href="/cdn-cgi/l/email-protection#d8b2bdbebea8b0adaab4bda198b1bbb4b7adbcf6bbb7b5"><span class="__cf_email__" data-cfemail="c9a3acafafb9a1bcbba5acb089a0aaa5a6bcade7aaa6a4">[email&#160;protected]</span></a><br>
+      <a href="https://linkedin.com/in/jeffphurley" target="_blank">linkedin.com/in/jeffphurley</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Years</span>
+        <span class="stat-note">1995–2026</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">$9.8M</span>
+        <span class="stat-label">Studio Contracts</span>
+        <span class="stat-note">Single year, BGM 2005</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">7×</span>
+        <span class="stat-label">Contract Value Growth</span>
+        <span class="stat-note">Threatpost build</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">12</span>
+        <span class="stat-label">Campaign Channels</span>
+        <span class="stat-note">Simpsons Movie, 2007</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule-gold"></div>
+
+<!-- ─── NARRATIVE ─── -->
+<section class="section" id="narrative">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>Career Narrative</h2>
+  </div>
+  <div class="narrative">
+    <p>My professional life started when I typed my very first resume and hand-delivered it to the head of HR at National Amusements. Well, not actually to her. I'd overestimated the power of simply knowing her name and asking to see her with nothing stronger than "but I brought a resume." I had grown up sneaking into their theatres almost weekly for any movie I could. I was a wayward young man, and published film critic, who determined National Amusements — owned by Sumner Redstone, chairman of Viacom, parent of Paramount, MTV, and CBS — was my shot at working inside the film industry without moving to New York or LA.</p>
+
+    <div class="pull-quote">
+      <p>The person who can sit between the people who know what they need and the people who build the thing is more valuable than either side alone.</p>
+    </div>
+
+    <p>A 3-year detour into finance and organizational project management at a Boston-based investment bank came first. The last project was Y2K compliance — translating requirements between Accounting, Client Services, and IT against federal regulations. It taught me something I've used in every role since.</p>
+
+    <p>From my first day at National Amusements to my last day at Boston Globe Media, there wasn't a film released in the United States that I didn't touch some part of its marketing. Weekly campaigns for every major studio, every week, built on real-time weekend audience data. I became Manager of Domestic Advertising, negotiating 50+ annual media contracts worth over $70 million.</p>
+
+    <p>At Boston Globe Media I spent 12 years managing relationships with every major film studio, every Boston professional sports franchise, and live entertainment clients from Live Nation to Broadway Across America. I built programs that didn't exist before I built them. The studio advertising business I managed totaled $9.8 million in contracted annual spend across eight major studios in 2005 alone.</p>
+
+    <p>At National CineMedia the real product wasn't the screen — it was first-party data built from ticket purchases, loyalty behavior, mobile geo-location, and beacon networks across 20,000+ screens and 769 million annual attendees. Grew a territory from scratch: 30% revenue growth, 60%+ close rate.</p>
+
+    <p>At Threatpost I inherited a media platform with no commercial infrastructure — no product portfolio, no pricing, no sales process, no client relationships. Built all of it. Grew average contract value 7x. Beat revenue targets by 22%.</p>
+  </div>
+</section>
+
+<div class="rule-thin"></div>
+
+<!-- ─── TIMELINE ─── -->
+<section class="section" id="timeline">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Career Timeline</h2>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">1995–1997</div>
+      <div class="timeline-content">
+        <h3>Control Accountant → Business Analyst</h3>
+        <div class="company">Investors Bank and Trust · Boston, MA</div>
+        <p>Financial controls and P&L analysis foundation. Y2K compliance project: requirements translation between Accounting, Client Services, and IT — foundational cross-functional work that shaped every subsequent role.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">1997–2004</div>
+      <div class="timeline-content">
+        <h3>Coop Advertising Coordinator → Manager, Domestic Advertising</h3>
+        <div class="company">National Amusements / Russell Goodrich Agency · Norwood, MA</div>
+        <p>Sumner Redstone's holding company controlling Viacom — Paramount, MTV, CBS, BET, Nickelodeon. Weekly simultaneous campaigns for every major studio across dozens of national markets, built on real-time weekend audience data. Negotiated 50+ annual media contracts worth $70M+.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2004–2016</div>
+      <div class="timeline-content">
+        <h3>Sales Supervisor → Division Sales Manager, Arts & Entertainment & Travel</h3>
+        <div class="company">Boston Globe Media · Boston, MA</div>
+        <p>12 years. The only fully integrated, cross-platform team at BGM. Studio advertising contracts totaling $9.8M across eight major studios (2005). Every Boston professional sports franchise, every major film studio, all major live entertainment. $30M+ commercial portfolios. 5–12% annual revenue growth. Multiple first-evers adopted organization-wide.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2016–2019</div>
+      <div class="timeline-content">
+        <h3>Account Director, Integrated Solutions</h3>
+        <div class="company">National CineMedia (NCM) · Remote</div>
+        <p>769M+ annual cinema attendees, 20,000+ screens. First-party audience data translated into strategic advertising recommendations. 30% territory revenue growth, 60%+ close rate. NCM Panel of Excellence 2019 — one of six from 240 professionals nationally.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2021–2022</div>
+      <div class="timeline-content">
+        <h3>Director, Business Development</h3>
+        <div class="company">Threatpost (Kaspersky Lab) · Remote</div>
+        <p>Built full commercial operation from zero for a 500K-user global cybersecurity media platform. 7x average contract value growth. 22% above revenue targets. Global client base across US, Europe, Middle East, South America.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2024–Present</div>
+      <div class="timeline-content">
+        <h3>Sales Consultant — Lincoln</h3>
+        <div class="company">Dana Motors · Staten Island, NY</div>
+        <p>Deliberate floor-level immersion in Tier 3 dealership operations. Daily use of Foureyes, Cox Automotive, AutoAlert, iPacket. Top performer. Promoted to Lincoln brand within five months.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="rule-gold"></div>
+
+<!-- ─── CAMPAIGNS CATALOGUE ─── -->
+<section class="section" id="campaigns">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Campaign Catalogue</h2>
+  </div>
+  <p class="campaigns-intro">Select any campaign to expand the full case study — channels, financial modeling, results, and the story of how it was built.</p>
+
+  <!-- FOCUS FEATURES -->
+  <div class="campaign-group">
+    <div class="campaign-group-header">
+      <span class="campaign-group-title">Focus Features Decade · 2008–2012</span>
+      <div class="campaign-group-line"></div>
+    </div>
+    <div class="campaign-cards">
+
+      <div class="campaign-card" onclick="openModal('focus-overview')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Focus Features · BGM</div>
+          <div class="card-title">The "Focus On" Partnership</div>
+          <div class="card-year">2008–2012 · Multi-Year Program</div>
+          <div class="card-desc">A single moment watching Dan in Real Life — the Focus Features logo appearing on screen — became the genesis of a decade-long branded partnership. Named, contractually structured, annually renewable.</div>
+          <div class="card-tags"><span class="tag">Branded Program</span><span class="tag">Multi-Year</span><span class="tag">Contract</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('kids-all-right')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Focus Features · BGM · MICA Award</div>
+          <div class="card-title">The Kids Are All Right — Love Letters</div>
+          <div class="card-year">2010 · Editorial-Advertising Integration</div>
+          <div class="card-desc">Academy Award-nominated film matched with BGM's "Love Letters" relationship column. A digital roadblock, print integration, and a post-screening party hosted by the columnist herself. Won the inaugural MICA Award.</div>
+          <div class="card-tags"><span class="tag">Print</span><span class="tag">Digital</span><span class="tag">Event</span><span class="tag">Award Winner</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('away-we-go')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Focus Features · BGM</div>
+          <div class="card-title">Away We Go</div>
+          <div class="card-year">2009 · Fully Modeled Campaign</div>
+          <div class="card-desc">Full financial modeling documented. Original schedule $50K. Negotiated schedule $96,757. Added value delivered: $45,789 against $46,526 in incremental spend — a 98.4% added value ratio.</div>
+          <div class="card-tags"><span class="tag">Print</span><span class="tag">Digital</span><span class="tag">Magazine</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('decade-in-focus')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Focus Features · BGM</div>
+          <div class="card-title">A Decade in Focus</div>
+          <div class="card-year">2011–2012 · Formal Annual Contract</div>
+          <div class="card-desc">The relationship formalized into a signed annual program with escalating minimum commitments. Print minimums grew 60% from Year 1 to Year 2. Six films: Moonrise Kingdom, ParaNorman, and more.</div>
+          <div class="card-tags"><span class="tag">Annual Contract</span><span class="tag">Six Films</span><span class="tag">Multi-Platform</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIMPSONS MOVIE -->
+  <div class="campaign-group">
+    <div class="campaign-group-header">
+      <span class="campaign-group-title">The Simpsons Movie · 2007</span>
+      <div class="campaign-group-line"></div>
+    </div>
+    <div class="campaign-cards">
+
+      <div class="campaign-card" onclick="openModal('simpsons-main')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">20th Century Fox · BGM · NESN</div>
+          <div class="card-title">The Simpsons Movie — Full Campaign</div>
+          <div class="card-year">2007 · 12-Channel Campaign</div>
+          <div class="card-desc">Trading cards printed by Fox and distributed through Globe infrastructure. A&E section takeover. Red Sox Simpsonize gallery. Five radio stations. NESN broadcast integration. When NESN ran a news segment about the trading cards alongside game scores, a promotion had become sports media content.</div>
+          <div class="card-tags"><span class="tag">Print</span><span class="tag">Digital</span><span class="tag">Radio</span><span class="tag">Broadcast</span><span class="tag">Experiential</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('simpsons-ip')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">20th Century Fox · Unprecedented IP Access</div>
+          <div class="card-title">The IP Access Story</div>
+          <div class="card-year">2007 · First Known Precedent</div>
+          <div class="card-desc">Studios are extraordinarily protective of IP licensing for physical goods. Getting Fox to grant a regional newspaper's creative team the right to render officially licensed Simpsons characters for a physical collectible — with Fox funding the production — had no known precedent.</div>
+          <div class="card-tags"><span class="tag">IP Licensing</span><span class="tag">First-Ever</span><span class="tag">Trading Cards</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DREAMWORKS -->
+  <div class="campaign-group">
+    <div class="campaign-group-header">
+      <span class="campaign-group-title">DreamWorks · 2004–2006</span>
+      <div class="campaign-group-line"></div>
+    </div>
+    <div class="campaign-cards">
+
+      <div class="campaign-card" onclick="openModal('over-the-hedge')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">DreamWorks · Boston Red Sox · NESN · BGM</div>
+          <div class="card-title">Over The Hedge — Fenway Activation</div>
+          <div class="card-year">2006 · Multi-Platform Sports Integration</div>
+          <div class="card-desc">Children hitting wiffle balls "Over the Hedge" (a Green Monster replica) at Fenway Family Fun Day. NESN broadcast integration, a potential screening at Fenway Park, and a home run guessing contest that merged the film's title with Boston baseball's most iconic feature.</div>
+          <div class="card-tags"><span class="tag">Experiential</span><span class="tag">Sports</span><span class="tag">Broadcast</span><span class="tag">Print</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('shark-tale')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">DreamWorks · Newbury Comics · BGM</div>
+          <div class="card-title">Shark Tale + Newbury Comics</div>
+          <div class="card-year">2004 · Three-Way Partnership</div>
+          <div class="card-desc">DreamWorks merchandise. Newbury Comics distribution. BGM print advertising. Three parties, one unified promotional program. Total package value: $51,368. Net cost to Paramount: $12,482. Value delivered at 4:1 ratio.</div>
+          <div class="card-tags"><span class="tag">Multi-Partner</span><span class="tag">Retail</span><span class="tag">Merchandise</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('dvd-proposal')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">DreamWorks · BGM · Anticipated Amazon Prime</div>
+          <div class="card-title">Globe DVD Distribution Proposal</div>
+          <div class="card-year">2004–2005 · First-Ever Innovation</div>
+          <div class="card-desc">A formal proposal to distribute full-length DreamWorks films on DVDs inserted into 700,000 Sunday Globe newspapers. Content subscription bundled with delivery infrastructure — conceived and formally proposed in 2004, before Netflix pivoted to streaming.</div>
+          <div class="card-tags"><span class="tag">Innovation</span><span class="tag">First-Ever</span><span class="tag">Product</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('madagascar')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">DreamWorks · Beaches Resort · BGM</div>
+          <div class="card-title">Madagascar — Multi-Partner Contest</div>
+          <div class="card-year">2005 · Sweepstakes Architecture</div>
+          <div class="card-desc">Grand prize: family trip for four to Beaches All-Inclusive Resort in Jamaica. A structured multi-sponsor promotional architecture DreamWorks could replicate in other markets — each partner contributing distinct value.</div>
+          <div class="card-tags"><span class="tag">Multi-Partner</span><span class="tag">Sweepstakes</span><span class="tag">Print</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARAMOUNT -->
+  <div class="campaign-group">
+    <div class="campaign-group-header">
+      <span class="campaign-group-title">Paramount Pictures · 2005–2010</span>
+      <div class="campaign-group-line"></div>
+    </div>
+    <div class="campaign-cards">
+
+      <div class="campaign-card" onclick="openModal('paramount-overview')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Paramount Pictures · Anchor Relationship</div>
+          <div class="card-title">The Paramount Relationship</div>
+          <div class="card-year">2004–2016 · $9.8M Portfolio Context</div>
+          <div class="card-desc">Paramount was the largest single-studio client at BGM. 2005: $926K actual against $1.5M contract. 2006 and 2008: $1.5M and $1M annual contracts respectively. Part of the $9.8M total studio portfolio managed in a single year.</div>
+          <div class="card-tags"><span class="tag">Studio Relationship</span><span class="tag">Annual Contract</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('war-of-worlds')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Paramount Pictures · BGM</div>
+          <div class="card-title">War of the Worlds — Station Domination</div>
+          <div class="card-year">2005 · South Station, Boston</div>
+          <div class="card-desc">Two options presented: $17K net / $52,500 value at 3:1 ratio, or $29.5K net / $89,000 value. Globe newspapers wrapped in film branding, distributed by street teams in branded apparel at South Station — the hub of Boston's commuter universe.</div>
+          <div class="card-tags"><span class="tag">OOH</span><span class="tag">Experiential</span><span class="tag">Print</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('shutter-island')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Paramount · NESN · BGM</div>
+          <div class="card-title">Shutter Island — Multi-Platform</div>
+          <div class="card-year">2009–2010 · Full Integration</div>
+          <div class="card-desc">Print, digital, NESN in-game live reads with elevator graphics tied to Red Sox schedule, and a proposed "Faux Section Front" — the G section front designed to look like an actual Globe section but branded as a Shutter Island advertorial.</div>
+          <div class="card-tags"><span class="tag">Print</span><span class="tag">Digital</span><span class="tag">Broadcast</span><span class="tag">Advertorial</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('quantum-solace')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Sony Pictures · James Bond · BGM</div>
+          <div class="card-title">Quantum of Solace — Bond Sweepstakes</div>
+          <div class="card-year">2008 · Multi-Sponsor Architecture</div>
+          <div class="card-desc">Grand prize: trip for two to London via Virgin Atlantic. National brand sponsors activated locally: Avon, Omega Watches (Tourneau, Shreve Crump & Lowe), Swatch, Virgin Atlantic, Visit Britain, Smirnoff. Each sponsor at $5K net received adjacency and logo placement.</div>
+          <div class="card-tags"><span class="tag">Multi-Sponsor</span><span class="tag">Sweepstakes</span><span class="tag">Bond</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SPORTS & EVENTS -->
+  <div class="campaign-group">
+    <div class="campaign-group-header">
+      <span class="campaign-group-title">Sports, Live Events & International</span>
+      <div class="campaign-group-line"></div>
+    </div>
+    <div class="campaign-cards">
+
+      <div class="campaign-card" onclick="openModal('celtics-champ')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Kraft Family · New England Patriots · BGM</div>
+          <div class="card-title">Boston Celtics Championship Page</div>
+          <div class="card-year">2008 · Championship Day</div>
+          <div class="card-desc">Full-page championship congratulations ad in the Boston Globe on championship day, placed by the Kraft Family, the New England Patriots, and the New England Revolution. Championship day. The Boston Globe. Full page.</div>
+          <div class="card-tags"><span class="tag">Sports</span><span class="tag">Multi-Sponsor</span><span class="tag">Print</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('fifa-2010')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">BGM · FIFA · New England Revolution</div>
+          <div class="card-title">FIFA World Cup 2010 Program</div>
+          <div class="card-year">2010 · Multilingual, Multicultural</div>
+          <div class="card-desc">Built BGM's multi-platform FIFA program from scratch, targeting 500,000+ soccer followers across Portuguese-American, Hispanic, and Brazilian communities in Greater Boston. Multilingual print section distributed to 130,000+ locations.</div>
+          <div class="card-tags"><span class="tag">Multi-Platform</span><span class="tag">Multilingual</span><span class="tag">Print</span><span class="tag">Digital</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('nova-scotia')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Nova Scotia Tourism · BGM · MICA Award</div>
+          <div class="card-title">Nova Scotia "Boston Takeover"</div>
+          <div class="card-year">2014 · MICA Award Winner</div>
+          <div class="card-desc">Custom Interactive Lighthouse at Faneuil Hall. Fenway Park activation. NESN-televised sponsored first pitch with live broadcast integration. Second MICA Award — repeat winner of BGM's Most Innovative Campaign Award.</div>
+          <div class="card-tags"><span class="tag">Experiential</span><span class="tag">Broadcast</span><span class="tag">Tourism</span><span class="tag">Award Winner</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+      <div class="campaign-card" onclick="openModal('travel-show')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Boston Globe · Event Leadership</div>
+          <div class="card-title">Boston Globe Travel Show</div>
+          <div class="card-year">Ongoing · Record Performance</div>
+          <div class="card-desc">Revenue strategy, sponsorship architecture, strategic partnerships, marketing plans, and full P&L accountability. The 11th Annual show — under second consecutive year of leadership — was the highest-attended and highest-revenue in the event's 11-year history.</div>
+          <div class="card-tags"><span class="tag">Events</span><span class="tag">P&L</span><span class="tag">Sponsorship</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THREATPOST -->
+  <div class="campaign-group">
+    <div class="campaign-group-header">
+      <span class="campaign-group-title">Threatpost — Build From Zero · 2021–2022</span>
+      <div class="campaign-group-line"></div>
+    </div>
+    <div class="campaign-cards">
+
+      <div class="campaign-card" onclick="openModal('threatpost')">
+        <div class="campaign-card-inner">
+          <div class="card-studio">Threatpost · Kaspersky Lab · Global</div>
+          <div class="card-title">Full Commercial Build — Zero to Revenue</div>
+          <div class="card-year">2021–2022 · 7× Contract Value Growth</div>
+          <div class="card-desc">No product portfolio. No pricing. No sales process. No client relationships. One audience: 500,000 global cybersecurity professionals. Built everything. Webinars, homepage takeovers, newsletters, custom podcasts, microsites. Beat targets by 22%.</div>
+          <div class="card-tags"><span class="tag">B2B Media</span><span class="tag">Product Build</span><span class="tag">Global</span><span class="tag">From Zero</span></div>
+          <div class="card-arrow">View Case Study →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<div class="rule-gold"></div>
+
+<!-- ─── INNOVATIONS ─── -->
+<section class="section" id="innovations">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2>Product Innovations & First-Evers</h2>
+  </div>
+  <div class="innovations-grid">
+
+    <div class="innovation-item featured">
+      <div class="innovation-label">First at BGM · 2004</div>
+      <div class="innovation-title">First Fully Integrated Multi-Channel Program</div>
+      <div class="innovation-desc">Print + digital + broadcast + experiential executed simultaneously by a single team for a single client. Previously siloed by product line across all of BGM. Became organization-wide standard.</div>
+    </div>
+
+    <div class="innovation-item">
+      <div class="innovation-label">First at BGM · 2010 · MICA Award</div>
+      <div class="innovation-title">First Editorial-Sponsored Content</div>
+      <div class="innovation-desc">BGM editorial staff working directly with advertising on a revenue-generating client campaign (Focus Features / Love Letters). Initially challenged internally. Later became industry standard.</div>
+    </div>
+
+    <div class="innovation-item">
+      <div class="innovation-label">First Known Precedent · 2007</div>
+      <div class="innovation-title">Simpsons Movie Trading Cards — Studio IP Access</div>
+      <div class="innovation-desc">First known instance of a major Hollywood studio granting a regional newspaper publisher's creative team the right to render officially licensed characters for a physical collectible. Fox funded the production; BGM cost center inverted.</div>
+    </div>
+
+    <div class="innovation-item">
+      <div class="innovation-label">Proposed 2004–2005 · Anticipated Amazon Prime</div>
+      <div class="innovation-title">Globe DVD Distribution Model</div>
+      <div class="innovation-desc">Formal proposal to distribute full-length studio films on DVDs in 700,000+ Sunday Globe newspapers. Content subscription + physical delivery hybrid conceived before Netflix pivoted to streaming. Machine testing began before organizational disruption ended the project.</div>
+    </div>
+
+    <div class="innovation-item">
+      <div class="innovation-label">Proposed 2004</div>
+      <div class="innovation-title">Boston.com Virtual Shopping District</div>
+      <div class="innovation-desc">Subscriber delivery + digital commerce hybrid for Boston.com. Anticipated e-commerce bundled with local delivery infrastructure — a concept now foundational to same-day retail.</div>
+    </div>
+
+    <div class="innovation-item featured">
+      <div class="innovation-label">Proposed 2010</div>
+      <div class="innovation-title">BGM Delivery Network Logistics Venture</div>
+      <div class="innovation-desc">Proposed monetizing existing Globe truck fleet and driver infrastructure for third-party delivery — a commercial logistics business built on existing BGM assets, years before gig economy delivery networks.</div>
+    </div>
+
+    <div class="innovation-item">
+      <div class="innovation-label">Across 12 Years at BGM</div>
+      <div class="innovation-title">Only Fully Cross-Platform Sales Team at BGM</div>
+      <div class="innovation-desc">The sole team selling across all BGM products simultaneously while all other divisions remained product-siloed. Built and ran the model that eventually became the organizational standard.</div>
+    </div>
+
+    <div class="innovation-item">
+      <div class="innovation-label">July 2010</div>
+      <div class="innovation-title">3D Newspaper Advertising Proposal</div>
+      <div class="innovation-desc">Proposed 3D advertising integration connecting the emerging 3D cinema trend to print advertising innovation following Verizon's 3D print campaign. Connecting the theatrical moment to the medium.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CLIENTS ─── -->
+<section class="clients-section" id="clients">
+  <div class="clients-inner">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Complete Client & Partner Roster</h2>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Film Studios</div>
+      <div class="client-list">Paramount Pictures · Universal Pictures · Sony Pictures · Warner Bros. · Walt Disney Studios · Focus Features · DreamWorks · Miramax · Lionsgate · 20th Century Fox · New Line Cinema · Warner Independent · Fine Line Features · Fox Searchlight · Sony Classics · Paramount Classics · CBS Films · Picturehouse · Freestyle Releasing · Music Box Films · First Look Studios · Afterdark Films</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Professional Sports</div>
+      <div class="client-list">Boston Red Sox · Boston Celtics · New England Patriots · Boston Bruins · New England Revolution · Kraft Family Sports & Entertainment · NESN</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Live Entertainment</div>
+      <div class="client-list">Live Nation · AEG · Broadway Across America · Boston Ballet · Boston Symphony Orchestra · ArtsEmerson · Commonwealth Shakespeare Company · Cirque du Soleil · Blue Man Group</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Tourism & Government</div>
+      <div class="client-list">Aruba Tourism Authority · Atout France · Greek National Tourism Organisation · Tourism Ireland · Nova Scotia Tourism · Japan Consulate Boston · FIFA / New England Revolution (World Cup 2010)</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Airlines</div>
+      <div class="client-list">Air Japan · Alitalia · Turkish Airlines · Emirates Air</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Retail & Multi-Partner Promotional</div>
+      <div class="client-list">Newbury Comics · Walgreens · AMC Theatres · Showcase Cinemas · Tourneau · Shreve Crump & Lowe · Smirnoff · Virgin Atlantic · Visit Britain · Omega Watches · Swatch · Avon · Burger King</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Cybersecurity (Threatpost)</div>
+      <div class="client-list">Cisco Systems · Palo Alto Networks · Rapid7 · Keeper Security · Exabeam · Sixgill · Zoho Corporation · Specops Software · Immersive Labs · SpyCloud · Uptycs</div>
+    </div>
+
+    <div class="client-category">
+      <div class="client-category-label">Media & Agency Partners</div>
+      <div class="client-list">Terry Hines & Associates · Allied Advertising / Allied Integrated Marketing · The VIA Agency · NESN · Metro Boston · WBOS · WROR · WMJX (Mix 98.5) · WBCN · ESPN Radio · Yahoo! Local · The Washington Post · San Francisco Chronicle · Philadelphia Inquirer · Miami Herald</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── AWARDS ─── -->
+<section class="section" id="awards">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>Awards & Recognition</h2>
+  </div>
+
+  <div class="awards-list">
+
+    <div class="award-item">
+      <div class="award-year">January 2019</div>
+      <div>
+        <div class="award-title">NCM Panel of Excellence</div>
+        <div class="award-desc">Selected as one of six panelists from 240 sales professionals nationally at the NCM Annual Sales Conference to present best practices to peers and senior leadership. Least-tenured member of the panel.</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-year">2011 · 2014</div>
+      <div>
+        <div class="award-title">BGM Most Innovative Campaign Award (MICA) — Two-Time Winner</div>
+        <div class="award-desc">Inaugural winner 2011: Focus Features / The Kids Are All Right — Love Letters editorial-advertising integration. Among the first instances of BGM editorial working directly with advertising on a revenue-generating client campaign. Became organization-wide template. Repeat winner 2014: Nova Scotia Tourism "Boston Takeover."</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-year">February 2007</div>
+      <div>
+        <div class="award-title">BGM Spirit Award — Inaugural Winner</div>
+        <div class="award-desc">Award created specifically to recognize the account executive who best demonstrates leadership in developing and selling complex integrated and innovative programs. First year the award was given.</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-year">March 2006 · July 2006</div>
+      <div>
+        <div class="award-title">BGM Taking Great Initiative Award — Inaugural & Repeat Winner</div>
+        <div class="award-desc">First award given (February 2006) and repeat winner (July 2006). Recognizes commitment to collaboration, integration, and innovation.</div>
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-year">2012</div>
+      <div>
+        <div class="award-title">Opening Remarks — Commonwealth Shakespeare Company, 25th Season</div>
+        <div class="award-desc">Gave the opening remarks for the 25th season of Shakespeare on the Common. The Governor of Massachusetts held the same honor the following non-landmark year.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="rule-gold"></div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-name">Jeff Hurley</div>
+  <div class="footer-contact">
+    617.755.2783 &nbsp;·&nbsp;
+    <a href="/cdn-cgi/l/email-protection#ff959a99998f978a8d939a86bf969c93908a9bd19c9092"><span class="__cf_email__" data-cfemail="fa909f9c9c8a928f88969f83ba939996958f9ed4999597">[email&#160;protected]</span></a> &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/jeffphurley" target="_blank">linkedin.com/in/jeffphurley</a>
+  </div>
+</footer>
+
+
+<!-- ─── MODALS ─── -->
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-content">
+    <!-- Filled dynamically -->
+  </div>
+</div>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const campaigns = {
+
+  'focus-overview': {
+    studio: 'Focus Features · Boston Globe Media',
+    title: 'The "Focus On" Partnership — Origin & Structure',
+    year: '2008–2012',
+    origin: `In 2007, on an ordinary night at the movies, a Steve Carell film appeared on screen being marketed by Disney. Everything about the advertising suggested broad family comedy. Then the Focus Features logo appeared at the start of the film.
+
+Because of years working inside the film industry, that logo meant something. What happened in that moment — that immediate cognitive shift, that sense of relief and recalibration of expectations — was the genesis of an idea. The film was Dan in Real Life. It was exactly what the Focus logo promised.`,
+    pitch: `The insight: Focus Features had a catalogue of critically acclaimed, commercially successful films. But their brand hadn't broken through to general audiences the way Miramax had. What if the Boston Globe — with its educated, culturally engaged, film-going readership — could serve as the platform to build that brand recognition in Boston?
+
+A trip to the Focus Features New York offices. Their heads of marketing in the room or on video call. The agency representatives present. The story of Dan in Real Life, the logo, and the shift in expectation was told exactly as it happened. The pitch: a branded film series partnership between Focus Features and Boston Globe Media.`,
+    details: [
+      'Named "Focus On" — Focus on Fall, Focus on Spring',
+      'Multi-year branded program beginning 2008',
+      'Escalated into a formally signed contractual structure by 2011',
+      'Named "A Decade in Focus" by Focus Features in 2012',
+      'David Brooks, President of Marketing at Focus Features, became a genuine long-term partner',
+      'Agency partners: Terry Hines & Associates (THA) and Allied Integrated Marketing',
+    ],
+    channels: ['Print', 'Digital', 'Events', 'Screenings', 'Annual Contract'],
+    metrics: [
+      { num: '2008–2012', label: 'Program Duration' },
+      { num: '4+', label: 'Films Per Year' },
+      { num: '$20K+', label: 'Per-Film Print Floor' },
+    ]
+  },
+
+  'kids-all-right': {
+    studio: 'Focus Features · BGM · Inaugural MICA Award Winner',
+    title: 'The Kids Are All Right — Love Letters',
+    year: '2010',
+    origin: `The film: an Academy Award-nominated story about a same-sex couple, their donor-conceived children, and what happens when the kids find their biological father. The platform: "Love Letters," Meredith Goldstein's relationship advice column at the Boston Globe, with a large, loyal, and deeply engaged audience.
+
+The connection was organic, audience-specific, and unprecedented. No one had done this before at BGM — editorial working directly with advertising on a revenue-generating client campaign.`,
+    pitch: `The concept required selling internally before it could ever be sold externally. BGM editorial had to agree. Legal had to review. Leadership had to approve a model that challenged the traditional separation of editorial and advertising. Only after all of that could the program be presented to Focus Features — and then built.`,
+    details: [
+      'Love Letters blog roadblock at 100% share of voice · 5-day flight 7/14–7/18/2010',
+      'Fixed 728×90 leaderboard · 300×250 big ads · 160×600 skyscraper · 300×250 Sticky',
+      'Wallpaper/back tile · Mobile.boston.com banners',
+      'Integrated 5×2 color strip ad in Globe G section · 3-week print flight',
+      'Film screening + post-screening party hosted by Meredith Goldstein at Flat Top Johnny\'s, Kendall Square',
+      'Annette Bening and the studio actively promoted the event',
+      'RSVPs through Boston.com/events',
+    ],
+    channels: ['Digital Roadblock', 'Print', 'Mobile', 'Event', 'Editorial Integration'],
+    metrics: [
+      { num: '$13K', label: 'Incremental Organic Revenue' },
+      { num: '$34K', label: 'Committed Base' },
+      { num: '$115K+', label: 'Total BGM Film Commitment' },
+    ]
+  },
+
+  'away-we-go': {
+    studio: 'Focus Features · Boston Globe Media',
+    title: 'Away We Go — Fully Modeled Campaign',
+    year: '2009',
+    origin: `Part of the "Focus On" annual program series, Away We Go required comprehensive financial modeling to demonstrate value at every budget level — showing Focus Features not just what they were buying, but what they were getting.`,
+    pitch: `Three schedule options were built and presented: the base original schedule, a full proposed schedule, and a negotiated schedule with documented discounts and added value. The financial modeling showed exactly how each dollar of Focus's investment performed above rate card value.`,
+    details: [
+      'Original schedule: $50,231 total',
+      'Proposed full-value schedule: $142,547',
+      'Negotiated schedule with discounts: $96,757',
+      'Added value delivered: $45,789 against $46,526 in incremental spend — 98.4% added value ratio',
+      'Lola magazine double-truck inside front cover',
+      'Boston.com with bonus impressions',
+      'Color Movie Guide integration',
+      'Earthfest sponsorship (added value)',
+    ],
+    channels: ['Print', 'Magazine', 'Digital', 'Added Value'],
+    metrics: [
+      { num: '$96,757', label: 'Negotiated Schedule' },
+      { num: '98.4%', label: 'Added Value Ratio' },
+      { num: '$45,789', label: 'Added Value Delivered' },
+    ]
+  },
+
+  'decade-in-focus': {
+    studio: 'Focus Features · Boston Globe Media · Annual Contract Program',
+    title: 'Focus on Boston / A Decade in Focus',
+    year: '2011–2012',
+    origin: `The relationship formalized into a named, signed annual program — an addendum to the Universal/Focus contract with escalating minimum commitments on both sides.`,
+    pitch: `What began as individual film buys became a branded annual program with contractual minimums, named promotional series, and reciprocal obligations. By 2012, Focus Features themselves named the program "A Decade in Focus" — acknowledging the length of the relationship they had built together.`,
+    details: [
+      '2011: Focus committed to $20,000 average opening-week print budget + $7,500 digital per film',
+      'BGM committed to full-page color announcement ad + upgraded screening promotion for each film',
+      '2011 films: Jane Eyre · Hannah · Beginners · One Day',
+      '2012: Print minimum grew from $20,000 to $32,000 — a 60% increase',
+      '2012: Digital minimum grew from $7,500 to $9,500',
+      '2012 films: Being Flynn · Moonrise Kingdom · Seeking a Friend for the End of the World · ParaNorman · For a Good Time, Call... · Hyde Park on the Hudson',
+    ],
+    channels: ['Annual Contract', 'Print', 'Digital', 'Screenings', 'Six Films'],
+    metrics: [
+      { num: '6', label: 'Films in 2012 Program' },
+      { num: '60%', label: 'Print Minimum Increase' },
+      { num: '$32K', label: 'Per-Film Print Floor (2012)' },
+    ]
+  },
+
+  'simpsons-main': {
+    studio: '20th Century Fox · Boston Globe Media · NESN',
+    title: 'The Simpsons Movie — 12-Channel Campaign',
+    year: 'Summer 2007',
+    origin: `The concept began not with Fox but with a conversation upstairs. The VP of Circulation at BGM, Hugo Collasante, was running a Red Sox rookie baseball card program to drive Sunday newspaper sales. The inversion was immediate: if readers would pick up a paper for an unknown baseball rookie card, they'd pick it up for officially licensed Simpsons trading cards. But the economics would be completely reversed.`,
+    pitch: `Fox would provide the IP rights. Fox would pay for the printing. Fox would pay for the distribution. BGM would repurpose marketing assets already in the budget. BGM's cost center becomes Fox's advertising investment. The concept required internal alignment across Circulation, Creative, Legal, and Sales before Fox could ever be approached.`,
+    details: [
+      'Trading cards: Officially licensed Simpsons Movie set, each featuring a scene from the film — designed by BGM creative with Fox IP approval',
+      'Subscriber home delivery (365,000 Sunday / 261,000 Friday)',
+      'Walgreens retail display racks ($3.99)',
+      'MBTA JFK-UMass T stop advertising',
+      'Boston Globe street vending boxes (marked FREE)',
+      'Boston.com A&E Section Takeover: Homer floating ad, Simpsons leaderboard, donut-tiled backtile, skyscraper',
+      'Simpsonize the Sox: Red Sox players run through the Burger King Simpsonizeme.com avatar generator — 17-page gallery',
+      'Print: Daily teaser newspaper ads July 8–15 building to July 27 opening · Full-page Simpsons Movie ads across multiple sections',
+      'Radio: ESPN · WBOS · WROR · WMJX (Mix 98.5) · WBCN',
+      'NESN: Trading cards received a dedicated news video segment listed alongside Red Sox game coverage',
+    ],
+    channels: ['Print', 'Digital', 'Radio', 'Broadcast (NESN)', 'OOH/Transit', 'Retail', 'Subscriber', 'Experiential', 'Social', 'Sweepstakes', 'IP Licensing', 'Earned Media'],
+    metrics: [
+      { num: '12', label: 'Campaign Channels' },
+      { num: '365K', label: 'Sunday Subscriber Reach' },
+      { num: '5', label: 'Radio Stations' },
+    ]
+  },
+
+  'simpsons-ip': {
+    studio: '20th Century Fox · Unprecedented IP Access',
+    title: 'The IP Access Story — A First Known Precedent',
+    year: '2007',
+    origin: `Studios are extraordinarily protective of IP licensing for physical goods. Getting Fox to grant a regional newspaper publisher access to their IP — specifically to allow BGM's creative team to render officially licensed Simpsons characters for a physical printed collectible product — had no known precedent at the time.`,
+    pitch: `The approval required Fox to trust BGM's creative team with their most valuable franchise in the summer of their biggest release. But the economic model made it logical: Fox was funding the production rather than BGM. The concept inverted the normal cost structure.`,
+    details: [
+      'First known instance of a major Hollywood studio granting a regional newspaper publisher\'s creative team the right to render officially licensed characters for a physical collectible',
+      'Internal approval chain: Circulation → BGM Creative → Legal → Sales — all had to commit before Fox could be approached',
+      'Fox provided IP rights, paid for printing, paid for distribution',
+      'BGM repurposed existing marketing budget infrastructure',
+      'BGM cost center inverted to Fox advertising investment',
+      'Burger King partnership: Simpsonizeme.com avatar generator cross-promotion',
+    ],
+    channels: ['IP Licensing', 'Collectible Product', 'Cross-Brand Partnership'],
+    metrics: [
+      { num: '0', label: 'Known Precedents' },
+      { num: '$0', label: 'BGM Production Cost' },
+      { num: '1', label: 'Summer of Fox\'s Biggest Release' },
+    ]
+  },
+
+  'over-the-hedge': {
+    studio: 'DreamWorks · Boston Red Sox · NESN · Boston Globe Media',
+    title: 'Over The Hedge — Fenway Park Activation',
+    year: '2006',
+    origin: `The title of the film is also a description of every home run hit at Fenway Park. That connection — Over The Hedge, over the Green Monster — was the organizing concept of the entire campaign. Not an advertising message layered onto a sporting event. A genuine integration of the film's premise into Boston's most beloved sports environment.`,
+    pitch: `Secured presence at the annual Red Sox Fenway Family Fun Day for exclusive Over The Hedge branding. The concept: a full "Over the Hedge" environment — coloring tables, face painting, games, children hitting wiffle balls over a mock Green Monster wall replica — at an event attended by approximately 38,000 people.`,
+    details: [
+      'Fenway Family Fun Day: Full branded environment, approximately 38,000 attendees',
+      'Green Monster replica wiffle ball wall — children hit balls "Over the Hedge"',
+      'Red Sox home run contest: Kids guessed how many home runs would be hit "Over the Hedge" during April home stand (4/11–4/20/06)',
+      'NESN: Contest and film mentioned during game broadcasts · Coverage of Family Fun Day · Potential 90-second trailer on Fenway jumbotron',
+      'NESN "Sports Plus" show placement',
+      'Potential actual screening at Fenway Park',
+      'Print: Metro, Globe, Boston.com, Events advertising across multiple sections',
+      'Mission: Impossible III cross-promotion within same period',
+    ],
+    channels: ['Experiential', 'Sports Venue', 'Broadcast (NESN)', 'Print', 'Digital', 'Contest'],
+    metrics: [
+      { num: '38,000', label: 'Event Attendees' },
+      { num: '4', label: 'Platform Types' },
+      { num: '$72,698', label: 'Est. Total Value (with M:I3)' },
+    ]
+  },
+
+  'shark-tale': {
+    studio: 'DreamWorks · Newbury Comics · Boston Globe Media',
+    title: 'Shark Tale + Newbury Comics — Three-Way Partnership',
+    year: '2004',
+    origin: `The DreamWorks relationship from 2004–2006 established the multi-partner promotional architecture that became a template for all subsequent studio work. Each campaign went beyond advertising into genuine multi-party promotion: studio + retail partner + BGM, each funding a share and each receiving amplified value.`,
+    pitch: `Three-way partnership: DreamWorks supplied merchandise. Newbury Comics provided in-store distribution and retail presence. BGM provided print advertising. Each party contributed what they had; each received returns that would have been impossible alone.`,
+    details: [
+      'DreamWorks supplied: plush items, headwear, stickers, posters, screening passes — minimum $750 value per store',
+      'Newbury Comics: in-store distribution across 3–4 locations',
+      'BGM: print advertising across Globe properties',
+      'Total package value across four stores: $51,368',
+      'Paramount net cost: $12,482',
+      'Value delivered at 4:1 ratio',
+      'Template for subsequent multi-partner DreamWorks campaigns',
+    ],
+    channels: ['Print', 'Retail', 'Merchandise', 'Multi-Partner'],
+    metrics: [
+      { num: '$51,368', label: 'Total Package Value' },
+      { num: '$12,482', label: 'Net Studio Cost' },
+      { num: '4:1', label: 'Value Ratio' },
+    ]
+  },
+
+  'dvd-proposal': {
+    studio: 'DreamWorks · Boston Globe Media · 2004–2005',
+    title: 'Globe DVD Distribution Proposal — Anticipated Amazon Prime',
+    year: '2004–2005',
+    origin: `Netflix had not yet pivoted to streaming. Amazon Prime did not exist. The Globe had 700,000+ Sunday subscribers with an established delivery infrastructure. DreamWorks had a film library — Ants, Chicken Run — that could promote upcoming releases like Madagascar and Wallace & Gromit.`,
+    pitch: `A formal proposal, documented and presented to DreamWorks: distribute full-length DreamWorks films on DVDs inserted into 700,000 Sunday Boston Globe newspapers, with bonus content promoting upcoming releases. The model: use past films to promote future ones, with trailers, making-of content, and interactive elements. Content subscription bundled with delivery infrastructure.`,
+    details: [
+      'Target distribution: 700,000+ Sunday Boston Globe subscribers',
+      'Back catalog films (Ants, Chicken Run) used to promote upcoming releases (Madagascar, Wallace & Gromit)',
+      'DVD bonus content: trailers, making-of, interactive elements',
+      'Globe delivery infrastructure repurposed for content distribution',
+      'Machine testing began with Globe insert equipment',
+      'Organizational disruption ended the project before full launch',
+      'Concept anticipated Amazon Prime\'s content-subscription-delivery model by a decade',
+    ],
+    channels: ['Product Innovation', 'Subscriber', 'Physical Distribution', 'Content Marketing'],
+    metrics: [
+      { num: '700K+', label: 'Potential Weekly Reach' },
+      { num: '~10yr', label: 'Before Amazon Prime' },
+      { num: '2004', label: 'Year Proposed' },
+    ]
+  },
+
+  'madagascar': {
+    studio: 'DreamWorks · Beaches All-Inclusive Resort · Boston Globe Media',
+    title: 'Madagascar — Multi-Partner Contest',
+    year: '2005',
+    origin: `The multi-partner architecture established with Shark Tale evolved with Madagascar. Rather than merchandise distribution, this campaign was built around an aspirational grand prize — a family travel experience — that aligned naturally with the film's themes of adventure and animals.`,
+    pitch: `Grand prize: family trip for four to Beaches All-Inclusive Resort in Jamaica. DreamWorks sought an airline partner for transportation. Full-color contest ad with entry form, rules, and film promotion. A structured multi-sponsor promotional architecture DreamWorks could replicate in other markets.`,
+    details: [
+      'Grand prize: family trip for four to Beaches All-Inclusive Resort in Jamaica',
+      'DreamWorks sought airline partner for transportation component',
+      'Full-color contest ad with integrated entry form and official rules',
+      'Screening passes and merchandise for runner-up prizes',
+      'Architecture designed to be replicated across other DreamWorks markets',
+      'Builds on Shark Tale three-way partnership model',
+    ],
+    channels: ['Print', 'Sweepstakes', 'Multi-Partner', 'Travel Partnership'],
+    metrics: [
+      { num: '3+', label: 'Partners' },
+      { num: '4', label: 'Grand Prize Winners' },
+      { num: 'Jamaica', label: 'Grand Prize Destination' },
+    ]
+  },
+
+  'paramount-overview': {
+    studio: 'Paramount Pictures · Allied Advertising · Terry Hines & Associates',
+    title: 'The Paramount Relationship — Anchor Studio',
+    year: '2004–2016',
+    origin: `Paramount Pictures was the largest single-studio client relationship at BGM. Managed through Allied Advertising and Terry Hines & Associates — the same agency network serving Universal, Fox, Sony, and Focus Features. The relationship spanned the full BGM tenure and touched every major Paramount release.`,
+    pitch: `The $9.8M total studio advertising portfolio managed in 2005 was built on multi-year relationships with eight major studios. Paramount was the anchor: every major film, every year, with individually negotiated programs for the most significant titles.`,
+    details: [
+      '2005: $926,020 actual spend against a $1,500,000 annual contract commitment',
+      '2005 total studio portfolio: $9.8M across 8 studios',
+      '2006: $1.5M annual Paramount contract',
+      '2008: $1M annual Paramount contract',
+      'Portfolio composition: Warner Bros. ($2M) · Disney/Miramax ($2.5M) · Paramount ($1.5M) · Universal/Focus ($2M) · Fox ($1M) · Lionsgate ($300K) · Sony ($1M) · DreamWorks ($500K)',
+      'Individual campaigns built for every major Paramount release: War of the Worlds, Mission: Impossible III, Shutter Island, and more',
+    ],
+    channels: ['Annual Contract', 'Multi-Film', 'Print', 'Digital', 'OOH', 'Broadcast'],
+    metrics: [
+      { num: '$9.8M', label: 'Total 2005 Studio Portfolio' },
+      { num: '$1.5M', label: 'Paramount Contract (2006)' },
+      { num: '8', label: 'Major Studios in Portfolio' },
+    ]
+  },
+
+  'war-of-worlds': {
+    studio: 'Paramount Pictures · Boston Globe Media',
+    title: 'War of the Worlds — South Station "Station Domination"',
+    year: '2005',
+    origin: `South Station is the nerve center of Boston's commuter rail system. Paramount's "Station Domination" concept was designed to make the film impossible to miss for commuters — and the BGM program extended that takeover into the physical newspaper itself.`,
+    pitch: `Two fully costed options presented, each offering a documented value ratio above net cost. The organizing concept: Globe newspapers wrapped in War of the Worlds branding, distributed by street teams in film-branded apparel at the most trafficked transit hub in Greater Boston.`,
+    details: [
+      'Option 1 ($17K net, $52,500 value): Half-page full-color Globe ad · 10,000 War of the Worlds-wrapped Globe newspapers at South Station · 2 five-person street teams in branded apparel · Boston.com photo gallery',
+      'Option 2 ($29.5K net, $89,000 value): Full-page Globe ad · Full-page Metro back cover (170K circ) · 10,000 wrapped Globes · 4 five-person street teams · Online advertising with trailer link · Photo gallery',
+      'Value delivered at 3:1 ratio (Option 2)',
+      'Integration with Paramount\'s national "Station Domination" campaign',
+    ],
+    channels: ['Print', 'OOH', 'Experiential', 'Street Teams', 'Digital'],
+    metrics: [
+      { num: '$89K', label: 'Value Delivered (Option 2)' },
+      { num: '3:1', label: 'Value Ratio' },
+      { num: '10,000', label: 'Wrapped Newspapers' },
+    ]
+  },
+
+  'shutter-island': {
+    studio: 'Paramount Pictures · NESN · Boston Globe Media',
+    title: 'Shutter Island — Multi-Platform Package',
+    year: '2009–2010',
+    origin: `One of the most comprehensively documented Paramount campaigns in the archive. Shutter Island presented an opportunity to build a campaign as atmospheric as the film itself — press-aware, Boston-centric, mystery-forward.`,
+    pitch: `The proposed program integrated every BGM channel simultaneously: print across multiple sections, digital across multiple verticals, NESN in-game live reads timed to Red Sox games, and a proposed editorial-advertising integration at the section-front level.`,
+    details: [
+      'Print: Fall Movies Preview Section Front (6×3, 4C) · Eight 2×2 b/w ads across Main News and Sports · Sunday Movies Section Front · Main News Spadea Wrap',
+      'Spadea Wrap modeled on San Francisco Chronicle/Zodiac campaign',
+      'Digital: Pre-awareness flight across Boston.com A&E, Movies, Celebrity News, Things To Do, Sports, Yahoo! Local',
+      'Boston.com Homepage Takeover on opening day',
+      'NESN: In-game live reads with elevator graphics (non-Yankees games) · Pre-game and post-game live reads',
+      'NESN flight dates tied to Red Sox schedule',
+      'Proposed G Section Faux Front: Section front designed to look like actual G section but branded as Shutter Island advertorial — with four-page advertorial inside and Inside Front Cover full-page ad',
+    ],
+    channels: ['Print', 'Digital', 'NESN Broadcast', 'Homepage Takeover', 'Editorial Integration'],
+    metrics: [
+      { num: '6+', label: 'Platform Types' },
+      { num: '8', label: 'B/W Print Ads' },
+      { num: '4', label: 'Advertorial Pages (Faux Front)' },
+    ]
+  },
+
+  'quantum-solace': {
+    studio: 'Sony Pictures · James Bond · Boston Globe Media',
+    title: 'Quantum of Solace — Bond Lifestyle Sweepstakes',
+    year: '2008',
+    origin: `The James Bond franchise is a lifestyle brand as much as a film franchise. The campaign was built not around the film's plot but around the Bond lifestyle — luxury travel, watches, spirits — activating national brand partners locally in Boston.`,
+    pitch: `A multi-sponsor sweepstakes architecture: each national brand received local Boston activation, logo placement, and adjacency advertising in exchange for their $5K net contribution. The program funded itself through sponsor contributions while delivering outsized media value to each participant.`,
+    details: [
+      'Grand prize: trip for two to London including Virgin Atlantic airfare, four nights hotel, Heathrow Express transportation',
+      'National sponsors activated as local Boston partners:',
+      'Avon · Omega Watches (Tourneau, Shreve Crump & Lowe, Barmakian, Jared) · Swatch · Virgin Atlantic · Visit Britain · Smirnoff',
+      'Each sponsor contributing $5K net received logo placement and 1×11.5 adjacency ad',
+      'Sweepstakes URL: boston.com/bondsweeps',
+      'Full official rules drafted and executed',
+      'National brand relationships leveraged for local market activation',
+    ],
+    channels: ['Sweepstakes', 'Multi-Sponsor', 'Print', 'Digital', 'Retail'],
+    metrics: [
+      { num: '6', label: 'Brand Partners' },
+      { num: '$5K', label: 'Per-Sponsor Net Revenue' },
+      { num: 'London', label: 'Grand Prize Destination' },
+    ]
+  },
+
+  'celtics-champ': {
+    studio: 'Kraft Family · New England Patriots · Boston Globe Media',
+    title: 'Boston Celtics Championship Congratulations',
+    year: '2008',
+    origin: `The Boston Celtics won the NBA Championship. Championship day. The Boston Globe. The question was not whether to run a congratulations ad — it was who would place it, and what it would say about the advertisers who did.`,
+    pitch: `A full-page championship congratulations ad in the Boston Globe on championship day, placed by the Kraft Family, the New England Patriots, and the New England Revolution. Cross-franchise, cross-sport solidarity — a statement that transcended any individual team's competitive interests.`,
+    details: [
+      'Full-page ad in the Boston Globe on championship day',
+      'Placed by: Kraft Family · New England Patriots · New England Revolution',
+      'Cross-sport solidarity from the city\'s football and soccer franchises to the basketball championship',
+      'Part of season-long integrated programs across all four Boston franchises simultaneously',
+      'Coordinated with broadcast partner NESN',
+    ],
+    channels: ['Print', 'Full Page', 'Championship Day', 'Cross-Franchise'],
+    metrics: [
+      { num: '3', label: 'Franchises United' },
+      { num: 'Full Page', label: 'Ad Size' },
+      { num: 'Day 1', label: 'Championship Day Placement' },
+    ]
+  },
+
+  'fifa-2010': {
+    studio: 'BGM · FIFA · New England Revolution · World Cup 2010',
+    title: 'FIFA World Cup 2010 — Multilingual Boston Program',
+    year: '2010',
+    origin: `Greater Boston's Portuguese-American, Hispanic, and Brazilian communities were among the most passionate World Cup audiences in the United States. BGM had never comprehensively targeted these audiences at scale. The 2010 World Cup was the opportunity to build that program.`,
+    pitch: `Built BGM's multi-platform FIFA World Cup program from scratch: targeting 500,000+ soccer followers across multilingual communities in Greater Boston. One of the first BGM programs to comprehensively target multilingual, multicultural Boston audiences at scale.`,
+    details: [
+      'Targeted audiences: Portuguese-American, Hispanic, and Brazilian communities in Greater Boston',
+      'Estimated reach: 500,000+ soccer followers',
+      'Multilingual print section distributed to 130,000+ locations',
+      'Boston.com digital packages',
+      'Mobile digital packages',
+      'New England Revolution partnership integration',
+      'One of the first BGM programs to comprehensively target multilingual audiences at scale',
+    ],
+    channels: ['Print', 'Digital', 'Mobile', 'Multilingual', 'Multi-Cultural'],
+    metrics: [
+      { num: '500K+', label: 'Target Audience' },
+      { num: '130K+', label: 'Print Distribution Locations' },
+      { num: '3', label: 'Language Communities' },
+    ]
+  },
+
+  'nova-scotia': {
+    studio: 'Nova Scotia Tourism · Boston Globe Media · MICA Award 2014',
+    title: 'Nova Scotia "Boston Takeover" — Two-Time MICA Award Winner',
+    year: '2014',
+    origin: `Nova Scotia Tourism wanted to break through in Boston — not with a standard travel ad, but with an activation that made the destination impossible to ignore. The concept: take over Boston with Nova Scotia, bringing a piece of the destination directly into the city's most iconic locations.`,
+    pitch: `The "Boston Takeover" concept was experiential, broadcast, and editorial simultaneously. A custom Interactive Lighthouse installed at Faneuil Hall. A Fenway Park activation. And a NESN-televised sponsored first pitch with live broadcast integration — putting Nova Scotia Tourism on New England's sports network on game day.`,
+    details: [
+      'Custom Interactive Lighthouse installed at Faneuil Hall',
+      'Fenway Park activation',
+      'NESN-televised sponsored first pitch with live broadcast integration',
+      'Won the 2014 BGM Most Innovative Campaign Award (MICA)',
+      'Second MICA win — repeat winner of the inaugural award category',
+    ],
+    channels: ['Experiential', 'Fenway Park', 'NESN Broadcast', 'Print', 'Digital'],
+    metrics: [
+      { num: '2nd', label: 'MICA Award Win' },
+      { num: 'NESN', label: 'Broadcast Network' },
+      { num: 'Faneuil Hall', label: 'Lighthouse Installation Location' },
+    ]
+  },
+
+  'travel-show': {
+    studio: 'Boston Globe Media · Annual Consumer Event',
+    title: 'Boston Globe Travel Show — Record Performance',
+    year: 'Multiple Years',
+    origin: `The Boston Globe Travel Show was an annual consumer event that predated the digital transformation of travel planning. The challenge was modernizing its commercial model while building the sponsorship architecture, partner network, and marketing program needed to drive attendance and revenue.`,
+    pitch: `Full P&L accountability from strategy through execution: revenue strategy, sponsorship architecture, strategic partnerships, marketing plans, and event operations. Under second consecutive year of leadership, the 11th Annual show became the highest-attended and highest-revenue event in its 11-year history.`,
+    details: [
+      'Full P&L accountability and event leadership',
+      'Revenue strategy and sponsorship architecture',
+      'Strategic partner development',
+      'Integrated media execution across BGM properties',
+      '11th Annual show: highest-attended in event history',
+      '11th Annual show: highest-revenue in event history',
+      'Second consecutive year of leadership when record was set',
+    ],
+    channels: ['Events', 'P&L', 'Sponsorship', 'Marketing', 'Operations'],
+    metrics: [
+      { num: '#1', label: 'Attendance in 11-Year History' },
+      { num: '#1', label: 'Revenue in 11-Year History' },
+      { num: '2', label: 'Consecutive Years Led' },
+    ]
+  },
+
+  'threatpost': {
+    studio: 'Threatpost · Kaspersky Lab · Global · 2021–2022',
+    title: 'Threatpost — Build Full Commercial Operation From Zero',
+    year: '2021–2022',
+    origin: `Threatpost was a niche cybersecurity news and intelligence platform reaching 500,000+ monthly users across 236 countries, funded by Kaspersky Lab. When the commercial development role began in February 2022, there was no product portfolio, no pricing, no sales process, and no client relationships. There was an audience.`,
+    pitch: `The mandate: build everything. Define the product suite, create the pricing architecture, develop the go-to-market framework, build the outreach sequences, and close deals — from cold outreach to repeat clients — across a global audience of cybersecurity professionals.`,
+    details: [
+      'Product portfolio built from zero: Webinars · Homepage takeovers · Sponsored newsletters · Custom podcasts · Sponsored articles · eBooks · Content hubs · Microsites',
+      'GTM framework: go-to-market strategy, pricing architecture, outreach sequences, proposal templates, onboarding process',
+      'Cross-functional delivery: managed end-to-end program delivery across remote teams spanning editorial, engineering, design, and finance',
+      'WordPress daily for content creation, editing, QA, and publishing',
+      'Client base built from cold outreach through to repeat clients: Cisco Systems · Palo Alto Networks · Rapid7 · Keeper Security · Exabeam · Sixgill · Zoho · Specops · Immersive Labs · SpyCloud',
+      'Geography: US, Europe, Middle East, South America',
+      'Operations ceased when Russia invaded Ukraine and Kaspersky Lab triggered global business restrictions',
+    ],
+    channels: ['B2B Media', 'Webinars', 'Newsletters', 'Podcasts', 'eBooks', 'Microsites', 'Content Hubs'],
+    metrics: [
+      { num: '7×', label: 'Contract Value Growth' },
+      { num: '22%', label: 'Above Revenue Targets' },
+      { num: '236', label: 'Countries of Audience Reach' },
+    ]
+  },
+
+};
+
+function openModal(id) {
+  const data = campaigns[id];
+  if (!data) return;
+
+  const metricsHTML = data.metrics.map(m => `
+    <div class="modal-metric">
+      <div class="modal-metric-num">${m.num}</div>
+      <div class="modal-metric-label">${m.label}</div>
+    </div>
+  `).join('');
+
+  const detailsHTML = data.details.map(d => `<li>${d}</li>`).join('');
+  const channelsHTML = data.channels.map(c => `<span class="modal-channel">${c}</span>`).join('');
+
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">Close ✕</button>
+      <div class="modal-studio">${data.studio}</div>
+      <div class="modal-title">${data.title}</div>
+      <div class="modal-year">${data.year}</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Origin</div>
+        ${data.origin.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')}
+      </div>
+      ${data.pitch ? `
+      <div class="modal-section">
+        <div class="modal-section-label">The Pitch & Build</div>
+        ${data.pitch.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')}
+      </div>` : ''}
+      <div class="modal-section">
+        <div class="modal-section-label">Campaign Details</div>
+        <ul>${detailsHTML}</ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Key Metrics</div>
+        <div class="modal-metrics">${metricsHTML}</div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Channels</div>
+        <div class="modal-channels">${channelsHTML}</div>
+      </div>
+    </div>
+  `;
+
+  const overlay = document.getElementById('modal-overlay');
+  overlay.classList.add('open');
+  overlay.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event) {
+  if (event && even

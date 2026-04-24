@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Hurley — Magazines & Custom Publishing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1a1e22;--paper:#f0f2f4;--cream:#e2e7ec;--rule:#b0bcc6;--accent:#c0443a;--gold:#4a6b7a;--pale:#f8fafc;--muted:#5a6470;--yellow:#d4a82a;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.7;}
+
+  header{background:var(--ink);color:var(--paper);padding:3.5rem 4rem 3rem;border-bottom:4px solid var(--accent);position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(255,255,255,.028) 28px,rgba(255,255,255,.028) 29px);pointer-events:none;}
+  .ol{font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem;}
+  .mn{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.4rem);font-weight:900;line-height:1;letter-spacing:-.01em;margin-bottom:.4rem;}
+  .mt{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.4vw,1.4rem);color:var(--rule);margin-bottom:1.6rem;}
+  .mr{width:60px;height:3px;background:var(--accent);margin-bottom:1.2rem;}
+  .mb{font-size:.92rem;color:#c8d4dc;max-width:680px;line-height:1.75;}
+  .mc{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;}
+  .mc a{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(74,107,122,.4);padding-bottom:2px;transition:color .2s,border-color .2s;}
+  .mc a:hover{color:#fff;border-color:#fff;}
+
+  .testimonials{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:900px;}
+  @media(max-width:680px){.testimonials{grid-template-columns:1fr;}}
+  .tcard{background:rgba(255,255,255,.06);border:1px solid rgba(74,107,122,.25);border-left:3px solid var(--gold);padding:.9rem 1.1rem;}
+  .tcard blockquote{font-family:'Libre Baskerville',Georgia,serif;font-style:italic;font-size:.8rem;color:#e8edf2;line-height:1.6;}
+  .tcard cite{display:block;margin-top:.5rem;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);font-style:normal;}
+
+  nav{background:#111;border-bottom:2px solid var(--accent);display:flex;overflow-x:auto;}
+  nav a{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:#a09070;padding:.85rem 1.2rem;text-decoration:none;white-space:nowrap;transition:color .2s,background .2s;border-right:1px solid #222;}
+  nav a:hover{color:#fff;background:rgba(255,255,255,.05);}
+
+  main{max-width:1180px;margin:0 auto;padding:3rem 2rem 5rem;}
+
+  .sh{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:1rem;margin:3.5rem 0 .4rem;}
+  .sh h2{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;}
+  .shr{height:1px;background:var(--rule);opacity:.5;}
+  .si{font-size:.86rem;color:var(--muted);margin:.6rem 0 1.4rem;line-height:1.65;max-width:820px;}
+
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;}
+  @media(max-width:800px){.g3{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.g3,.g2{grid-template-columns:1fr;}}
+
+  .card{background:var(--pale);border:1px solid var(--cream);border-top:3px solid var(--accent);padding:1.45rem 1.6rem 1.6rem;transition:transform .18s,box-shadow .18s;}
+  .card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(26,30,34,.11);}
+  .card.gld{border-top-color:var(--gold);}
+  .card.span2{grid-column:span 2;}
+  .card.span3{grid-column:1/-1;}
+  @media(max-width:800px){.card.span2{grid-column:1/-1;}}
+
+  .ctag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
+  .card.gld .ctag{color:var(--gold);}
+  .card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;line-height:1.25;margin-bottom:.4rem;}
+  .csub{font-family:'Space Mono',monospace;font-size:.61rem;color:#5a6470;margin-bottom:.65rem;letter-spacing:.04em;}
+  .card p{font-size:.85rem;color:var(--muted);line-height:1.65;}
+  .card p+p{margin-top:.55rem;}
+  .cl{display:inline-block;margin-top:.85rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(181,50,10,.32);padding-bottom:1px;transition:color .2s,border-color .2s;}
+  .cl+.cl{margin-left:1rem;}
+  .cl:hover{color:var(--ink);border-color:var(--ink);}
+
+  .callout-box{background:var(--ink);color:var(--paper);padding:1.8rem 2rem 2rem;margin-bottom:1.3rem;border-top:3px solid var(--gold);}
+  .callout-box .ctag{color:var(--gold);}
+  .callout-box h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--paper);margin-bottom:.3rem;}
+  .callout-box .csub{color:#9a8a72;}
+  .callout-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;margin-top:1rem;}
+  @media(max-width:680px){.callout-inner{grid-template-columns:1fr;}}
+  .callout-box p{font-size:.84rem;color:#8a9aaa;line-height:1.65;}
+  .callout-box p+p{margin-top:.5rem;}
+  .callout-col h4{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;border-bottom:1px solid rgba(74,107,122,.3);padding-bottom:.38rem;}
+  .callout-col ul{list-style:none;}
+  .callout-col ul li{font-size:.81rem;padding:.36rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.5rem;line-height:1.4;color:#8a9aaa;}
+  .callout-col ul li::before{content:'→';color:var(--yellow);flex-shrink:0;font-size:.73rem;margin-top:.07rem;}
+  .callout-col ul li strong{color:var(--paper);}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;align-items:start;}
+  @media(max-width:680px){.split{grid-template-columns:1fr;}}
+  .sf h4{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#5a6470;margin-bottom:.55rem;border-bottom:1px solid var(--cream);padding-bottom:.38rem;}
+  .sf ul{list-style:none;}
+  .sf ul li{font-size:.81rem;padding:.36rem 0;border-bottom:1px solid var(--cream);display:flex;gap:.5rem;line-height:1.4;}
+  .sf ul li::before{content:'→';color:var(--yellow);flex-shrink:0;font-size:.73rem;margin-top:.07rem;}
+  .sf ul li strong{color:var(--ink);}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:2.2rem 0;}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stat{background:var(--ink);color:var(--paper);padding:1.15rem 1rem;text-align:center;}
+  .sv{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--yellow);line-height:1;margin-bottom:.25rem;}
+  .sl{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rule);line-height:1.45;}
+
+  .accordion{border:1px solid var(--cream);border-top:3px solid var(--rule);background:var(--pale);margin-bottom:.7rem;transition:border-color .2s;}
+  .accordion:hover{border-color:var(--rule);}
+  .acc-trigger{width:100%;background:none;border:none;cursor:pointer;padding:1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;text-align:left;gap:1rem;}
+  .acc-trigger:focus{outline:2px solid var(--gold);outline-offset:2px;}
+  .acc-left{display:flex;flex-direction:column;gap:.28rem;}
+  .acc-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:#5a6470;}
+  .acc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.25;}
+  .acc-sub{font-family:'Space Mono',monospace;font-size:.58rem;color:#5a6470;letter-spacing:.03em;}
+  .acc-arrow{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--yellow);flex-shrink:0;transition:transform .22s;}
+  .acc-trigger[aria-expanded="true"] .acc-arrow{transform:rotate(180deg);}
+  .acc-body{display:none;padding:0 1.4rem 1.3rem;border-top:1px solid var(--cream);}
+  .acc-body.open{display:block;}
+  .acc-body p{font-size:.84rem;color:var(--muted);line-height:1.65;margin-top:.9rem;}
+  .acc-body p+p{margin-top:.5rem;}
+  .acc-body .pills{margin-top:.75rem;}
+  .acc-body .cl{margin-top:.75rem;}
+
+  table.rt{width:100%;border-collapse:collapse;font-size:.79rem;margin-top:.4rem;}
+  table.rt th{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:#5a6470;padding:.46rem .65rem;border-bottom:2px solid var(--rule);text-align:left;background:var(--cream);}
+  table.rt td{padding:.4rem .65rem;border-bottom:1px solid var(--cream);vertical-align:top;line-height:1.42;}
+  table.rt tr:hover td{background:#f0ece2;}
+  .rv{font-family:'Space Mono',monospace;color:var(--yellow);font-size:.73rem;}
+  .rn{font-family:'Space Mono',monospace;font-size:.57rem;color:var(--gold);text-transform:uppercase;letter-spacing:.09em;}
+  .rtotal td{background:var(--cream);font-weight:700;}
+  .rgroup td{background:#e2e7ec;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#5a6470;padding:.3rem .65rem;}
+  .rsub td{background:var(--ink);color:var(--paper);font-weight:700;}
+  .rsub .rv{color:var(--gold);}
+
+  .pq{border-left:4px solid var(--gold);padding:1.1rem 1.8rem;background:var(--cream);margin:2.2rem 0;}
+  .pq blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;line-height:1.5;}
+  .pq cite{display:block;margin-top:.5rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:#5a6470;font-style:normal;}
+
+  .pills{display:flex;flex-wrap:wrap;gap:.42rem;margin-top:.8rem;}
+  .pill{font-family:'Space Mono',monospace;font-size:.57rem;letter-spacing:.09em;text-transform:uppercase;background:var(--cream);color:var(--muted);padding:.24rem .62rem;border:1px solid var(--rule);}
+
+  .tl .ti{display:grid;grid-template-columns:110px 1fr;gap:0 1.5rem;padding:1rem 0;border-bottom:1px solid var(--cream);}
+  .ty{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--yellow);letter-spacing:.07em;padding-top:.12rem;}
+  .tc h4{font-family:'Playfair Display',serif;font-weight:700;font-size:.93rem;margin-bottom:.17rem;}
+  .tc p{font-size:.81rem;color:var(--muted);line-height:1.53;}
+  @media(max-width:540px){.tl .ti{grid-template-columns:1fr;gap:.18rem;}}
+
+  .sn{margin-top:3rem;padding:1.3rem 1.5rem;background:var(--cream);border:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:.61rem;letter-spacing:.07em;color:#5a6470;line-height:1.8;}
+  .sn strong{color:var(--ink);} .sn a{color:inherit;}
+
+  footer{background:var(--ink);color:var(--rule);text-align:center;padding:2rem 1rem;font-family:'Space Mono',monospace;font-size:.61rem;letter-spacing:.12em;text-transform:uppercase;}
+  footer strong{color:var(--yellow);}
+</style>
+</head>
+<body>
+
+<header>
+  <div style="margin-bottom:1.2rem;"><a href="https://jeffphurley.com" style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:#6a9aad;text-decoration:none;border-bottom:1px solid rgba(106,154,173,.35);padding-bottom:2px;transition:color .2s;">← jeffphurley.com</a></div>
+  <div class="ol">Portfolio — Magazines &amp; Custom Publishing</div>
+  <div class="mn">Jeff Hurley</div>
+  <div class="mt">Entrepreneurial Leader — Magazines &amp; Custom Publishing · Boston Globe Media</div>
+  <div class="mr"></div>
+  <p class="mb">A decades-long career includes expanding and integrating the Boston Globe's weekly magazine and custom publishing portfolio — from the weekly Globe Magazine franchise and themed editions to bespoke client collaboration publications for landmark institutions. Below is a snapshot (c. 2012–2013) from his 12 years with Boston Globe Media, including Fenway Park, the Isabella Stewart Gardner Museum, and MIT. Spanning strategic partnerships, creative design, content focus, co-op advertising, production and distribution, and pioneering digital and experiential marketing extensions, his work generated millions in annual revenue across multiple publications, event sponsorships and emerging platforms.</p>
+  <div class="testimonials">
+    <div class="tcard">
+      <blockquote>"Jeff and I worked together on a number of collaborative projects bridging the newsroom and business sides of The Boston Globe. His high-level enthusiasm and idea-generation were always valued and when opportunity arises, he always pounced quickly."</blockquote>
+      <cite>Doug Most · Author · Assistant VP, Executive Editor, BU Today · Editor, The Boston Globe · worked with Jeff on collaborative projects</cite>
+    </div>
+    <div class="tcard">
+      <blockquote>"Jeff is one of the hardest working sales executives in the business. He is completely in tune to his clients needs and cares about the effectiveness of the ad campaigns he creates for them. He knows the entertainment business like the back of his hand."</blockquote>
+      <cite>Kristin Toli · VP Global Integrated Marketing, Liberty Mutual · Globe Magazine brand manager</cite>
+    </div>
+  </div>
+  <div class="mc" style="margin-top:1.5rem;">
+    <a href="mailto:jeffphurley@icloud.com">jeffphurley@icloud.com</a>
+    <a href="https://www.linkedin.com/in/jeffphurley" target="_blank">LinkedIn</a>
+  </div>
+</header>
+
+<nav>
+  <a href="#globe-mag">Globe Magazine</a>
+  <a href="#themed">Themed Editions</a>
+  <a href="#special">Landmark Publications</a>
+  <a href="#event-guides">Programs, Guides &amp; Events</a>
+  <a href="#g-section">G Section</a>
+  <a href="#arts-sections">Arts &amp; Travel Sections</a>
+  <a href="#revenue">Revenue at a Glance</a>
+</nav>
+
+<main>
+
+  <div class="stats" style="margin-top:2.5rem;">
+    <div class="stat"><div class="sv">881K</div><div class="sl">Globe Magazine readers per issue</div></div>
+    <div class="stat"><div class="sv">$1.55M</div><div class="sl">Arts &amp; Travel sections annual revenue</div></div>
+    <div class="stat"><div class="sv">+25%</div><div class="sl">Revenue growth YoY — across all magazines &amp; custom publications</div></div>
+    <div class="stat"><div class="sv">30+</div><div class="sl">Annual magazines, sections &amp; custom publications</div></div>
+  </div>
+
+  <!-- ══════════════ GLOBE MAGAZINE ══════════════ -->
+  <div id="globe-mag" class="sh"><h2>Globe Magazine</h2><div class="shr"></div></div>
+  <p class="si">New England's dominant lifestyle magazine — reaching more highly qualified consumers than all competitor magazines combined — tourism, arts &amp; culture, income, homeownership, and luxury goods. Jeff led sales into the Globe Magazine's weekly edition and expanded the portfolio of special themed issues that were the magazine's most consistent revenue growth engine.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Core Weekly Magazine · 2005–2013</div>
+    <h3>Globe Magazine</h3>
+    <div class="csub" style="color:#9a8a72;">Weekly · 881,100 Readers · 382,452 Combined Sunday Circulation · +4.6% YoY (AAM, March 2013)</div>
+    <div class="callout-inner">
+      <div>
+        <p>Jeff led sales into Globe Magazine, coordinating with sales, clients, editorial, production, circulation, and marketing to drive revenue across the full weekly and themed-issue program. The magazine delivered an audience no other local publication could replicate: 86% of its 881,100 weekly readers were exclusive — unreachable through any competitor. Average HHI ran 12% above the market; 80% read every Sunday.</p>
+        <p>Audience data and strategic editorial calendar validated sales of a complete suite of standard and exclusive positions — full-page, half-page, third-page, back cover, inside front cover, gatefold, and barn door formats — each pitch with a competitive case study tailored to the advertiser's need.</p>
+        <div style="margin-top:.85rem;">
+          <a href="https://drive.google.com/file/d/0B0EnKLRY11bOTlVnZDV6YWY2T0E" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">2013 Mag Overview →</a>
+        </div>
+      </div>
+      <div class="callout-col">
+        <h4>Audience &amp; Competitive Advantage</h4>
+        <ul>
+          <li><strong>86% exclusive readership</strong> — unreachable through any competitor magazine</li>
+          <li><strong>Average HHI 12% above market</strong> · 80% read every Sunday</li>
+          <li>Reached 32% of adults spending $2,500+ on last vacation vs. 7% for Boston Magazine</li>
+          <li>395,644 arts &amp; culture attendees reached per issue</li>
+          <li>More adults planning a weekend getaway than Boston Magazine, Improper Bostonian, Cape Cod Life, Yankee, and Boston Common combined</li>
+          <li><strong>Sunday readership penetration grew to 63%</strong> of Sunday Globe readers (2012, up from 59% in 2011) · Average HHI grew to $106,557 · +21% vs. market on vacation spend</li>
+          <li>Custom competitive audience case built for every advertiser category</li>
+        </ul>
+        <div style="margin-top:.85rem;">
+          <a href="https://drive.google.com/file/d/1SVQi4Fdk5cmsCbUsFgyAP0Dkb0cNUYr6" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Travel vs. Local Magazines Deck →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ THEMED EDITIONS ══════════════ -->
+  <div id="themed" class="sh"><h2>Themed Globe Magazine Editions</h2><div class="shr"></div></div>
+  <p class="si">The themed Globe Magazine program became the magazine's key revenue growth vehicle — a portfolio of four seasonal special issues featuring travel content opened the door to sponsored content, co-op partnerships, and growth with new advertisers. The Travel series was the most consistently positive revenue performer; insights applied there drove editorial expansion across the full magazine calendar.</p>
+
+  <div class="g3">
+
+    <div class="card gld span2">
+      <div class="ctag">Most Consistent Revenue Producer · Sponsored Content &amp; Co-Op Programs</div>
+      <h3>Travel Series</h3>
+      <div class="csub">4 Seasonal Issues Per Year · Most Consistently Positive Revenue Among All Globe Magazine Editions</div>
+      <p>Jeff led team sales into the full calendar of the weekly Globe Magazine with particular focus on the four seasonal Travel-themed issues — Spring Travel/Golf (Mar), Summer Travel (May), Fall Travel (Sep), and Winter Travel (Nov). Client demand and revenue growth led to adding a Weekend Fun Guide (Jun, 2012) — generating new revenue with further growth over 10% in 2013. The most reliably strong revenue growth strategy, new theme issues were added in 2013: Arts, Weddings, Staycations, Food (×2), Dining Out (×2), Music Gift Guide.</p>
+      <p>Beyond standard ad sales, sponsored content features and destination co-operative advertising programs were developed that materially expanded revenue by bringing in advertisers with no prior relationship with the section — regional tourism boards, destination hotels, airline partners, and travel brands pooling budgets into co-op units alongside editorial. Frequency discount programs locked multi-insertion annual commitments. These tactics became the model applied to the Arts Edition, Weekend Fun Guide, and every other new themed issue launched.</p>
+      <p>The Fall Travel Magazine alone drove 31 advertisers and 7 full-page ads in Q3 2011 with a 5% revenue gain over the prior year — while the broader travel category delivered 38% year-over-year digital growth the same period.</p>
+      <div class="pills">
+        <span class="pill">Spring Travel/Golf</span><span class="pill">Summer Travel</span>
+        <span class="pill">Fall Travel</span><span class="pill">Winter Travel</span>
+        <span class="pill">Sponsored Content</span><span class="pill">Co-Op Advertising</span><span class="pill">Frequency Programs</span>
+      </div>
+      <a href="https://drive.google.com/file/d/0B0EnKLRY11bOWC1oRVh3YXlnbEU" class="cl" target="_blank">2013 Travel Magazine Spec →</a>
+      <a href="https://drive.google.com/file/d/123Bfjh8PAo0rdYbcKNXU-havt5T1INQf" class="cl" target="_blank">Travel Frequency Discount Program →</a>
+    </div>
+
+    <div class="accordion" style="grid-column:1/-1;">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Annual Summer Edition · New Launch 2012</span>
+          <span class="acc-title">Weekend Fun Guide</span>
+          <span class="acc-sub">Globe Magazine · June Annual · +10% Revenue Growth in 2013</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Launched in 2012 as a guide to summer weekend adventures in New England — introducing new editorial subsections and advertiser options, including a first-ever North Shore and South Shore sub-section. Added as a direct result of client demand and momentum from the Travel series; the program generated new revenue in its launch year and grew over 10% in 2013. Reached 1.4 million adults planning a weekend getaway and connected digitally to Boston.com regional travel content, extending advertiser reach beyond print.</p>
+        <div class="pills">
+          <span class="pill">New 2012</span><span class="pill">+10% Growth 2013</span><span class="pill">1.4M Adults Reached</span><span class="pill">North/South Shore Sub-Sections</span><span class="pill">Boston.com Digital Extension</span>
+        </div>
+        <a href="https://drive.google.com/file/d/0B0EnKLRY11bOb1JhUG9XZkpyUUU" class="cl" target="_blank">View Weekend Fun Guide Spec →</a>
+      </div>
+    </div>
+
+    <div class="accordion" style="grid-column:1/-1;">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">New Launch · 2013</span>
+          <span class="acc-title">Arts Edition</span>
+          <span class="acc-sub">Sunday, April 28, 2013 · Incremental Revenue · New Program</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>The new Arts-themed Globe Magazine edition launched in 2013 as a direct replication of the Travel issue model: editorial focused, driving sponsored content and audience-aligned opportunities. Reached 881,100 readers and drove incremental revenue well above the first-year goal, establishing a repeatable template for future arts-calendar-themed issues.</p>
+        <a href="https://drive.google.com/drive/folders/0B0EnKLRY11bOWUFPNy00eFRxZUk" class="cl" target="_blank">View Arts Magazine Folder →</a>
+      </div>
+    </div>
+
+    <div class="accordion" style="grid-column:1/-1;">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">2013 New Themed Issues — Five Additional Launches</span>
+          <span class="acc-title">New Themed Editions: Arts, Dining Out, Food, Music Gift Guide, Weddings &amp; Staycations</span>
+          <span class="acc-sub">Six New Programs · 2013 · $100K+ Combined Incremental Revenue</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>The Travel series model was applied to five additional content categories in 2013 — each a new themed Globe Magazine issue with no prior-year baseline: Arts Edition (April), Weddings (January), Boston Staycations (February), Dining Out ×2 (June &amp; July), Food ×2 (April &amp; November), and Music Gift Guide (November). Together they added over $100,000 in incremental revenue to the magazine program in a single year, each following the same editorial-led, sponsored-content model proven by the Travel series.</p>
+        <div class="pills">
+          <span class="pill">Arts Edition · April</span><span class="pill">Weddings · January</span>
+          <span class="pill">Staycations · February</span><span class="pill">Dining Out ×2</span>
+          <span class="pill">Food ×2</span><span class="pill">Music Gift Guide</span><span class="pill">All New 2013</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════ SPECIAL PUBLICATIONS ══════════════ -->
+  <div id="special" class="sh"><h2>Landmark &amp; Custom Publications</h2><div class="shr"></div></div>
+  <p class="si">One-of-a-kind glossy magazines tied to defining Boston cultural and civic moments — each a complete custom publishing program with its own editorial concept, advertiser proposition, distribution strategy, event component, and digital extension.</p>
+
+  <div class="g3">
+    <div class="card gld span3">
+      <div class="split">
+        <div>
+          <div class="ctag">Glossy Keepsake Magazine · Event Integration · Digital Extension</div>
+          <h3>Fenway 100: The Spirit of Fenway Park</h3>
+          <div class="csub">Boston Sunday Globe · April 1, 2012 · + 50,000 at Fenway Park · MLB Network Trade Partnership</div>
+          <p>A glossy oversized collector's magazine celebrating Fenway Park's 100th anniversary — one of the highest-profile custom publishing programs in Globe Media history. Sold as a complete custom publishing package: premium print magazine, exclusive client launch event, and digital extension on Boston.com Sports.</p>
+          <p>A trade agreement was secured with MLB Network — print and digital advertising in the magazine exchanged for on-air promotion — demonstrating the cross-platform value of the custom publishing model. The launch event at Game On! at Fenway Park, featuring Red Sox legends and Sports Museum memorabilia, was reserved exclusively for full-page advertisers, creating a direct event incentive tied to print revenue.</p>
+          <p>Premium creative positions included a Barn Door center spread, a Gatefold cover extension, and a Poster insert — each framed as limited-availability formats justifying premium pricing well above standard ROP.</p>
+          <a href="https://drive.google.com/file/d/0B0EnKLRY11bOX19PYVg3dS13cXM" class="cl" target="_blank">Premium Positions Spec →</a>
+          <a href="https://drive.google.com/file/d/0B0EnKLRY11bOYnB4TzNUTUV3WVk" class="cl" target="_blank">One Sheet →</a>
+        </div>
+        <div class="sf">
+          <h4>Program Highlights</h4>
+          <ul>
+            <li>Inserted in Boston Sunday Globe — April 1, 2012</li>
+            <li>50,000 copies at Fenway Park, April 20 weekend</li>
+            <li><strong>MLB Network trade deal — on-air promotion for print &amp; digital</strong></li>
+            <li>Full page · Half page · One-third premium positions available</li>
+            <li>Barn Door · Gatefold · Poster — limited-availability premium formats</li>
+            <li>Client launch event at Game On! — first 10 full-page advertisers only</li>
+            <li>Digital: Boston.com Sports section extension</li>
+            <li>Target: decision-makers 66% more likely to attend 10+ MLB games/year</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.3rem;">
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Glossy Magazine · Strategic Partnership · Event Integration · Dual Distribution</span>
+          <span class="acc-title">Gardner Museum Magazine</span>
+          <span class="acc-sub">Globe + NYT Boston DMA · January 15, 2012 · Cross-Category Initiative</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Special glossy magazine marking the $118 million Isabella Stewart Gardner Museum renovation — distributed in both the Boston Sunday Globe and The New York Times in the Boston DMA (unduplicated), plus at Gardner opening events. Reached adults with average HHI 26% above market and those with significantly higher investment portfolios. Identified internally as a cross-category revenue initiative, drawing budgets simultaneously from arts, luxury, and cultural institution advertiser categories.</p>
+        <div class="pills"><span class="pill">Globe + NYT Distribution</span><span class="pill">Event Distribution</span><span class="pill">Cross-Category Revenue</span><span class="pill">Above-Market HHI Audience</span></div>
+        <a href="https://drive.google.com/file/d/0B0EnKLRY11bONjBpdEppRFBjMWs" class="cl" target="_blank">View Gardner Mag Spec →</a>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Glossy Magazine · Strategic Partnership · Event Integration · Dual Distribution</span>
+          <span class="acc-title">MIT 150th Anniversary</span>
+          <span class="acc-sub">Boston Globe Media · 2011</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Custom editorial and advertising program developed for MIT's 150th anniversary — part of a repeatable institutional milestone publishing playbook applied across multiple Boston organizations: MIT 150, UMass 150, Boston Children's Museum Centennial, and Fenway 100. Each program followed the same model: anchor editorial moment, premium glossy distribution, sponsored content, and event-based revenue layered on top of print advertising — creating a scalable custom publishing format applicable to any major institutional anniversary.</p>
+        <a href="https://drive.google.com/drive/folders/0B0EnKLRY11bOdzY4ckdYWFhYWlk" class="cl" target="_blank">View MIT 150 Folder →</a>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Glossy Magazine · Strategic Partnership · Event Integration · Dual Distribution</span>
+          <span class="acc-title">MFA Magazine</span>
+          <span class="acc-sub">Museum of Fine Arts Boston · Custom Program · Multi-Platform Relationship</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Custom-published magazine program developed in partnership with the Museum of Fine Arts Boston — the flagship cultural institution custom publishing relationship in the portfolio. The MFA was simultaneously a Summer Arts Weekend Bronze sponsor, a Museums special section advertiser, a trade partner, and a BostonGlobe.com sponsorship client, making it one of the most multi-dimensional media relationships across the entire account base. The MFA Magazine was the print anchor of that full-platform, year-round institutional partnership.</p>
+        <a href="https://drive.google.com/drive/folders/0B0EnKLRY11bOazh6cVM1U2JCbG8" class="cl" target="_blank">View MFA Folder →</a>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Commemorative Broadsheet Section</span>
+          <span class="acc-title">2011 Bruins Stanley Cup Commemorative</span>
+          <span class="acc-sub">Boston Sunday Globe · June 19, 2011 · +32,000 Single-Copy Lift</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Broadsheet commemorative section celebrating the Bruins' Stanley Cup win — 18+ editorial pages, 4 pages of photos and player bios, and an estimated +32,000 single-copy circulation uplift. Positioned as a long shelf-life collector's item to justify premium rates. Front-page strip ad and premium positions available.</p>
+        <a href="https://drive.google.com/file/d/0B0EnKLRY11bOeHVyRmkxLVQ3UG8" class="cl" target="_blank">View Commemorative Spec →</a>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">New Centennial Publication · 2013</span>
+          <span class="acc-title">Boston Children's Museum Turns 100</span>
+          <span class="acc-sub">June 9, 2013 · New Program · Strong First-Year Revenue Goal</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>New institutional centennial publication for the Boston Children's Museum, applying the same custom publishing model proven across Fenway 100, Gardner Museum Magazine, MIT 150, and UMass 150. Milestone publications had become a reliable new revenue channel: each new anniversary program generated six-figure revenue from advertisers seeking association with a defining institutional moment — with an aggressive first-year goal for this new program.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════ PROGRAMS, GUIDES & EVENTS ══════════════ -->
+  <div id="event-guides" class="sh"><h2>Programs, Guides &amp; Events</h2><div class="shr"></div></div>
+  <p class="si">Multi-platform programs spanning live events, custom-published guides, and contracted annual partnerships — each structured to generate revenue across print, digital, sponsorship, and on-site channels simultaneously.</p>
+
+  <!-- Summer Arts Weekend — lead full-width card -->
+  <div class="card gld" style="margin-bottom:1.3rem;">
+    <div class="split">
+      <div>
+        <div class="ctag">BGM Revenue Lead · Print · Event · Digital · Broadcast · 2012–2015</div>
+        <h3>Summer Arts Weekend</h3>
+        <div class="csub">Copley Plaza Hub · July 2012 (Inaugural) · Co-Produced with WGBH · Presented by Citizens Bank</div>
+        <p>A multiday citywide festival launched in 2012 by Boston Globe Media and public media powerhouse WGBH — Jeff led BGM revenue, collaborating with WGBH to structure, close, and execute sponsorships and media integrations, while managing design, content, production, and distribution of the printed program guide.</p>
+        <p>Jeff worked closely between sales, customers, and internal stakeholders at two separate presenting organizations — structuring the sponsorship tier architecture, managing a 100+ account pipeline, negotiating institutional contracts, and overseeing on-site client activations including sponsor booths, stage signage, hospitality tents, and video displays throughout the four-day event's Copley Plaza hub.</p>
+        <p>500,000 copies of the Program Guide were the custom publishing anchor of Summer Arts Weekend: home-delivered in the Sunday Globe and Worcester T&amp;G, direct mailed to 110,000 WGBH members, and distributed on-site, it featured full-page advertising from brand sponsors, arts institutions, and destination advertisers — each sold by Jeff's Arts and Travel teams as part of the broader sponsorship packages.</p>
+        <p>The Guide was supported by a digital event microsite on Boston.com, a mobile app, Boston.com TicketWatch email promotions to 60,000+ subscribers, 160 radio spots on WGBH 89.7 and 99.5 Classical, and 160 TV spots on WGBH Channel 2. Revenue spanned multiple streams: tiered cash sponsorships, in-guide advertising, on-site booth fees, and trade arrangements with arts institution participants. The event continued three additional summers, validating the model.</p>
+        <a href="https://drive.google.com/file/d/0B0EnKLRY11bOMGpoU3hnWU9vVGc" class="cl" target="_blank">View Sales Deck →</a>
+      </div>
+      <div class="sf">
+        <h4>Revenue &amp; Platform Scale</h4>
+        <ul>
+          <li><strong>BGM Revenue Lead · Cross-partner stakeholder management</strong></li>
+          <li>100+ account pipeline · $422,750+ total pipeline value</li>
+          <li>Presenting: Citizens Bank · multi-year commitment</li>
+          <li>Platinum: Volkswagen · Gold: Samsung · Silver: GBCVB</li>
+          <li>20+ bronze &amp; custom-built institutional sponsors</li>
+          <li>On-site: booths, stage signage, hospitality tents, video displays</li>
+          <li>Custom Guide: 500,000 copies · Globe + T&amp;G + WGBH direct mail + on-site</li>
+          <li>Digital: Boston.com microsite + mobile app + 60K+ TicketWatch emails</li>
+          <li>Radio: 160 spots · WGBH 89.7 + 99.5 Classical New England</li>
+          <li>TV: 160 spots · WGBH Channel 2 kids + primetime</li>
+          <li>Additional print: 4 Sunday Arts + 8 daily Globe + 6 G Section + 2 Globe Magazine pages</li>
+          <li>Continued three additional summers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:.4rem;">
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Event-Tied Custom Guide · Annual</span>
+          <span class="acc-title">Summer Arts Weekend Program Guide</span>
+          <span class="acc-sub">500,000 Copies · Globe + T&amp;G + WGBH Direct Mail + On-Site</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>The 500,000-copy Program Guide was the custom publishing anchor of the Summer Arts Weekend revenue model — sold by Jeff's Arts and Travel teams as part of sponsorship packages, carrying advertising from brand sponsors, arts institutions, and destination advertisers across a 5.5" × 8.5" full-color format. Distributed in the Sunday Globe, Worcester T&amp;G, direct mailed to 110,000 WGBH members, and on-site at Copley Plaza.</p>
+        <div class="pills">
+          <span class="pill">500,000 Copies</span><span class="pill">Globe + T&amp;G Home Delivery</span>
+          <span class="pill">110,000 WGBH Direct Mail</span><span class="pill">On-Site Distribution</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Annual Event Guide · Official Program</span>
+          <span class="acc-title">Boston Globe Travel Show Guide</span>
+          <span class="acc-sub">Annual · Seaport World Trade Center · 21,700+ Attendees · Full-Run Globe Distribution</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Official tabloid supplement for the Boston Globe Travel Show — the largest attended travel show in the country, drawing more than 21,700 consumers and trade professionals annually. Published full-run in The Boston Globe, Worcester Telegram &amp; Gazette, and The Boston Metro in the week of the show, with 10,000 additional copies distributed on-site. The guide featured show sponsors, special offers, trip giveaways, exhibitor floor plan, and travel-themed editorial content.</p>
+        <p>The Travel Show drew an audience of highly qualified buyers: 68% with household incomes between $50K–$150K, 82% planning to spend $2,000 or more on their next vacation, and 89% indicating intent to book with a show vendor. Sponsorship packages bundled the guide with Globe print advertising, Boston.com digital impressions, BostonGlobeTravelShow.com placement, booth space, and stage presence — making it a fully integrated annual program across print, digital, and event.</p>
+        <div class="pills">
+          <span class="pill">Full-Run Globe + T&amp;G + Metro Distribution</span>
+          <span class="pill">10,000 On-Site Copies</span>
+          <span class="pill">21,700+ Attendees</span>
+          <span class="pill">Largest U.S. Travel Show</span>
+          <span class="pill">Multi-Platform Sponsorship Bundles</span>
+          <span class="pill">89% Attendee Purchase Intent</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Multi-Year Contract · Event + Print + Digital Bundle</span>
+          <span class="acc-title">Ski &amp; Snowboard Expo Official Guide</span>
+          <span class="acc-sub">BEWI Productions · Annual Contracted Program · Signed by Jeff Hurley</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Multi-year contracted custom publishing program for the Boston.com Ski &amp; Snowboard Expo — delivering an annual Ski &amp; Travel Guide positioned as the Official Guide, distributed in the Sunday Globe plus overruns at Eastern ski stores. Bundled with a G Section Pop-Out on opening Thursday and Boston.com digital support into a single contracted annual deal, signed by Jeff Hurley as Division Manager.</p>
+        <a href="https://drive.google.com/file/d/0B0EnKLRY11bOVS1FSGJGekFsZGs" class="cl" target="_blank">View Contract →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════ G SECTION ══════════════ -->
+  <div id="g-section" class="sh"><h2>"G" Section — Daily Arts &amp; Entertainment Magazine</h2><div class="shr"></div></div>
+  <p class="si">The "G" Section was Boston Globe Media's daily magazine-format product — a Monday–Saturday arts and entertainment section that Jeff Hurley helped develop in collaboration with editorial and then led the full client roll-out as a new magazine-style daily content format.</p>
+
+  <div style="max-width:100%;">
+    <div class="card gld">
+      <div class="ctag">Product Development · Client Roll-Out · Premium Formats · 229,900+ Weekly Readers</div>
+      <h3>"G" Section — Magazine Format Development &amp; Launch</h3>
+      <div class="csub">Monday–Saturday · Daily Arts &amp; Entertainment · New Magazine-Style Format</div>
+      <p>Jeff collaborated with editorial on the development of the "G" Section as a new daily magazine-style content format — then led the full client roll-out, bringing advertisers into a redesigned product with new premium positions and a stronger editorial identity. The transition from a traditional section to a magazine-style daily was a significant commercial proposition that required product education, new creative format development, and coordinated go-to-market execution across sales, editorial, production, and marketing.</p>
+      <p>A suite of premium advertising products was developed and sold specifically for the magazine format: Pop-Out tab extensions, Gatefold wraps, Post-Oscar cover takeovers (a magazine-style cover format created specifically for Oscars Monday), Love Week editorial packages, and the annual Plonkapalooza wine guide. Each format was positioned as incremental to standard ROP — generating premium revenue from existing accounts while opening the door to new advertiser categories drawn to the magazine aesthetic.</p>
+      <p>"G" Section readers indexed above market for arts attendance, fine dining, museum visits, and cultural engagement — making it the natural advertising home for entertainment studios, performing arts organizations, restaurants, and lifestyle advertisers.</p>
+      <p>Jeff also authored client education, reservation materials, and spec guides for the Globe's two most premium front-page formats. The Spadea — an unbound broadsheet wrapping the paper's front page — required 6–8 week lead times and a custom reservation process. The G-Section Gatefold offered an upgraded paper stock four-panel spread across the inside front cover. Both were positioned as first-in-market opportunities with limited annual availability, creating genuine scarcity that supported premium pricing and enabled competitive displacement from rival publications.</p>
+      <div class="pills">
+        <span class="pill">Product Development</span><span class="pill">Client Roll-Out</span>
+        <span class="pill">Pop-Out Extensions</span><span class="pill">Gatefold Wraps</span>
+        <span class="pill">Cover Takeover</span><span class="pill">Spadea Front Page</span>
+        <span class="pill">Love Week</span><span class="pill">Plonkapalooza</span>
+      </div>
+      <a href="https://drive.google.com/file/d/0B0EnKLRY11bOaVdQc05yaEFiM0U" class="cl" target="_blank">View Spadea Spec →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ ARTS & TRAVEL SECTIONS ══════════════ -->
+  <div id="arts-sections" class="sh"><h2>Arts &amp; Travel Special Sections</h2><div class="shr"></div></div>
+  <p class="si">The annual Arts and Travel special sections were the foundation of the publishing revenue calendar — editorially-driven themed sections with strong advertiser demand, digital companion content, and in several cases direct ties to events and institutional sponsorships.</p>
+
+  <div style="margin-top:1rem;">
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Largest Revenue Section · Annual</span>
+          <span class="acc-title">Fall Arts Preview</span>
+          <span class="acc-sub">2011: 52 Advertisers · 2012 Strong Performance · 2013 Goal: Growth</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>The single highest-revenue section in the arts portfolio. In 2011, the Fall Arts Preview drove strong results from 52 advertisers — a benchmark that shaped the annual planning model. Connected to digital companion content on Boston.com Arts and digital display packages extending reach beyond print. Delivered consistent year-over-year growth as the anchor of Q3 revenue planning.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Summer Anchor · Annual</span>
+          <span class="acc-title">Summer Arts Preview</span>
+          <span class="acc-sub">Strong Year-Over-Year Growth · 2013 Goal Above Prior Year</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Second-highest revenue arts section and the editorial launch pad for the summer cultural season. Directly tied to the Summer Arts Weekend event program — arts institutions that participated in the event typically advertised in the Preview, creating a natural cross-sell between the magazine and sponsorship programs. Grew consistently year over year as the event expanded.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Q4 Revenue Driver · Annual</span>
+          <span class="acc-title">Holiday Arts Preview</span>
+          <span class="acc-sub">Critical Q4 Anchor · Consistent Growth Year Over Year</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Critical Q4 revenue anchor capturing holiday entertainment, gift, and event advertising. Timed to the highest-competition arts advertising window of the year, with companion digital placements on BostonGlobe.com extending advertiser visibility. One of the most reliably recurring revenue sections across the full annual calendar.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Institutional Advertising · Annual</span>
+          <span class="acc-title">Museums Special Section</span>
+          <span class="acc-sub">Annual · Connected to Summer Arts Weekend Partnerships</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Annual dedicated section for Boston's museum community — directly connected to the Summer Arts Weekend institutional partnerships and the MFA, Gardner, and Children's Museum custom publishing programs. Part of a year-round multi-platform institutional media strategy across print, event, and digital. Strong year-over-year growth driven by deepening institutional relationships.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Spring Anchor · Annual</span>
+          <span class="acc-title">Family / Spring Entertainment</span>
+          <span class="acc-sub">Reliable Mid-Year Revenue Producer · Digital Companion Integration</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Spring entertainment section covering family programming, children's activities, and cultural events — the natural advertising home for performing arts organizations, family attractions, and seasonal entertainment advertisers. Reliably strong mid-year revenue producer with digital companion integration on Boston.com Family. Grew year over year on the strength of consistent institutional renewal.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Annual Bookends</span>
+          <span class="acc-title">Winter Arts Guide &amp; Year in Arts</span>
+          <span class="acc-sub">February + December · Framing the Full Editorial Season</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>The annual arts calendar opened with the Winter Arts Guide (February) and closed with Year in Arts (December) — framing the full editorial season. Both carried companion digital packages on BostonGlobe.com Arts and served as natural renewal touchpoints for advertisers active throughout the year.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <div class="acc-left">
+          <span class="acc-tag">Travel Section Program</span>
+          <span class="acc-title">30+ Annual Travel Special Sections</span>
+          <span class="acc-sub">Spring Travel +5% YoY · 31 Advertisers (2011) · 38% Digital Growth</span>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p>Year-round weekly Travel section covering 30+ destinations and themes. The Spring Travel Magazine grew 5% YoY in 2011 with 31 advertisers; the broader travel category delivered 38% YoY digital growth the same year. Frequency discount programs locked multi-insertion annual commitments from JetBlue, Liberty Travel, Porter Airlines, and multiple destination boards.</p>
+        <a href="https://drive.google.com/file/d/1FG8OvDJDTe0245hHSzoBCHE2KEDGvEco" class="cl" target="_blank">View Travel &amp; Amuse QBR →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════ REVENUE ══════════════ -->
+  <div id="revenue" class="sh"><h2>Revenue at a Glance — 2013 Calendar</h2><div class="shr"></div></div>
+  <p class="si">Combined Arts &amp; Travel goal of $1,549,468 in 2013 — up 25% from $1,242,152 in 2012. Five new programs launched in 2013 alongside the existing calendar. Data drawn directly from the working revenue tracker in Google Drive.</p>
+
+  <div style="overflow-x:auto;">
+  <table class="rt">
+    <thead>
+      <tr><th>Program</th><th>Format</th><th>Pub Date</th><th>2012 Revenue</th><th>2013 Goal</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr class="rgroup"><td colspan="6">Globe Magazine Themed Issues</td></tr>
+      <tr><td>Weddings</td><td>Globe Magazine</td><td>Jan 13</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New</span></td></tr>
+      <tr><td>Boston Staycations</td><td>Globe Magazine</td><td>Feb 17</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New</span></td></tr>
+      <tr><td>Spring Travel / Golf</td><td>Globe Magazine</td><td>Mar 24</td><td class="rv">Strong prior year</td><td class="rv">Growth goal</td><td></td></tr>
+      <tr><td>Food (1 of 2)</td><td>Globe Magazine</td><td>Apr 7</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New</span></td></tr>
+      <tr><td><strong>Arts Edition</strong></td><td>Globe Magazine</td><td>Apr 28</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New Launch</span></td></tr>
+      <tr><td>Weekend Fun Guide</td><td>Globe Magazine</td><td>Jun 2</td><td class="rv">Strong launch year</td><td class="rv">+10% growth</td><td></td></tr>
+      <tr><td>Dining Out (×2)</td><td>Globe Magazine</td><td>Jun &amp; Jul</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New</span></td></tr>
+      <tr><td>Food (2 of 2)</td><td>Globe Magazine</td><td>Nov 3</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New</span></td></tr>
+      <tr class="rsub"><td colspan="3">Globe Magazine Subtotal — 8 Issues (5 New)</td><td class="rv">Baseline</td><td class="rv">+$100K+ incremental</td><td></td></tr>
+
+      <tr class="rgroup"><td colspan="6">Arts Special Sections</td></tr>
+      <tr><td>Winter Arts Guide</td><td>Arts Section</td><td>Feb 3</td><td class="rv">Prior year strong</td><td class="rv">Growth goal</td><td></td></tr>
+      <tr><td>Family / Spring Entertainment</td><td>Arts Section</td><td>Apr 7</td><td class="rv">Prior year strong</td><td class="rv">+11% YoY goal</td><td></td></tr>
+      <tr><td><strong>Summer Arts Preview</strong></td><td>Arts Section</td><td>May 19</td><td class="rv">$254,507</td><td class="rv">+10% growth goal</td><td></td></tr>
+      <tr><td>Music Gift Guide</td><td>Arts Section</td><td>Nov 22</td><td class="rv">—</td><td class="rv">New 2013</td><td><span class="rn">New</span></td></tr>
+      <tr><td><strong>Holiday Arts Preview</strong></td><td>Arts Section</td><td>Nov 24</td><td class="rv">$212,508</td><td class="rv">+11% growth goal</td><td></td></tr>
+      <tr><td>Year in Arts</td><td>Arts Section</td><td>Dec 29</td><td class="rv">Prior year strong</td><td class="rv">Growth goal</td><td></td></tr>
+      <tr><td>Museums</td><td>Arts Section</td><td>Oct 20</td><td class="rv">$108,487</td><td class="rv">+11% growth goal</td><td></td></tr>
+      <tr><td><strong>Fall Arts Preview</strong></td><td>Arts Section</td><td>Sep 8</td><td class="rv">$390,749</td><td class="rv">+10% growth goal</td><td>Peak section</td></tr>
+      <tr class="rsub"><td colspan="3">Arts Sections Subtotal — 8 Sections (1 New)</td><td class="rv">$966,754+</td><td class="rv">+10–11% YoY across portfolio</td><td></td></tr>
+
+      <tr class="rgroup"><td colspan="6">Custom Publications &amp; Event</td></tr>
+      <tr><td><strong>Boston Children's Museum Turns 100</strong></td><td>Custom Magazine</td><td>Jun 9</td><td class="rv">—</td><td class="rv">Strong first-year goal</td><td><span class="rn">New Launch</span></td></tr>
+      <tr><td>Summer Arts Weekend Program Guide</td><td>Event Custom Guide</td><td>Jul 21</td><td colspan="2" style="font-size:.78rem;color:var(--muted);">Event revenue — multi-stream (sponsorship + guide + on-site)</td><td></td></tr>
+      <tr class="rsub"><td colspan="3">Custom Publications Subtotal</td><td class="rv">Baseline</td><td class="rv">New programs added</td><td></td></tr>
+
+      <tr class="rtotal"><td colspan="3">Arts &amp; Travel Total</td><td class="rv">$1,242,152</td><td class="rv">$1,549,468</td><td>+25% YoY</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="pq" style="margin-top:2rem;">
+    <blockquote>"86% of Globe Magazine's weekly readers could not be reached through Boston Magazine, Improper Bostonian, or Boston Common — making it the only vehicle that delivers Boston's most affluent and culturally engaged audience at meaningful scale."</blockquote>
+    <cite>Boston Globe Media · 2012 Scarborough Custom ReContact Study, Boston DMA</cite>
+  </div>
+
+  <!-- CAREER SUMMARY -->
+  <div class="sh" style="margin-top:3rem;"><h2>Career Summary</h2><div class="shr"></div></div>
+  <div class="tl">
+    <div class="ti">
+      <div class="ty">2005–2013</div>
+      <div class="tc">
+        <h4>Boston Globe Media — Advertising Sales, Sales Supervisor, Division Manager</h4>
+        <p>Led advertising sales across magazines, custom publications, Arts and Travel special sections, event sponsorship, and digital integration. Responsible for annual P&amp;L planning, new product and program development, multi-year advertiser contracts, and institutional partnerships. Signed as Division Manager on formal advertising contracts including the BEWI Ski Expo annual program and the Summer Arts Weekend sponsorship agreements.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">Publications</div>
+      <div class="tc">
+        <h4>Key Magazines &amp; Custom Publications</h4>
+        <p>Globe Magazine (weekly + 15+ themed issues/year) · Travel Series · Arts Edition · Weekend Fun Guide · Fenway 100: Spirit of Fenway Park · Gardner Museum Magazine · MIT 150th Anniversary · UMass 150 · Boston Children's Museum Centennial · Summer Arts Weekend Program Guide · 2011 Bruins Stanley Cup Commemorative · Fall / Summer / Holiday / Winter Arts Previews · Museums Section · 30+ Annual Travel Special Sections.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">Clients</div>
+      <div class="tc">
+        <h4>Selected Client Roster</h4>
+        <p>MFA Boston · Gardner Museum · BSO · Boston Ballet · ICA · Huntington Theatre · Arts Emerson · NEAQ · Citizens Bank · Volkswagen · Samsung · MLB Network · JetBlue · Liberty Travel · Porter Airlines · Bermuda Tourism · MOTT · AMC / Loews / Regal / National Amusements · Live Nation · AEG Live · NESN · Netflix · WGBH · WBUR · Massport · Azores Tourism · Visit Florida · Deutsche Bank Championship · Newport Festivals · BEWI Snow Sports.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sn">
+    <strong>SOURCE NOTE —</strong> All work samples, rate cards, audience research, editorial calendars, and revenue trackers referenced in this portfolio are drawn from Jeff Hurley's Boston Globe Media archive (2005–2013). Source files are available upon request.
+  </div>
+
+</main>
+<footer><strong>Jeff Hurley</strong> &nbsp;·&nbsp; Magazines &amp; Custom Publishing Portfolio &nbsp;·&nbsp; Boston Globe Media &nbsp;·&nbsp; jeffphurley@icloud.com</footer>
+
+<script>
+function toggleAcc(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>

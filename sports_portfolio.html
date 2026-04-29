@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Hurley — Sports Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1a1e22;--paper:#f0f2f4;--cream:#e2e7ec;--rule:#b0bcc6;--accent:#1d6b2e;--gold:#4a6b7a;--pale:#f8fafc;--muted:#5a6470;--yellow:#d4a82a;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'Libre Baskerville',Georgia,serif;font-size:16px;line-height:1.7;}
+
+  header{background:var(--ink);color:var(--paper);padding:3.5rem 4rem 3rem;border-bottom:4px solid var(--accent);position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(255,255,255,.028) 28px,rgba(255,255,255,.028) 29px);pointer-events:none;}
+  .ol{font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem;}
+  .mn{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.4rem);font-weight:900;line-height:1;letter-spacing:-.01em;margin-bottom:.4rem;}
+  .mt{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.4vw,1.4rem);color:var(--rule);margin-bottom:1.6rem;}
+  .mr{width:60px;height:3px;background:var(--accent);margin-bottom:1.2rem;}
+  .mb{font-size:.92rem;color:#c8d4dc;max-width:680px;line-height:1.75;}
+  .mc{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;}
+  .mc a{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(74,107,122,.4);padding-bottom:2px;transition:color .2s,border-color .2s;}
+  .mc a:hover{color:#fff;border-color:#fff;}
+
+  .testimonials{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:900px;}
+  @media(max-width:680px){.testimonials{grid-template-columns:1fr;}}
+  .tcard{background:rgba(255,255,255,.06);border:1px solid rgba(74,107,122,.25);border-left:3px solid var(--gold);padding:.9rem 1.1rem;}
+  .tcard blockquote{font-family:'Libre Baskerville',Georgia,serif;font-style:italic;font-size:.8rem;color:#e8edf2;line-height:1.6;}
+  .tcard cite{display:block;margin-top:.5rem;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);font-style:normal;}
+
+  nav{background:#111;border-bottom:2px solid var(--accent);display:flex;overflow-x:auto;}
+  nav a{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:#a09070;padding:.85rem 1.2rem;text-decoration:none;white-space:nowrap;transition:color .2s,background .2s;border-right:1px solid #222;}
+  nav a:hover{color:#fff;background:rgba(255,255,255,.05);}
+
+  main{max-width:1180px;margin:0 auto;padding:3rem 2rem 5rem;}
+
+  .sh{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:1rem;margin:3.5rem 0 .4rem;}
+  .sh h2{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;}
+  .shr{height:1px;background:var(--rule);opacity:.5;}
+  .si{font-size:.86rem;color:var(--muted);margin:.6rem 0 1.4rem;line-height:1.65;max-width:820px;}
+
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;}
+  @media(max-width:800px){.g3{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.g3,.g2{grid-template-columns:1fr;}}
+
+  .card{background:var(--pale);border:1px solid var(--cream);border-top:3px solid var(--accent);padding:1.45rem 1.6rem 1.6rem;transition:transform .18s,box-shadow .18s;}
+  .card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(26,30,34,.11);}
+  .card.gld{border-top-color:var(--gold);}
+  .card.span2{grid-column:span 2;}
+  .card.span3{grid-column:1/-1;}
+  @media(max-width:800px){.card.span2{grid-column:1/-1;}}
+
+  .ctag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
+  .card.gld .ctag{color:var(--gold);}
+  .card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;line-height:1.25;margin-bottom:.4rem;}
+  .csub{font-family:'Space Mono',monospace;font-size:.61rem;color:#5a6470;margin-bottom:.65rem;letter-spacing:.04em;}
+  .card p{font-size:.85rem;color:var(--muted);line-height:1.65;}
+  .card p+p{margin-top:.55rem;}
+  .cl{display:inline-block;margin-top:.85rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(29,107,46,.32);padding-bottom:1px;transition:color .2s,border-color .2s;}
+  .cl+.cl{margin-left:1rem;}
+  .cl:hover{color:var(--ink);border-color:var(--ink);}
+
+  .callout-box{background:var(--ink);color:var(--paper);padding:1.8rem 2rem 2rem;margin-bottom:1.3rem;border-top:3px solid var(--gold);}
+  .callout-box .ctag{color:var(--gold);}
+  .callout-box h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--paper);margin-bottom:.3rem;}
+  .callout-box .csub{color:#9a8a72;}
+  .callout-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;margin-top:1rem;}
+  @media(max-width:680px){.callout-inner{grid-template-columns:1fr;}}
+  .callout-box p{font-size:.84rem;color:#8a9aaa;line-height:1.65;}
+  .callout-box p+p{margin-top:.5rem;}
+  .callout-col h4{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;border-bottom:1px solid rgba(74,107,122,.3);padding-bottom:.38rem;}
+  .callout-col ul{list-style:none;}
+  .callout-col ul li{font-size:.81rem;padding:.36rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.5rem;line-height:1.4;color:#8a9aaa;}
+  .callout-col ul li::before{content:'→';color:var(--yellow);flex-shrink:0;font-size:.73rem;margin-top:.07rem;}
+  .callout-col ul li strong{color:var(--paper);}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;align-items:start;}
+  @media(max-width:680px){.split{grid-template-columns:1fr;}}
+  .sf h4{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#5a6470;margin-bottom:.55rem;border-bottom:1px solid var(--cream);padding-bottom:.38rem;}
+  .sf ul{list-style:none;}
+  .sf ul li{font-size:.81rem;padding:.36rem 0;border-bottom:1px solid var(--cream);display:flex;gap:.5rem;line-height:1.4;}
+  .sf ul li::before{content:'→';color:var(--yellow);flex-shrink:0;font-size:.73rem;margin-top:.07rem;}
+  .sf ul li strong{color:var(--ink);}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:2.2rem 0;}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stat{background:var(--ink);color:var(--paper);padding:1.15rem 1rem;text-align:center;}
+  .sv{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--yellow);line-height:1;margin-bottom:.25rem;}
+  .sl{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rule);line-height:1.45;}
+
+  .accordion{border:1px solid var(--cream);border-top:3px solid var(--rule);background:var(--pale);margin-bottom:.7rem;transition:border-color .2s;}
+  .accordion:hover{border-color:var(--rule);}
+  .acc-trigger{width:100%;background:none;border:none;cursor:pointer;padding:1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;text-align:left;gap:1rem;}
+  .acc-trigger:focus{outline:2px solid var(--gold);outline-offset:2px;}
+  .acc-left{display:flex;flex-direction:column;gap:.28rem;}
+  .acc-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:#5a6470;}
+  .acc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.25;}
+  .acc-sub{font-family:'Space Mono',monospace;font-size:.58rem;color:#5a6470;letter-spacing:.03em;}
+  .acc-arrow{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--yellow);flex-shrink:0;transition:transform .22s;}
+  .acc-trigger[aria-expanded="true"] .acc-arrow{transform:rotate(180deg);}
+  .acc-body{display:none;padding:0 1.4rem 1.3rem;border-top:1px solid var(--cream);}
+  .acc-body.open{display:block;}
+  .acc-body p{font-size:.84rem;color:var(--muted);line-height:1.65;margin-top:.9rem;}
+  .acc-body p+p{margin-top:.5rem;}
+  .acc-body .pills{margin-top:.75rem;}
+  .acc-body .cl{margin-top:.75rem;}
+
+  .pq{border-left:4px solid var(--gold);padding:1.1rem 1.8rem;background:var(--cream);margin:2.2rem 0;}
+  .pq blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;line-height:1.5;}
+  .pq cite{display:block;margin-top:.5rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:#5a6470;font-style:normal;}
+
+  .pills{display:flex;flex-wrap:wrap;gap:.42rem;margin-top:.8rem;}
+  .pill{font-family:'Space Mono',monospace;font-size:.57rem;letter-spacing:.09em;text-transform:uppercase;background:var(--cream);color:var(--muted);padding:.24rem .62rem;border:1px solid var(--rule);}
+
+  .tl .ti{display:grid;grid-template-columns:110px 1fr;gap:0 1.5rem;padding:1rem 0;border-bottom:1px solid var(--cream);}
+  .ty{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--yellow);letter-spacing:.07em;padding-top:.12rem;}
+  .tc h4{font-family:'Playfair Display',serif;font-weight:700;font-size:.93rem;margin-bottom:.17rem;}
+  .tc p{font-size:.81rem;color:var(--muted);line-height:1.53;}
+  @media(max-width:540px){.tl .ti{grid-template-columns:1fr;gap:.18rem;}}
+
+  .sn{margin-top:3rem;padding:1.3rem 1.5rem;background:var(--cream);border:1px solid var(--rule);font-family:'Space Mono',monospace;font-size:.61rem;letter-spacing:.07em;color:#5a6470;line-height:1.8;}
+  .sn strong{color:var(--ink);} .sn a{color:inherit;}
+
+  footer{background:var(--ink);color:var(--rule);text-align:center;padding:2rem 1rem;font-family:'Space Mono',monospace;font-size:.61rem;letter-spacing:.12em;text-transform:uppercase;}
+  footer strong{color:var(--yellow);}
+
+  .htag{display:inline-block;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:#fff;padding:.2rem .6rem;margin-bottom:.5rem;margin-right:.3rem;}
+  .htag.gld{background:var(--gold);}
+</style>
+</head>
+<body>
+
+<header>
+  <div style="margin-bottom:1.2rem;"><a href="https://jeffphurley.com" style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:#6a9aad;text-decoration:none;border-bottom:1px solid rgba(106,154,173,.35);padding-bottom:2px;transition:color .2s;">← jeffphurley.com</a></div>
+  <div class="ol">Portfolio — Sports Marketing · Team Partnerships · Audience Integration</div>
+  <div class="mn">Jeff Hurley</div>
+  <div class="mt">Sports Marketing · Team &amp; Event Partnerships · Boston Globe Media · National CineMedia</div>
+  <div class="mr"></div>
+  <p class="mb">This portfolio documents four dimensions of Jeff Hurley's sports marketing career — and what you're about to see is a record built directly inside the game.</p>
+  <p class="mb" style="margin-top:.85rem;"><strong style="color:var(--yellow);">First: direct team partnerships.</strong> Jeff held active advertising and sponsorship relationships with the Boston Red Sox, New England Patriots, Boston Bruins, Boston Celtics, New England Revolution, Boston Breakers, Boston College Athletics, and UNH — managing contracts, barter agreements, ad logs, and in-stadium assets directly with team and Fenway Sports Group marketing staff. Not adjacent to the teams — inside the accounts.</p>
+  <p class="mb" style="margin-top:.85rem;"><strong style="color:var(--yellow);">Second: breadth into marquee events.</strong> Beyond the pro teams: the Volvo Ocean Race Boston Stopover, Deutsche Bank Championship PGA Tour, Boston Marathon, Head of the Charles Regatta, Newport Folk and Jazz Festivals, Boston Cannons (MLL), Lowell Spinners, and Spartan Race — a full-spectrum sports calendar managed as an integrated advertising portfolio.</p>
+  <p class="mb" style="margin-top:.85rem;"><strong style="color:var(--yellow);">Third: sports as the integration engine.</strong> The Over the Hedge DreamWorks activation, The Simpsons Movie / NESN campaign, and Nova Scotia Tourism's "Boston Takeover" — two MICA Awards, ESPN Sunday Night Baseball placement, +1,116% Massachusetts web traffic — all worked because they were structured as sports partnerships, not media buys. The stadium was the platform.</p>
+  <p class="mb" style="margin-top:.85rem;"><strong style="color:var(--yellow);">Fourth: sports audience as media strategy.</strong> At Boston Globe Media, Jeff owned GameDay at Fenway (175,000 game-day distributions per home stand), every playoff and championship special section, and the Fenway 100 centennial magazine. At National CineMedia, he translated that sports-audience fluency into cinema — earning the 2019 NCM Panel of Excellence, one of six from 240 professionals nationally.</p>
+  <div class="testimonials">
+    <div class="tcard">
+      <blockquote>"Jeff is one of the hardest working sales executives in the business. He is completely in tune to his clients needs and cares about the effectiveness of the ad campaigns he creates for them. He knows the entertainment business like the back of his hand."</blockquote>
+      <cite>Kristin Toli · VP Global Integrated Marketing, Liberty Mutual · Boston Globe Media</cite>
+    </div>
+    <div class="tcard">
+      <blockquote>"Jeff and I worked together on a number of collaborative projects bridging the newsroom and business sides of The Boston Globe. His high-level enthusiasm and idea-generation were always valued and when opportunity arises, he always pounced quickly."</blockquote>
+      <cite>Doug Most · Author · Assistant VP, Executive Editor, BU Today · Editor, The Boston Globe</cite>
+    </div>
+  </div>
+  <div class="mc" style="margin-top:1.5rem;">
+    <a href="mailto:jeffphurley@icloud.com">jeffphurley@icloud.com</a>
+    <a href="https://www.linkedin.com/in/jeffphurley" target="_blank">LinkedIn</a>
+  </div>
+</header>
+
+<nav>
+  <a href="#team-partnerships" style="color:var(--yellow);font-weight:700;">① Team Partnerships</a>
+  <a href="#redsox">Red Sox / FSG</a>
+  <a href="#playoffs">Playoffs &amp; Championships</a>
+  <a href="#super-bowl">Super Bowl · Patriots</a>
+  <a href="#expanded-partners">BC · Breakers · Revolution · UNH</a>
+  <a href="#marquee-events" style="color:var(--yellow);font-weight:700;">② Marquee Events</a>
+  <a href="#fenway100">Fenway 100</a>
+  <a href="#volvo-newport">Volvo Ocean Race</a>
+  <a href="#additional-sports">Marathon · Deutsche Bank · World Cup</a>
+  <a href="#sports-integration" style="color:var(--yellow);font-weight:700;">③ Sports Integration</a>
+  <a href="#over-the-hedge">DreamWorks × Red Sox</a>
+  <a href="#simpsons">Simpsons × NESN</a>
+  <a href="#xmen">X-Men × GameDay</a>
+  <a href="#nova-scotia">Nova Scotia × Fenway / ESPN</a>
+  <a href="#media-alignment" style="color:var(--yellow);font-weight:700;">④ Sports Media</a>
+  <a href="#gameday">GameDay at Fenway</a>
+  <a href="#ncm">National CineMedia</a>
+  <a href="#overview">Revenue Overview</a>
+</nav>
+
+<main>
+
+  <div class="stats" style="margin-top:2.5rem;">
+    <div class="stat"><div class="sv">8</div><div class="sl">Pro &amp; college sports franchises with active direct partnerships — Red Sox, Patriots, Bruins, Celtics, Revolution, Breakers, BC Athletics, UNH</div></div>
+    <div class="stat"><div class="sv">$740K</div><div class="sl">Annual Red Sox / FSG cash + barter partnership value at peak</div></div>
+    <div class="stat"><div class="sv">$136K</div><div class="sl">Volvo Ocean Race Boston Stopover — $70K paid + $66K trade, reconciled within $36 of budget</div></div>
+    <div class="stat"><div class="sv">2×</div><div class="sl">MICA Award — Nova Scotia "Boston Takeover" at Fenway / ESPN SNF · +1,116% MA web traffic</div></div>
+    <div class="stat"><div class="sv">175K</div><div class="sl">GameDay at Fenway game-day distributions per home stand — the sports media platform Jeff owned</div></div>
+    <div class="stat"><div class="sv">4.8M</div><div class="sl">NCM cinema impressions — Craft Sportswear national campaign · 42 theaters · 3 DMAs · $261K</div></div>
+    <div class="stat"><div class="sv">2019</div><div class="sl">NCM Panel of Excellence — 1 of 6 from 240 professionals nationally · Least tenured recipient</div></div>
+  </div>
+
+  <!-- ══ CHAPTER DIVIDER ══ -->
+  <div id="team-partnerships" style="margin:3.5rem 0 0;padding:1.4rem 2rem 1.2rem;background:var(--ink);border-left:4px solid var(--yellow);">
+    <div style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:.45rem;">Chapter 01</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--paper);margin-bottom:.4rem;">Direct Team Partnerships</div>
+    <div style="font-size:.83rem;color:#8a9aaa;max-width:680px;line-height:1.65;">Active advertising and sponsorship relationships managed directly with Boston's professional and college sports franchises — Red Sox, Patriots, Bruins, Celtics, Revolution, Breakers, Boston College Athletics, and UNH. Contracts, barter agreements, in-stadium assets, and ad logs on file for each.</div>
+  </div>
+
+  <!-- ══════════════ RED SOX PARTNERSHIP ══════════════ -->
+  <div id="redsox" class="sh"><h2>Red Sox / Fenway Sports Group Partnership</h2><div class="shr"></div></div>
+  <p class="si">Jeff managed the Boston Globe Media's flagship sports media partnership — a multi-year, multi-platform relationship with Fenway Sports Group and the Boston Red Sox that combined print, digital, in-stadium, signage, hospitality, and barter components into one of the Globe's largest integrated accounts.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Media Partnership · 2003–2013</div>
+    <h3>Boston Globe Media × Fenway Sports Group</h3>
+    <div class="csub" style="color:#9a8a72;">Official media partner · Exclusive print + digital + in-stadium · Multi-year barter + cash agreement</div>
+    <div class="callout-inner">
+      <div>
+        <p>The BGM–Red Sox partnership covered official media status, in-stadium kiosk presence at Fenway Park (Gate A year-round, Gate B for 20 games), two fascia signs along the first and third base lines, a video board feature titled "Hometown Headlines" running all 81 home games, and an annual full-page color magazine ad. Hospitality included six season tickets, 300 Green Monster seats, two ceremonial first pitches, and two Fantasy Days.</p>
+        <p>The 2011 agreement called for $425,000 net cash + $315,000 net in barter trade — a total investment of $740,000. Trade inventory was restricted to half-page or smaller print placements at the $500K rate and impression-based digital (no premium inventory, roadblocks, or fixed homepage positions without paid negotiation). Jeff managed the account across seasons, producing detailed ad logs, revenue trackers, and barter reconciliations.</p>
+        <div style="margin-top:.85rem;">
+          <a href="https://drive.google.com/file/d/12oLMRfxTDyJPzYB9LA5HzDJWrVOqpQgg" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">2011 Partnership Proposal →</a>
+          <a href="https://drive.google.com/file/d/1VqaXfl1Wo3e2eq38QZFEGY7olGK5t-4m" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Red Sox Ad Log 2011 →</a>
+        </div>
+      </div>
+      <div class="callout-col">
+        <h4>Partnership Assets</h4>
+        <ul>
+          <li><strong>Official Status:</strong> Exclusive print media partner; first right of refusal for online classifieds</li>
+          <li><strong>In-Stadium:</strong> Kiosks at Gate A (full season) + Gate B (20 games) + Spring Training</li>
+          <li><strong>Signage:</strong> Two 3'×18' fascia signs; "Hometown Headlines" video board feature all 81 home games</li>
+          <li><strong>Hospitality:</strong> 6 season tickets, 300 Green Monster seats, 2 first pitches, 2 Fantasy Days</li>
+          <li><strong>Deutsche Bank Championship:</strong> Included as part of barter pool — $50K reserved for the PGA event at TPC Boston</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Revenue (selected years)</h4>
+        <ul>
+          <li><strong>2010:</strong> $516,203 net (print + digital barter)</li>
+          <li><strong>2011:</strong> $315,000 barter contract (net) + $37K over-barter revenue</li>
+          <li><strong>2008 (BC Sports):</strong> $68,317 net — Fenway Sports Group account alone</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:1.3rem;">
+    <div class="card gld">
+      <div class="ctag">Red Sox · 2010</div>
+      <h3>Red Sox Full-Season Media Plan</h3>
+      <div class="csub">Print + Digital · January–December 2010</div>
+      <p>Managed the Red Sox 2010 advertising schedule across Boston Globe print (half-page 4C placements in the Sports section, multiple days per week) and Boston.com digital (homepage, Red Sox section, online exclusives). Print value $224,739; digital value $291,464. Total barter contract: $516,203 net.</p>
+      <div class="pills">
+        <span class="pill">Print Sports Section</span>
+        <span class="pill">Boston.com Homepage</span>
+        <span class="pill">Barter Tracking</span>
+        <span class="pill">NESN Integration</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1sCS9So37AZfkAfYYlZfhxVUB1ueqtpGo" class="cl" target="_blank">Ad Schedule 2010 →</a>
+    </div>
+    <div class="card gld">
+      <div class="ctag">Red Sox · 2011</div>
+      <h3>Red Sox 2011 Media + Deutsche Bank</h3>
+      <div class="csub">Print + Digital + Golf · January–September 2011</div>
+      <p>The 2011 plan consolidated the Red Sox barter account with the Deutsche Bank Championship (PGA Tour at TPC Boston). Print ads ran in the Globe Sports section; digital campaigns deployed across Boston.com. Deutsche Bank component added $49,945 in digital value. Total barter contract: $315,000 (with $62K over-barter captured as direct revenue).</p>
+      <div class="pills">
+        <span class="pill">PGA Tour Integration</span>
+        <span class="pill">Deutsche Bank Championship</span>
+        <span class="pill">Multi-sport Portfolio</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1fP_b4hlzfHOPOeP9T7Z-FEcS9EAePuco" class="cl" target="_blank">MEZ Red Sox 2011 →</a>
+          <a href="https://drive.google.com/file/d/0B0EnKLRY11bOM2dmWExXaFp2TVE" class="cl" target="_blank">Deutsche Bank Signed Contract →</a>
+      <a href="https://drive.google.com/file/d/1VqaXfl1Wo3e2eq38QZFEGY7olGK5t-4m" class="cl" target="_blank">Ad Log 2011 →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ PLAYOFFS ══════════════ -->
+  <div id="playoffs" class="sh"><h2>Playoff &amp; Championship Sponsorship Packages</h2><div class="shr"></div></div>
+  <p class="si">Jeff built and sold playoff-specific advertising packages across all four major Boston sports teams, turning post-season momentum into accelerated revenue through special sections, commemorative issues, and sports-barter activations.</p>
+
+  <div class="g3">
+    <div class="card">
+      <div class="ctag">2011 Bruins · Stanley Cup</div>
+      <h3>Bruins Stanley Cup Commemorative</h3>
+      <div class="csub">Boston Sunday Globe · June 19, 2011 · Estimated 32K single-copy lift</div>
+      <p>A broadsheet special section (18+ content pages) with team, season, finals, and victory coverage plus player bios — sold as a collector's item with extended shelf life. Jeff's account on the Bruins Playoffs 2011 produced $156,698 in closed revenue — the highest individual account total on the entire commemorative effort. The program drew advertisers including NESN, Patriots, Red Sox (barter), Patron Tequila, TD Banknorth Garden, and major retailers (Dick's, Modell's, Sports Authority, JC Penney).</p>
+      <div class="pills">
+        <span class="pill">$156K Personal Revenue</span>
+        <span class="pill">Broadsheet Commemorative</span>
+        <span class="pill">+32K Single-Copy Circulation</span>
+      </div>
+      <a href="https://drive.google.com/file/d/12W271BotvHE2sM4xnpBVFXi5ZVVJuCe6" class="cl" target="_blank">Bruins Commemorative Deck →</a>
+      <a href="https://drive.google.com/file/d/1Zhwy_pD9eWXDpcC3Wi609vH1SdlvaIAf" class="cl" target="_blank">Bruins Revenue Tracker →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">2010 Celtics · NBA Finals</div>
+      <h3>Celtics Playoffs 2010 Packages</h3>
+      <div class="csub">Boston.com + Boston Globe · Finals Advertising</div>
+      <p>Multi-platform Celtics playoffs sponsorship package covering both the print Boston Globe Sports section and Boston.com digital properties. The 2008 Celtics championship generated $120,293 in print revenue and $232,713 from corporate accounts alone — retail advertisers (Modell's, Dick's, Sports Authority, JC Penney, Bob's Store), corporate brands (TD Bank, Verizon, Budweiser, Harvard Pilgrim, John Hancock), and NSO accounts (Miller Lite, Smucker's, Welch's). Jeff's account produced the single largest personal total.</p>
+      <div class="pills">
+        <span class="pill">NBA Finals</span>
+        <span class="pill">Print + Digital</span>
+        <span class="pill">Retail + Corporate Packages</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1ql4idUXGnXYk7H5BmLoR-yhXpLm24sZZ" class="cl" target="_blank">Celtics 2010 Package Deck →</a>
+      <a href="https://drive.google.com/file/d/1wfeFyYhawa-TLkWrmCRIjJHv2E-Kow7b" class="cl" target="_blank">NBA Finals Rate Card →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">2012 Patriots · Playoffs</div>
+      <h3>Patriots Playoffs 2011/12 Program</h3>
+      <div class="csub">Boston Globe + Boston.com · Jan–Feb 2012</div>
+      <p>Managed a cross-team sales effort for Patriots Playoffs special sections and digital sponsorships timed to the AFC Championship and Super Bowl run. Jeff's own closed business included a Universal Pictures Super Bowl Sunday ad buy (Denzel Washington/Ryan Reynolds film) for $9,639. The program also included Patriots playoff decks covering print rate cards for retail and general advertisers, and dedicated pitch materials for the Patriots 2011 season and playoff run.</p>
+      <div class="pills">
+        <span class="pill">AFC Championship</span>
+        <span class="pill">Super Bowl Section</span>
+        <span class="pill">Universal Pictures Integration</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1CV3bgirrOa59-6N5b4EDFo3ChWTaGo2i" class="cl" target="_blank">Patriots 2011 Deck →</a>
+      <a href="https://drive.google.com/file/d/1tUb56DVYZo33zgJC4I_kIc2MyJpPfUMy" class="cl" target="_blank">Playoffs Revenue Tracker →</a>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:1.3rem;">
+    <div class="card">
+      <div class="ctag">Red Sox · 2007</div>
+      <h3>Red Sox Playoff Sponsorship Package</h3>
+      <div class="csub">Multi-platform · Boston Globe + Boston.com</div>
+      <p>Playoff-window advertising package integrating Globe print sports section placements with Boston.com digital inventory, timed to Red Sox post-season progress. The package included rate incentives for advertisers who committed to both print and online components, and was structured to scale if the Sox advanced to the ALCS or World Series.</p>
+      <a href="https://drive.google.com/file/d/1QkOx52DnkxnRsG9zFsvZWWEJfJ4LC_bq" class="cl" target="_blank">Red Sox Playoff Sponsorship Deck →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Red Sox · 2006 &amp; 2011 · "Movie Night"</div>
+      <h3>Red Sox Movie Night at Fenway</h3>
+      <div class="csub">Fenway Park Event · Film Studio Partnership</div>
+      <p>Boston Globe Media was the official media partner for the Red Sox's annual "Movie Night" event at Fenway — where a film is screened for fans on the outfield. Jeff built pitch decks for the 2006 and 2011 versions, selling studio and media partnerships around the in-park screening experience. This was a direct precursor to the Over the Hedge model of activating entertainment brands inside the Fenway experience, and demonstrated how the sports venue itself became a promotional platform.</p>
+      <div class="pills">
+        <span class="pill">Fenway Park Venue Activation</span>
+        <span class="pill">Studio × Red Sox Partnership</span>
+        <span class="pill">2006 + 2011</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1Mw1juONWq-efa9WrBzdzl0zkUtIqVXZK" class="cl" target="_blank">Movie Night Deck (2006) →</a>
+      <a href="https://drive.google.com/file/d/1321xHWZoSBdXwFEZKTJcXc6EbtN8F8NL" class="cl" target="_blank">Movie Night Deck (2011) →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ SUPER BOWL ══════════════ -->
+  <div id="super-bowl" class="sh"><h2>Super Bowl / Patriots Playoff Special Sections</h2><div class="shr"></div></div>
+  <p class="si">Jeff was an early developer of the Patriots playoff and Super Bowl special section franchise at the Boston Globe, building tiered rate structures that rewarded schedule commitment while capturing revenue from both pre-game and post-game coverage windows.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Patriots · 2008 · Perfect Season Run</div>
+    <h3>Patriots Playoffs 2008 — Special Section Framework</h3>
+    <div class="csub" style="color:#9a8a72;">AFC Championship + Super Bowl + Potential Perfect Season Commemorative</div>
+    <div class="callout-inner">
+      <div>
+        <p>For the 2008 Patriots playoff run — which ran through the AFC Championship (San Diego @ New England, Jan 20) and potential Super Bowl XLII (Feb 3, Arizona) — Jeff built a tiered, commitment-based rate structure with incentives that rewarded advertisers for booking early and across multiple dates. The structure was ahead of its time: rate cards rewarded combinations of 1 Sunday + multiple daily repeats, with special pricing for the post-Super Bowl commemorative issue and the "Perfect Season" section contingent on a New England win.</p>
+        <p>The Globe planned to print ~15,000 additional copies distributed in Arizona Jan 31–Feb 3. If the Patriots won, a Sunday Feb 10 "Perfect Season Commemorative" was added, requiring a commitment alongside the Feb 4 post-game issue. Rates ranged from $252/PCI (1 Sunday + 1 daily) to $410/PCI (1 Sunday + 6 dailies). Color at 20% additional. Minimum buy: 31.5 inches.</p>
+      </div>
+      <div class="callout-col">
+        <h4>Special Section Calendar</h4>
+        <ul>
+          <li><strong>Jan 18:</strong> Pre-AFC Championship coverage</li>
+          <li><strong>Jan 20:</strong> Game-day coverage</li>
+          <li><strong>Jan 21:</strong> Post-game coverage</li>
+          <li><strong>Feb 1:</strong> Pre-Super Bowl coverage (AZ distribution)</li>
+          <li><strong>Feb 3:</strong> Super Bowl game-day (AZ distribution)</li>
+          <li><strong>Feb 4:</strong> Post-Super Bowl (+100K additional circ)</li>
+          <li><strong>Feb 10:</strong> Perfect Season Commemorative (conditional)</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Rate Structure (Net PCI)</h4>
+        <ul>
+          <li>1 Sunday + 1 daily: <strong>$252</strong></li>
+          <li>1 Sunday + 2 dailies: <strong>$275</strong></li>
+          <li>1 Sunday + 3 dailies: <strong>$315</strong></li>
+          <li>1 Sunday + 4 dailies: <strong>$345</strong></li>
+          <li>1 Sunday + 6 dailies: <strong>$410</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:.85rem;">
+      <a href="https://drive.google.com/file/d/1ULMQrkQuFb8mvbIA5ugdlSNjojhu90pn" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">2008 Playoffs Document →</a>
+      <a href="https://drive.google.com/file/d/1qqHnMQ4ZF97qPQEJ7HopDNK_ImQtTShS" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Tear — Super Bowl 2005 →</a>
+      <a href="https://drive.google.com/file/d/1PkhbXlbJJ5RjH7U_7CEulfuMtx-8TxWX" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Tear — Super Bowl 2004 →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ EXPANDED SPORTS PARTNERS ══════════════ -->
+  <div id="expanded-partners" class="sh"><h2>Expanded Sports Partner Portfolio — Pro, College &amp; Event</h2><div class="shr"></div></div>
+  <p class="si">Beyond the flagship Red Sox and Patriots partnerships, Jeff managed advertising and sponsorship relationships with a wide range of professional, collegiate, and event sports organizations across two employers — Boston Globe Media (print, digital, events) and National CineMedia (cinema advertising). The breadth spans MLS, lacrosse, minor league baseball, college athletics, road racing, obstacle racing, and the world's largest rowing event.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Barter Partnership · 2006–2009 · Boston College Athletics × Boston Globe Media × Fenway Sports Group</div>
+    <h3>Boston College Sports — Multi-Sport Barter Sponsorship</h3>
+    <div class="csub" style="color:#9a8a72;">Football · Men's &amp; Women's Basketball · Men's &amp; Women's Hockey · Alumni Stadium + Conte Forum · $450K Cash + Barter · FSG Agreement</div>
+    <div class="callout-inner">
+      <div>
+        <p>Jeff managed the Boston College Athletics sponsorship — structured as part of the broader Fenway Sports Group agreement — covering all regular-season Football, Men's and Women's Basketball, and Men's and Women's Hockey through 2009. The Globe received exclusivity as print and online media partner, LED rotational signage at BC Football (Alumni Stadium) and at BC Basketball and Hockey games (Conte Forum), Zamboni branding rights at hockey games, a :60 videoboard feature at both venues, logo rights, online promotion, access for subscription sales at every home game (77 starts in 2008 generating $3,566 profit), and 8 tickets and parking privileges to all home games.</p>
+        <p>The three-year contract totaled $450,000: $50,000 cash per year plus $100,000 barter per year (2006–2008). BC used barter for 5-column × 4-inch black and white ticket sales ads. Jeff maintained detailed ad logs tracking barter usage across print and digital for each academic year — 2009–10 ($99,918 combined), 2010–11 ($175,174), and 2011–12 ($194,636).</p>
+        <div style="margin-top:.85rem;">
+          <a href="https://drive.google.com/file/d/1CN58YGJKHYsHkocaWOwUR1j8cxbHfi1v" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">BC Sponsorship Executive Summary →</a>
+          <a href="https://drive.google.com/file/d/18Y8Yko4VbJUOt59T9MYOmHchFiFm2T8L" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">BC Sports Ad Log (2009–2012) →</a>
+          <a href="https://drive.google.com/file/d/13-UHRi1VMBl-sR_vkGAcaMbteHOsS3e4" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">BC Sports Aug–Dec 2008 Billing →</a>
+        </div>
+      </div>
+      <div class="callout-col">
+        <h4>BC Sports Sponsorship Assets</h4>
+        <ul>
+          <li><strong>Exclusivity:</strong> Print and online classifieds, news sites, local search</li>
+          <li><strong>LED Signage:</strong> 10 min per game at Alumni Stadium (Football) + Conte Forum (Basketball + Hockey)</li>
+          <li><strong>Zamboni Branding:</strong> 2nd intermission sponsorship rights at all hockey games</li>
+          <li><strong>Videoboard:</strong> :60 feature at Conte Forum + Alumni Stadium</li>
+          <li><strong>Subscription Sales:</strong> Rights at every home game across all sports</li>
+          <li><strong>Tickets:</strong> 8 tickets + parking for all home games</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Barter Usage by Year</h4>
+        <ul>
+          <li><strong>2009–10:</strong> $99,918 combined print + digital</li>
+          <li><strong>2010–11:</strong> $175,174 combined print + digital</li>
+          <li><strong>2011–12:</strong> $194,636 combined print + digital</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2013–2014 · Road Racing</div>
+      <h3>Boston Marathon — Preview &amp; Review Sections</h3>
+      <div class="csub">117th Boston Marathon · April 2014 · John Hancock Title Sponsor</div>
+      <p>Jeff sold advertising for the Globe's two annual Boston Marathon special sections: the Marathon Preview Section (publishing the Friday before Marathon Monday) and the Marathon Review Section (publishing the Tuesday after the race, listing all finisher times). Creative ad unit packages included Section Front Strips ($10,326.60 for 18"), L-shapes ($21,887.20 for 54"), and Stair Steps ($17,999.20 for 42") — available to advertisers at a minimum $50K total investment. Boston.com provided in-depth photo gallery coverage and digital ad adjacency. The 2014 Marathon was the first following the 2013 bombing — a historic and high-readership moment for both sections.</p>
+      <div class="pills">
+        <span class="pill">Marathon Preview Section</span>
+        <span class="pill">Marathon Review Section</span>
+        <span class="pill">Section Front Premium Units</span>
+        <span class="pill">Boston.com Coverage</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1PRTUCe-o3YO9sV4n0WyeHwoZuS1DnnAr" class="cl" target="_blank">Marathon 2014 Pitch Deck →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2008 · Rowing</div>
+      <h3>Head of the Charles Regatta</h3>
+      <div class="csub">October 2008 · $62,363 Net Billing · Elevate Communications</div>
+      <p>Jeff managed advertising for the Head of the Charles Regatta — the world's largest two-day rowing event, held annually on the Charles River in Boston — with $62,363 net billing across 4 ads running October 9–18, 2008, via agency Elevate Communications. Ad placements ran across seven consecutive days surrounding the event, with the largest single placement on October 10 ($19,467 net). The Regatta draws 11,000+ athletes and 400,000+ spectators annually, making it one of the highest-attendance sporting events in New England.</p>
+      <div class="pills">
+        <span class="pill">World's Largest 2-Day Rowing Event</span>
+        <span class="pill">400,000+ Spectators</span>
+        <span class="pill">$62K Net Billing · 2008</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1b_atXDsRjAXt3i4ERUjoBKsZ6yl1BfI3" class="cl" target="_blank">Head of the Charles 2008 Billing →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2011 · MLS</div>
+      <h3>New England Revolution — Travel Show Sponsorship</h3>
+      <div class="csub">Boston Globe Travel Show · February 11–13, 2011 · Seaport World Trade Center</div>
+      <p>Jeff sold a Silver Sponsorship package to the New England Revolution for the 2011 Boston Globe Travel Show — the largest-attended travel show in the country at 21,730 attendees. The Revolution received a 3×5.75" color ad in the Travel Show Guide tabloid supplement, a ¼-page Sunday Travel or Sports ad in the Globe, logo presence with clickthrough on the show website, a 10×10 booth, 25 passes, and PR mentions across press releases. The Revolution also appeared in Jeff's Boston Deals program (43 ticket vouchers sold, $356.40 net revenue).</p>
+      <div class="pills">
+        <span class="pill">MLS · New England Revolution</span>
+        <span class="pill">Travel Show Silver Sponsor</span>
+        <span class="pill">21,730 Show Attendees</span>
+      </div>
+      <a href="https://drive.google.com/file/d/15fN-BsO7CTpMqkzsSwRDRoUjI28HmI7W" class="cl" target="_blank">Revolution Travel Show Pitch →</a>
+    </div>
+  </div>
+
+  <div class="g3" style="margin-top:1.3rem;">
+    <div class="card gld">
+      <div class="ctag">National CineMedia · 2019 · MLL</div>
+      <h3>Boston Cannons — NCM Cinema Campaign</h3>
+      <div class="csub">Major League Lacrosse · May–August 2019 · 14-Week Campaign · 11 Boston-Area Theaters</div>
+      <p>Jeff developed a multi-scenario NCM cinema advertising plan for the Boston Cannons (MLL) targeting the 2019 lacrosse season (May 17–August 22, 14 weeks). The campaign delivered a :15 Segment 1 pre-show spot across 11 Boston-area theaters including Boston Common 19, Framingham 16, Methuen 20, Assembly Row 12, and the Fenway 13 with RPX — projecting 3.2 million impressions at $64,278 net (360 plan: on-screen + LEN lobby network + Cinema Accelerator digital cross-platform banners). Three tiered scenarios were built: full city + suburbs (11 theaters), top 5 theaters only, and a combined plan.</p>
+      <div class="pills">
+        <span class="pill">3.2M Projected Impressions</span>
+        <span class="pill">$64K Net · 14 Weeks</span>
+        <span class="pill">On-Screen + LEN + Digital</span>
+        <span class="pill">Fenway 13 Anchor Theater</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1faobk-XoyUR5s6knRc_fpeNsLuL8sVOL" class="cl" target="_blank">Boston Cannons NCM Scenarios →</a>
+    </div>
+    <div class="card gld">
+      <div class="ctag">National CineMedia · 2017 · MiLB</div>
+      <h3>Lowell Spinners — NCM Cinema Pitch</h3>
+      <div class="csub">Minor League Baseball · Red Sox Affiliate · January 2017</div>
+      <p>Jeff developed an NCM cinema advertising pitch for the Lowell Spinners — the Boston Red Sox's Class A Short Season affiliate — targeting the 2017 season. The pitch led with NCM's 700M+ annual attendance network, top-5 family film slate (Beauty and the Beast, Boss Baby, Despicable Me 3, Cars 3), and audience affluence data (median HHI $76.9K vs. $61.9K US average). The Spinners represented a natural NCM case study: a regional sports franchise with a family-skewing audience that maps precisely to the G/PG moviegoing demographic NCM reaches most efficiently.</p>
+      <div class="pills">
+        <span class="pill">Red Sox Class A Affiliate</span>
+        <span class="pill">Family Audience Index</span>
+        <span class="pill">Regional Sports + Cinema Crossover</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1HQpVQBx5YElDvoUVNkgfTiHgoZvJMY7s" class="cl" target="_blank">Lowell Spinners NCM Pitch →</a>
+    </div>
+    <div class="card gld">
+      <div class="ctag">National CineMedia · 2019 · Obstacle Racing</div>
+      <h3>Spartan Race — NCM Regional Cinema Campaign</h3>
+      <div class="csub">Roanoke–Lynchburg DMA · April–May 2019 · Event Timing</div>
+      <p>Jeff built an NCM cinema campaign for Spartan Race timed to a Roanoke, Virginia event — a :10 Segment 2 spot running across 6 Roanoke-Lynchburg DMA theaters for 3 weeks (April 26–May 16, 2019), projecting 106,740 impressions at $4,920 net. The plan offered two scenario options: all 6 theaters (72K+ impressions at $4,920) or top 3 theaters only (46,517 impressions at $3,000). Spartan Race's adventure-sports audience and geographic event-timing model made cinema a natural fit — reaching local, physically active audiences in the weeks before a race takes place in their market.</p>
+      <div class="pills">
+        <span class="pill">Event-Timed Cinema Campaign</span>
+        <span class="pill">Adventure / Obstacle Sports</span>
+        <span class="pill">Geographic Market Targeting</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1D3MsTuwuyjkmkXB8tTCILx_XinyVQqy9" class="cl" target="_blank">Spartan Race NCM Scenario →</a>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:1.3rem;">
+    <div class="card">
+      <div class="ctag">National CineMedia · 2017 · College Athletics</div>
+      <h3>UNH Athletics — NCM Cinema Partnership</h3>
+      <div class="csub">University of New Hampshire · America East Conference</div>
+      <p>Jeff developed a National CineMedia cinema advertising pitch for UNH Athletics — covering the full NCM value proposition for a regional NCAA program: on-screen first-look advertising, LEN lobby network, and cross-platform digital banners targeting New Hampshire and northern New England moviegoing audiences. UNH Athletics competes in America East across 18 varsity sports. The cinema pitch reached UNH's core recruiting and fan engagement markets across southern NH and the Seacoast region — an audience with strong overlap with the family and young-adult demographics that fill NCAA arenas.</p>
+      <div class="pills">
+        <span class="pill">NCAA Division I · America East</span>
+        <span class="pill">18 Varsity Sports</span>
+        <span class="pill">NH + New England Cinema Targeting</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1WDIlDEY-IKNkwHgZH_TwQG33kB4T_S-1" class="cl" target="_blank">UNH Athletics Drive Folder →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2009–2010 · Women's Professional Soccer</div>
+      <h3>Boston Breakers — WPS Advertising + World Cup 2010</h3>
+      <div class="csub">Women's Professional Soccer · Fenway Sports Group · 2010 FIFA World Cup Section</div>
+      <p>Jeff managed the Boston Breakers account — Boston's Women's Professional Soccer franchise, then aligned with Fenway Sports Group — as part of his FSG portfolio at BGM. The Breakers folder in Jeff's archive contains the team logo, Globe Sports section tearsheets including Breakers game results (documented in a April 12, 2009 Sunday Globe Sports page: "Breakers 2, Athletica 0"), and the 2010 FIFA World Cup presentation deck. Jeff built a dedicated World Cup 2010 special section sales package (four versions archived) targeting advertisers across the Globe Sports section and Boston.com around the June–July 2010 tournament — one of the most-watched sporting events in the world, and a natural cross-sell against his women's soccer client relationships.</p>
+      <div class="pills">
+        <span class="pill">Boston Breakers · WPS</span>
+        <span class="pill">Fenway Sports Group Portfolio</span>
+        <span class="pill">World Cup 2010 Special Section</span>
+        <span class="pill">Globe Sports Tearsheets</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/0B0EnKLRY11bOY2hEQTRZTHF5Wmc" class="cl" target="_blank">Boston Breakers + World Cup Drive Folder →</a>
+      <a href="https://drive.google.com/file/d/1dfZEKwIXrHCwBKd3gea2p3GScKaXOcdI" class="cl" target="_blank">World Cup 2010 Deck →</a>
+    </div>
+  </div>
+
+
+
+  <!-- ══ CHAPTER DIVIDER ══ -->
+  <div id="marquee-events" style="margin:3.5rem 0 0;padding:1.4rem 2rem 1.2rem;background:var(--ink);border-left:4px solid var(--yellow);">
+    <div style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:.45rem;">Chapter 02</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--paper);margin-bottom:.4rem;">Marquee Events &amp; Broader Sports Calendar</div>
+    <div style="font-size:.83rem;color:#8a9aaa;max-width:680px;line-height:1.65;">Beyond the four major pro teams: Fenway 100 centennial, Volvo Ocean Race Boston Stopover, Boston Marathon, Deutsche Bank Championship, Head of the Charles, Newport Folk and Jazz Festivals, FIFA World Cup, and more — a full-spectrum sports event advertising portfolio.</div>
+  </div>
+
+  <!-- ══════════════ FENWAY 100 ══════════════ -->
+  <div id="fenway100" class="sh"><h2>Fenway 100: The Spirit of Fenway Park</h2><div class="shr"></div></div>
+  <p class="si">The Fenway 100th Anniversary Magazine was one of the Globe's most ambitious sports-marketing custom publishing projects — a glossy oversized keepsake magazine distributed in the Sunday Globe and at the ballpark, anchored by a launch-party event at Game On! at Fenway Park co-produced with the Sports Museum.</p>
+
+  <div class="g2">
+    <div class="card gld">
+      <div class="ctag">Custom Publishing · April 2012 · Centennial</div>
+      <h3>Fenway 100: The Spirit of Fenway Park</h3>
+      <div class="csub">Sunday Globe Insert, April 1, 2012 + 50,000 copies at Fenway, April 20</div>
+      <p>Jeff sold and managed advertising for the glossy oversize Fenway 100 magazine — a centennial keepsake chronicling what Fenway Park means to fans, the team, the league, baseball, and Boston. The magazine ran premium print positions including Barn Door ($156K), Gatefold ($104K), and Center Poster ($156K). Standard positions ran from $3,950 (one-sixth page) to $20,000 (full page). Jeff personally managed the NESN account (full page, $20,000) and held accounts with the JFK Library ($7,500 — a closed win) among others.</p>
+      <div class="pills">
+        <span class="pill">$156K Barn Door Position</span>
+        <span class="pill">50K Fenway Distribution</span>
+        <span class="pill">Sports Museum Launch Event</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1W2E4o8hIA1NH0n2MG81ysCu1-txPUHGO" class="cl" target="_blank">Fenway 100 One Sheet →</a>
+      <a href="https://drive.google.com/file/d/1uZbCAYj0AuQ5DjJjhbxlM7Mg5UNZA0J7" class="cl" target="_blank">Premium Positions (Net) →</a>
+      <a href="https://drive.google.com/file/d/1u4d6n62ZtFHgcrNhQKJKYQhXxgxYDgnT" class="cl" target="_blank">Fenway Pitch Deck →</a>
+    </div>
+    <div class="card gld">
+      <div class="ctag">B2B Audience Research · 2012</div>
+      <h3>Fenway 100 — Red Sox Fans Are Business Leaders</h3>
+      <div class="csub">Scarborough Research · Boston DMA Decision Makers</div>
+      <p>Jeff developed B2B-targeted audience research showing that Boston DMA company decision makers were 66% more likely to have attended 10+ MLB games in the past year — positioning the Fenway 100 and Globe Sports section as a premium B2B vehicle, not just a consumer sports product. Management/Business/Financial professionals attended 3+ MLB games at 73%; legal professionals at 43%. This framing opened non-endemic advertiser categories for sports section buys.</p>
+      <div class="pills">
+        <span class="pill">B2B Sports Audience</span>
+        <span class="pill">Scarborough Research</span>
+        <span class="pill">Decision Maker Index</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1NeXtkU8cIyCIp6NRK9Njap3KcBo0j_l0" class="cl" target="_blank">B2B Research Deck →</a>
+      <a href="https://drive.google.com/file/d/1sjeMwKr0cu3jv31RpeIBZgjJYYDdrZIM" class="cl" target="_blank">Fenway 100 Lead List →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ SNOW SPORTS ══════════════ -->
+  <div id="snow-sports" class="sh"><h2>Snow Sports Multimedia — Ski &amp; Winter Sports Marketing</h2><div class="shr"></div></div>
+  <p class="si">Jeff built and sold an integrated snow sports marketing program combining the Globe's annual Chill pull-out section, the weekly SnowSports in-section feature in the Globe Sports pages, Boston.com digital targeting, RadioBDC audio sponsorship, and the Boston.com Ski &amp; Snowboard Expo — a multi-platform model that treated winter sports as both editorial and advertiser opportunity.</p>
+
+  <div class="card span3">
+    <div class="ctag">Integrated Multimedia · Winter 2012–2013 · Ski &amp; Snowboard</div>
+    <h3>Snow Sports Multimedia Opportunities</h3>
+    <div class="csub">Chill Pull-Out · SnowSports Weekly Section · Boston.com SkiMail · RadioBDC · Ski &amp; Snowboard Expo</div>
+    <p>The package reached 132,855 New England skiing and snowboarding adults (Scarborough 2011), of which 110,170 skied in New Hampshire, 42,640 in Vermont, and 37,083 in Maine. The Chill pull-out section anchored the program as the official guide to the Boston.com Ski and Snowboard Expo (November 8–11), distributed at the Expo to thousands of committed enthusiasts. The weekly SnowSports section in the Globe Sports pages provided a winter-long content environment. Boston.com added 700,000 additional local adults beyond the print reach.</p>
+    <p>Digital components included geographic targeting (DMA, zone, zip), demographic targeting, contextual placements in Travel, Weather, and Things To Do, mobile (iPad/iPhone/Android), and the SkiMail opt-in newsletter (26,200 subscribers) — both an advertiser-exclusive and editorial version sent weekly Jan–Mar. RadioBDC (launched fall 2012 with 50,000 unique users in first 4 weeks) added a live audio channel to reach skiers on the go.</p>
+    <div class="pills">
+      <span class="pill">132K+ Active Skiers/Snowboarders</span>
+      <span class="pill">Ski &amp; Snowboard Expo</span>
+      <span class="pill">26K SkiMail Subscribers</span>
+      <span class="pill">RadioBDC Audio</span>
+      <span class="pill">Mobile / iPad</span>
+      <span class="pill">Boston.com Digital</span>
+    </div>
+    <a href="https://drive.google.com/file/d/1AlOdA-NX-aT0MYgoDG-UrJSdOE1reQfb" class="cl" target="_blank">Snow Sports Multimedia Deck →</a>
+  </div>
+
+  <div id="fall-sports" class="sh"><h2>Fall Boston Sports Calendar — NFL, NHL, MLB Playoffs</h2><div class="shr"></div></div>
+  <p class="si">Jeff packaged the entire fall Boston sports calendar into a single sales vehicle — showing advertisers how to build across NFL Preview, NHL/Bruins Banner Raising, MLB Playoffs, Patriots home opener, and unique advertising positions (Section Fronts, Fan's Guide, G Section Poster, Sports Spadea) in a single integrated proposal.</p>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ctag">Fall 2011 · Boston Sports Calendar</div>
+      <h3>Fall Sports Package — NFL + NHL + MLB</h3>
+      <div class="csub">September–October 2011 · Boston Globe Sports</div>
+      <p>The Fall 2011 Boston Sports Calendar package identified the key editorial dates (NFL Preview: Sept 8; NHL Preview/Bruins Banner Raising: Oct 2), game dates (Patriots opener: Sept 12; MLB Playoffs: Sept 29; Bruins opener: Oct 6), and unique advertising positions. The NFL Preview section offered frequency rates from $275 (single ad) to $895 (7-ad package, 35% discount). The NHL Preview/Bruins Banner Raising — the Bruins raising the 2011 Stanley Cup banner — was pitched as a collector's section with the Philly @ Boston opener as an emotional anchor.</p>
+      <div class="pills">
+        <span class="pill">NFL Preview</span>
+        <span class="pill">Bruins Banner Raising</span>
+        <span class="pill">MLB Playoffs</span>
+        <span class="pill">Section Fronts</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1RZlpzZCozs5ilgWvU4kfCLyb7tEyUXDx" class="cl" target="_blank">Fall 2011 Sports Calendar →</a>
+    </div>
+      <a href="https://drive.google.com/file/d/1cCg5BwVL1PN3M_u78I-7TtsqF3IvkYph" class="cl" target="_blank">Sports Section Packages →</a>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ VOLVO / NEWPORT ══════════════ -->
+  <div id="volvo-newport" class="sh"><h2>Sailing &amp; Water Sports — Volvo Ocean Race · Newport Folk &amp; Jazz Festivals</h2><div class="shr"></div></div>
+  <p class="si">No America's Cup documents surfaced in a full search of 6,810 archived files. What is documented in exhaustive detail: the 2009 Volvo Ocean Race Boston stopover, one of offshore sailing's premier global events, and a three-year relationship with the Newport Festivals Foundation covering the Newport Folk and Jazz Festivals (2009–2011).</p>
+
+  <div class="callout-box">
+    <div class="ctag">Boston Globe Media · March 22 – May 16, 2009 · Offshore Sailing · Fan Pier, Boston</div>
+    <h3>Volvo Ocean Race — 2009 Boston Stopover</h3>
+    <div class="csub" style="color:#9a8a72;">$70,000 Paid + $66,760 Trade = $136,760 Total · The Fallon Company / Elevate Communications · 4 Archived Versions Including Approved Schedule with Order Numbers</div>
+    <div class="callout-inner">
+      <div>
+        <p>The Volvo Ocean Race is the round-the-world offshore sailing race — approximately 45,000 nautical miles across nine legs, widely considered the "Everest of sailing." The 2009 edition made Boston's Fan Pier its North American stopover, April 27–May 16. Jeff managed the complete Boston Globe Media advertising plan: a $70,000 paid budget (PCI $158.73 net, color included) and $66,760 in trade advertising (PCI $262.00 net) — $136,760 total — through The Fallon Company and Elevate Communications.</p>
+        <p>Four versions of the schedule are archived, documenting full negotiation history: the original proposal, Proposal B, vB1 (approved), and a final approved schedule with Globe order numbers for each placement. The campaign launched March 22 and ran every key date through May 16. Paid placements anchored around Boston moments — Red Sox Opening Day (April 6), Marathon Monday (April 20), Cinco de Mayo (May 5), and "Yankees Wrap-Up" (May 6). The Globe Magazine full-page flat rate ran April 19. Three "Tickets to the Arts" G-section placements ran in the three weeks surrounding the race. Trade budget ran March 22 (Main News, $8,253), May 3 (Main News, $8,253), May 10 (Sunday Travel, "Irish Waterfront Fest," $8,253), May 11 (Sports, $8,253), May 13 (Metro, $8,253), May 14 (G Section, $8,253), and May 15 (Main News, $8,253). The final approved schedule reconciled to $69,994.94 paid (−$5.06) and $66,729 trade (−$31) against a total $136,760 plan.</p>
+      </div>
+      <div class="callout-col">
+        <h4>Race Village Event Calendar</h4>
+        <ul>
+          <li><strong>Apr 25:</strong> Race Village Opens · Mass Bay HS Race · Youth Race · Live Music</li>
+          <li><strong>Apr 27:</strong> Boats Arrive · Program Distribution · Kids Educational begins</li>
+          <li><strong>May 1:</strong> Opening Ceremonies · Live Music</li>
+          <li><strong>May 2–3:</strong> City of Champions Weekend · Boston Sports Exhibit · College Champ Racing · Live Music</li>
+          <li><strong>May 5:</strong> Cinco de Mayo</li>
+          <li><strong>May 9:</strong> In-Port Race · Oyster Fest · Laser Regatta · Youth Race · Live Music</li>
+          <li><strong>May 10:</strong> Pro-Am Race · Awards Dinner · Celtic Thunder · Boston Ballet · SAR Demo</li>
+          <li><strong>May 13–16:</strong> Ireland Festival · Live Music · Irish Food · Boats Depart May 16</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Budget Final Reconcile</h4>
+        <ul>
+          <li><strong>Paid budget:</strong> $70,000 · PCI $158.73 net, color included</li>
+          <li><strong>Trade budget:</strong> $66,760 · PCI $262.00 net, color included</li>
+          <li><strong>Total campaign:</strong> $136,760</li>
+          <li><strong>Paid final:</strong> $69,994.94 (under by $5.06)</li>
+          <li><strong>Trade final:</strong> $66,729 (under by $31.00)</li>
+          <li><strong>Sections covered:</strong> Main News, Sports, Metro, Globe Magazine, G Section, Sunday Arts, Sunday Travel</li>
+          <li><strong>Ad orders confirmed:</strong> 14 individual Globe order numbers on file</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:.85rem;">
+      <a href="https://drive.google.com/file/d/1CGo-pD6W9cx4eR0lJgfS41gJPbuOwfIz" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Approved Schedule with Order Numbers →</a>
+      <a href="https://drive.google.com/file/d/1NAoudruXO3VsRL9Z3hQYul7nUbYu_aNw" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Final Schedule with Deadlines →</a>
+      <a href="https://drive.google.com/file/d/1CjVn7jvJEoGIW5lICLbgFa4b_mFVdO0J" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Rev 4-29 with Deadlines →</a>
+      <a href="https://drive.google.com/file/d/1FzauTSLBgiu0gDIVdm82oaXQlAIhp32L" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Original Proposal →</a>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:1.3rem;">
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2009–2011 · Newport, Rhode Island</div>
+      <h3>Newport Folk Festival + Newport Jazz Festival</h3>
+      <div class="csub">Three Signed Contracts · Newport Festivals Foundation / 02809 Media / Elevate Communications · $35K (2009) · $28K billed (2010) · $45K (2011)</div>
+      <p>Jeff held a three-year recurring advertising relationship with the Newport Festivals Foundation — covering both the Newport Folk Festival (late July, Fort Adams State Park) and Newport Jazz Festival (early August, Fort Adams) — with signed contracts each year: 2009 ($35,000, May–July, via Spada Media), 2010 ($28,024 net billed, April–August, via 02809 Media), and 2011 ($45,000, May–August, via 02809 Media). The 2010 season included a signed Value Added Promotion agreement: a co-branded "Enter to Win" contest with event tickets and hotel accommodations as prizes, a full-run quarter-page in-paper promotion, and an online contest portal — signed July 29, 2010. Four scheduling versions are archived for 2010 alone, iterating on placements across Folk and Jazz as separate buys with combined negotiated rates.</p>
+      <p>Placements ran in G Section premium positions (inside front cover, back page, Page 3 — all with 20% surcharge), Globe Magazine (Summer Travel issue and Weekend Fun Guide), Sunday Arts (Summer Arts Preview), and Ticket to the Arts recurring weekly. Boston.com digital ran $10,000/year alongside print. The 2011 contract grew the relationship to $45,000 — a 29% increase over 2009 — confirming a strengthening annual partnership built on multi-platform media value.</p>
+      <div class="pills">
+        <span class="pill">Newport Folk Festival</span>
+        <span class="pill">Newport Jazz Festival</span>
+        <span class="pill">3 Signed Contracts · 2009–2011</span>
+        <span class="pill">$35K → $45K (29% growth)</span>
+        <span class="pill">Signed Value-Added Promotion · 2010</span>
+        <span class="pill">G Section + Globe Magazine + Boston.com</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1xh0MamLFQLVBxFk1aAgENQYYdPCebJ-I" class="cl" target="_blank">2011 Signed Contract ($45K) →</a>
+      <a href="https://drive.google.com/file/d/1ViCPkPLuvUy993y0GpaxrzUNj4Bl6JAk" class="cl" target="_blank">2009 Signed Contract ($35K) →</a>
+      <a href="https://drive.google.com/file/d/1iy4mFzXoxCm7Ng2vPeKsqStrI21UX67-" class="cl" target="_blank">2010 Value-Added Promotion Agreement →</a>
+      <a href="https://drive.google.com/file/d/1M7_OguhQrjXT5ajXRmSHw9utNTTNv8SC" class="cl" target="_blank">2010 Revenue Billing →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Research Note · America's Cup</div>
+      <h3>America's Cup — Not in Archive</h3>
+      <div class="csub">Full search across all five Drive folders · 6,810 files · No match found</div>
+      <p>A complete full-text and title search of the entire archive returned no documents specifically related to the America's Cup. The closest documented sailing work is the Volvo Ocean Race Boston Stopover (2009, $136,760 total), which covers offshore ocean racing at the highest global level. America's Cup work, if it occurred, may predate this archive's date range, exist under a title sponsor or yacht club name not indexed in this search, or reside in physical materials not yet digitized.</p>
+      <div class="pills">
+        <span class="pill">Volvo Ocean Race → Best Sailing Documentation</span>
+        <span class="pill">Head of the Charles → Water Sports 2008</span>
+        <span class="pill">America's Cup → Not Found</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ WORLD CUP / BREAKERS / ADDITIONAL ══════════════ -->
+  <div id="additional-sports" class="sh"><h2>Additional Sports Programs — World Cup · Custom Publishing · Sportswear · Aramark Fenway</h2><div class="shr"></div></div>
+  <p class="si">The archive surfaces four additional sports marketing programs documented in Jeff's files: a dedicated 2010 FIFA World Cup special section; "Boston's Greatest Sports Stories: Beyond the Headlines" — a Globe/NESN co-branded sports documentary DVD with presenter sponsorship packages; an Aramark/Fenway Park advertising rate and position package; and a Craft Sportswear national NCM cinema campaign.</p>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2010 · FIFA World Cup</div>
+      <h3>2010 FIFA World Cup — Special Section Package</h3>
+      <div class="csub">June–July 2010 · Four-Version Sales Deck · Globe Sports + Boston.com</div>
+      <p>Jeff built and sold advertising for the Boston Globe's 2010 FIFA World Cup special section coverage — the most-watched single sporting event in the world, with 700M+ viewers globally. Four versions of the sales deck are archived, indicating an iterative pitch process across different advertiser categories. The World Cup section aligns with Jeff's Boston Breakers (WPS) client relationships and his broader pattern of tying sports editorial moments to revenue packages — from playoff sections to film-studio GameDay campaigns.</p>
+      <div class="pills">
+        <span class="pill">FIFA World Cup 2010</span>
+        <span class="pill">Globe Sports Special Section</span>
+        <span class="pill">4 Pitch Versions</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1GFD7Bl7tzFxkudgGuybzqYFY3fWd_5FS" class="cl" target="_blank">World Cup Section Deck →</a>
+      <a href="https://drive.google.com/file/d/1Q0iVI_1Z-FlOET_lefyfE3G-K24DRz33" class="cl" target="_blank">World Cup 2010 (Version 2) →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Boston Globe Media · 2004 · Sports Documentary</div>
+      <h3>"Boston's Greatest Sports Stories: Beyond the Headlines"</h3>
+      <div class="csub">Globe + NESN + National Amusements · DVD Documentary · Sponsor Package</div>
+      <p>Jeff developed the presenter sponsorship package for <em>Boston's Greatest Sports Stories: Beyond the Headlines</em> — a two-hour video documentary written by Leigh Montville (Globe), featuring interviews with Bob Ryan, Dan Shaughnessy, Jackie MacMullen, and 18 other Globe writers, covering The Orr Goal (1970), the 1975 World Series, the 1980 Miracle on Ice, Bird being drafted, the Hail Mary at the Orange Bowl (1984), and Vinatieri's Super Bowl kick (2002). The Presenting Sponsor package included 2 full-page Globe ads, logo presence in Boston.com and NESN ads, logo on the DVD packaging, a :30 commercial at the beginning and end of the video, four 30-minute NESN programming segments, and 1,000 copies of the video. Jeff also built a separate pitch to National Amusements for pre-trailer vignettes across 15+ Massachusetts cinema locations.</p>
+      <div class="pills">
+        <span class="pill">Globe + NESN Co-Branded</span>
+        <span class="pill">Presenter Sponsor Package</span>
+        <span class="pill">National Amusements Cinema Deal</span>
+        <span class="pill">Leigh Montville · Dan Shaughnessy · Bob Ryan</span>
+      </div>
+      <a href="https://drive.google.com/file/d/0B0EnKLRY11bOcHByN04wenZxYXc" class="cl" target="_blank">Sponsor Sheet →</a>
+      <a href="https://drive.google.com/file/d/0B0EnKLRY11bOY2NWbmxGM1JpQlE" class="cl" target="_blank">National Amusements Proposal →</a>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:1.3rem;">
+    <div class="card gld">
+      <div class="ctag">Boston Globe Media · 2011 · Fenway Park Concessions</div>
+      <h3>Aramark × Fenway Park — Ad Sizes &amp; Costs</h3>
+      <div class="csub">Fenway Park Concessions Partner · Print + Digital Rate Card</div>
+      <p>Jeff built a dedicated ad sizes and costs presentation for Aramark — the official food and beverage/concessions partner at Fenway Park — outlining BGM print and digital advertising options tailored to a Fenway-affiliated client. Aramark's Fenway presence made them a natural extension of the FSG/Red Sox advertising ecosystem Jeff managed. The presentation demonstrates Jeff's practice of building custom, venue-specific pitch materials for each partner in the Fenway Sports Group family.</p>
+      <div class="pills">
+        <span class="pill">Fenway Park Concessions Partner</span>
+        <span class="pill">FSG Ecosystem</span>
+        <span class="pill">Custom Rate Presentation</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1Q1pZVQTavlLoSQWPz_TB8aCcTCrwnI0X" class="cl" target="_blank">Aramark Fenway Pitch Deck →</a>
+    </div>
+    <div class="card gld">
+      <div class="ctag">National CineMedia · 2017 · Sportswear</div>
+      <h3>Craft Sportswear — NCM National Cinema Campaign</h3>
+      <div class="csub">Performance Sportswear Brand · 42 Theaters · New England + Northeast + Hartford · 4.8M Impressions · $261K</div>
+      <p>Jeff developed a major national NCM cinema campaign for Craft Sportswear — a performance athletic apparel brand — spanning 42 theaters across the Boston/Manchester, New York, and Hartford/New Haven DMAs for 13 weeks (September 29–December 28, 2017). The package combined Segment 2 :30 on-screen spots (2.8M impressions), Regional LEN lobby network (:30), and a Cross-Platform Cinema Accelerator digital buy (1.2M impressions via 1,089 targeted zip codes). Total projected impressions: 4.8 million. Total net: $261,174. The campaign highlighted NCM's engagement superiority over NFL Sunday Night Football among A18–34, directly relevant to a sports apparel brand's target audience.</p>
+      <div class="pills">
+        <span class="pill">4.8M Projected Impressions</span>
+        <span class="pill">$261K Net · 13 Weeks</span>
+        <span class="pill">42 Theaters · 3 DMAs</span>
+        <span class="pill">On-Screen + LEN + Digital</span>
+        <span class="pill">Outperforms NFL SNF A18-34</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1ubZ02TpsYeBXCDDfWNQ8S2x5t7Y6_Djk" class="cl" target="_blank">Craft Sportswear NCM Deck →</a>
+      <a href="https://drive.google.com/file/d/1FIH5TaSjEdCXVqZkJJsl36-grptWB1TL" class="cl" target="_blank">Craft Sportswear NCM Scenario →</a>
+    </div>
+  </div>
+
+
+
+  <!-- ══ CHAPTER DIVIDER ══ -->
+  <div id="sports-integration" style="margin:3.5rem 0 0;padding:1.4rem 2rem 1.2rem;background:var(--ink);border-left:4px solid var(--yellow);">
+    <div style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:.45rem;">Chapter 03</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--paper);margin-bottom:.4rem;">Integrating Sports &amp; Marketing</div>
+    <div style="font-size:.83rem;color:#8a9aaa;max-width:680px;line-height:1.65;">Non-sports brands — DreamWorks, Fox, Nova Scotia Tourism — structured as sports marketing activations. Fenway Park as the platform, NESN as the broadcast partner, ESPN Sunday Night Baseball as the national reach vehicle. Two MICA Awards. The stadium wasn't the backdrop; it was the strategy.</div>
+  </div>
+
+  <!-- ══════════════ OVER THE HEDGE / DREAMWORKS ══════════════ -->
+  <div id="over-the-hedge" class="sh"><h2>DreamWorks × Red Sox — <em>Over the Hedge</em> Activation</h2><div class="shr"></div></div>
+  <p class="si">The Over the Hedge partnership is the clearest example of Jeff engineering a sports marketing activation for an entertainment property: a cross-platform campaign that placed a DreamWorks animated family film inside Fenway Park on Red Sox Family Fun Day — with NESN broadcast integration, a boston.com contest, print advertising, and in-park event presence.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Cross-Platform Activation · April–May 2006 · DreamWorks SKG × Boston Red Sox</div>
+    <h3><em>Over the Hedge</em> — Fenway Family Fun Day + Multi-Platform Promotion</h3>
+    <div class="csub" style="color:#9a8a72;">Fenway Park · Boston.com · Boston Globe · Metro Boston · NESN · April 2006 Opening</div>
+    <div class="callout-inner">
+      <div>
+        <p>Jeff identified the Red Sox's annual Fenway Family Fun Day — with 38,000 attendees and discounted children's tickets — as the perfect live activation for DreamWorks' upcoming animated family film <em>Over the Hedge</em>. He built and documented a full integrated marketing plan: a total "Over the Hedge" branded environment at the ballpark gates and inner concourse; a coloring table, face painting, games, and a wiffle ball "hit it over the hedge / Green Monster" contest for kids; prizes including Over the Hedge and Boston Globe Media collateral.</p>
+        <p>The companion digital program placed the official contest on Boston.com: fans guessed how many Red Sox home runs would be hit "Over the Hedge" during the April home stand (4/11–4/20). The contest was promoted in-paper (Globe + Metro Boston), on boston.com, and through NESN's Sports Plus show prior to Red Sox games — with a strong prospect of the contest airing during actual game broadcasts and the trailer appearing on the Fenway JumboTron.</p>
+        <div style="margin-top:.85rem;">
+          <a href="https://drive.google.com/file/d/10fZfEGiGv46OndCQv9F8pYL0H8Lznv7o" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Campaign Recap &amp; Plan →</a>
+          <a href="https://drive.google.com/file/d/1AsR-ORZ_T63YRVqc6-fKD3383dIysSjC" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Official Contest Rules →</a>
+          <a href="https://drive.google.com/file/d/1wNy2BTu5CxsqgPsy8tACPtbgTLxQOn4N" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Contest Page Design →</a>
+        </div>
+      </div>
+      <div class="callout-col">
+        <h4>Campaign Components</h4>
+        <ul>
+          <li><strong>Fenway Family Fun Day:</strong> Branded environment at park gates + concourse; ~38,000 attendees</li>
+          <li><strong>Kids Activities:</strong> Coloring, face painting, wiffle ball "over the hedge" contest</li>
+          <li><strong>NESN:</strong> Contest mention on Sports Plus pre-game show; potential game-broadcast integration; JumboTron trailer potential</li>
+          <li><strong>Boston.com:</strong> Official contest page, digital ads (leaderboards on A&amp;E + Sports, ROS)</li>
+          <li><strong>Print:</strong> Boston Globe + Metro Boston ads from March 31</li>
+          <li><strong>Grand Prize:</strong> Family of four trip to Beaches Resort (Jamaica or Turks &amp; Caicos, value ~$19,500) courtesy DreamWorks SKG</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Digital IO Details</h4>
+        <ul>
+          <li><strong>A&amp;E Plus + Sports:</strong> 267,860 impressions @ $7 CPM</li>
+          <li><strong>ROS Leaderboard:</strong> 312,500 impressions @ $6 CPM</li>
+          <li><strong>Custom Contest:</strong> 6-day run, fixed placement</li>
+          <li><strong>Total Digital:</strong> ~$5,000 net (Insertion Order, April 20–May 2)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SIMPSONS × NESN ══════════════ -->
+  <div id="simpsons" class="sh"><h2>The Simpsons Movie × Red Sox / NESN</h2><div class="shr"></div></div>
+  <p class="si">The Simpsons Movie activation was another sports-entertainment crossover — using the Red Sox/NESN platform and Boston.com's sports audience to promote the Fox animated film's July 2007 release. Jeff engineered Simpsons trading cards inserted into the GameDay program and a "Simpsonize the Sox" digital campaign on Boston.com that tied the film directly to fan engagement around the team.</p>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ctag">GameDay Activation · 2007 · Fox</div>
+      <h3>Simpsons Trading Cards in GameDay</h3>
+      <div class="csub">Fenway Park Insert · July 29 &amp; August 3, 2007</div>
+      <p>Custom Simpsons Movie trading cards — with character bios printed on card backs — were inserted into the GameDay program for two Red Sox home-game dates surrounding the film's July 27 opening. The cards ran as a sponsored insert, placing the film brand directly in the hands of 25,000 Fenway fans per game. The billing ran through Allied Advertising / Fox at the Movie Directory rate.</p>
+      <div class="pills">
+        <span class="pill">In-Game Insert</span>
+        <span class="pill">Fox / Allied Advertising</span>
+        <span class="pill">50,000 Fans Reached</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1biGd4xoVVvBJiw4X1mWljLRoS3iqyDMv" class="cl" target="_blank">Trading Card Design →</a>
+      <a href="https://drive.google.com/file/d/19UC3SFMbrj7hRUD-VviA7h5NJWN38S8t" class="cl" target="_blank">Billing Record →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">Boston.com Activation · 2007</div>
+      <h3>"Simpsonize the Sox" — Boston.com Digital</h3>
+      <div class="csub">Digital Campaign · boston.com/sports · Red Sox Homepage</div>
+      <p>The "Meet the Simpsonized Sox" feature on Boston.com let fans rate Simpsons-style renderings of each Red Sox player (Beckett, Manny, Dice-K, Papelbon, Ortiz, Varitek, and others). The interactive voting feature ran on boston.com/sports and drove engagement by cross-promoting the film's Simpsonizeme.com avatar tool. The NESN screen capture confirms the Simpsons Trading Card promotion ran as a NESN-sponsored segment, appearing on the network alongside Red Sox pre-game coverage.</p>
+      <div class="pills">
+        <span class="pill">Interactive / Social Feature</span>
+        <span class="pill">NESN On-Air Integration</span>
+        <span class="pill">boston.com Sports Homepage</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1OcEPV1P87336Q2Jqf16Z1_cb0P-l33ek" class="cl" target="_blank">Simpsonize Sox Page →</a>
+      <a href="https://drive.google.com/file/d/135HeHxjRDvB0oEP7xCLvHygwXPZ82h5U" class="cl" target="_blank">NESN Screen Cap →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ X-MEN IN GAMEDAY ══════════════ -->
+  <div id="xmen" class="sh"><h2>X-Men: The Last Stand × GameDay</h2><div class="shr"></div></div>
+  <p class="si">X-Men 3 was one of the first major film brands to purchase into the new GameDay program, timed to the Red Sox's first home Yankees series of the 2006 season — one of the highest-demand, highest-readership periods in the program's schedule.</p>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ctag">GameDay Film Integration · May 2006 · Fox</div>
+      <h3>X-Men: The Last Stand in GameDay</h3>
+      <div class="csub">Red Sox vs. Yankees Series · May 22–28 · Fenway Park</div>
+      <p>X-Men 3 (released May 26, 2006) was timed to run in GameDay across the Red Sox's first Yankees home series of the season — among the most coveted dates in the program — and the following Tampa Bay series covering the film's full opening weekend. The placement offered Fox a direct pipeline to 175,000 highly engaged sports fans during peak interest windows. The PDF archive preserves the actual GameDay newspaper, with game-day editorial (Curt Schilling vs. Wang analysis) alongside film advertising.</p>
+      <div class="pills">
+        <span class="pill">Opening Weekend Alignment</span>
+        <span class="pill">Yankees Series · Peak Audience</span>
+        <span class="pill">Fox Films</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1gNm6_3R0OU5ZoLRIVh7sF_ik2_qHCm30" class="cl" target="_blank">X-Men 3 in GameDay (Archived Issue) →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ NOVA SCOTIA TOURISM ══════════════ -->
+  <div id="nova-scotia" class="sh"><h2>Nova Scotia Tourism — The "Boston Takeover" · Two-Time MICA Award Winner</h2><div class="shr"></div></div>
+  <p class="si">The Nova Scotia Tourism 2014 campaign — called the "Boston Takeover" — won Jeff his second BGM Most Innovative Campaign Award (MICA). It was a multi-year client relationship: the 2011 MICA went to Focus Features / The Kids Are All Right, and the 2014 MICA went to Nova Scotia Tourism for the "Boston Takeover" — a custom interactive Peggy's Cove lighthouse at Faneuil Hall, an official Fenway Park partnership, and an NESN-televised sponsored first pitch with live broadcast integration. The NSTA presentation (Tourism InnovatioNS Day, April 29, 2014) documents a $3.2M+ US campaign built around Boston sports media as the primary channel for driving Nova Scotia visitation.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Two-Time MICA Award Winner · 2014 · Nova Scotia Tourism Agency × Boston Red Sox × Boston Globe</div>
+    <h3>Nova Scotia "Boston Takeover" — Nova Scotia Day at Fenway Park, May 18, 2014</h3>
+    <div class="csub" style="color:#9a8a72;">BGM MICA Award 2014 · Official Partner of the Boston Red Sox · ESPN Sunday Night Baseball · 7.2M Facebook Fans · Home Plate Signage · 10 Games</div>
+    <div class="callout-inner">
+      <div>
+        <p>Nova Scotia secured an official partnership with the Boston Red Sox for a dedicated "Nova Scotia Day at Fenway" on May 18, 2014 — a nationally televised ESPN Sunday Night Baseball game against the Detroit Tigers. The activation was among the most complete sports-tourism integrations ever executed at Fenway: ceremonial first pitch accompanied by the 78th Highlanders, Wally the mascot in a kilt, a dedicated Nova Scotia fan section, 5,000 co-branded tartan towels for fans, home plate signage for 10 games, a pre-game :60 video board feature, and a visitor services table with giveaways.</p>
+        <p>The weekend was preceded by "Nova Scotia Light at Faneuil Hall" (May 16–18) — a 28-foot Peggy's Cove lighthouse replica at historic Faneuil Hall with Nova Scotia musicians (Old Man Luedecke, SQUID, JRDN), Red Sox legends on stage, the Kilted Chef cooking demonstration, the 78th Highlanders, and an inflatable pitching tent awarding first pitch rights and hourly game tickets. NESN brought a camera crew for live pre-game segments at Faneuil Hall, promoting both events on the Yawkey Way pre-game show. The Boston Globe was a named media partner: half-page Sunday Travel placements, full pages in Globe Magazine Spring Travel, and half-pages in daily News/Sports sections — Jeff's own BGM inventory.</p>
+      </div>
+      <div class="callout-col">
+        <h4>Fenway Activation Details</h4>
+        <ul>
+          <li><strong>Official Red Sox Partnership:</strong> Exclusive day sponsorship, branding throughout park</li>
+          <li><strong>ESPN National Broadcast:</strong> Sunday Night Baseball vs. Detroit Tigers</li>
+          <li><strong>MLB Social Sweep:</strong> 7.2M Facebook fans, 720K Twitter, 600K email</li>
+          <li><strong>Home Plate Signage:</strong> 10 games of fixed in-field Nova Scotia branding</li>
+          <li><strong>5,000 Tartan Towels:</strong> Co-branded Nova Scotia / Red Sox giveaway</li>
+          <li><strong>NESN Pre-Game:</strong> Live segments from Faneuil Hall; Yawkey Way billboard</li>
+          <li><strong>World Series Trophy Tour:</strong> 3 trophies (2008, 2012, 2013) to Nova Scotia June 4–5 via Nova Star Cruises; Bluenose BoSox Brotherhood partnership</li>
+          <li><strong>100 Red Sox Tickets:</strong> For contesting throughout 2014 regular season</li>
+        </ul>
+        <h4 style="margin-top:1rem;">US Campaign Results — March 1 to April 13, 2014</h4>
+        <ul>
+          <li><strong>Massachusetts web traffic:</strong> 5,714 → 69,500 (+1,116%)</li>
+          <li><strong>New England total:</strong> 11,432 → 87,923 (+669%)</li>
+          <li><strong>MA call centre inquiries:</strong> 133 → 1,671 (+1,156%)</li>
+          <li><strong>Total US inquiries:</strong> 2,139 → 4,337 (+103%)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="card">
+      <div class="ctag">Boston Globe · Named US Media Partner</div>
+      <h3>Boston Globe + Boston.com in NSTA's Plan</h3>
+      <div class="csub">NSTA Northeast US Media Blocking Chart · March–June 2014</div>
+      <p>The NSTA's official 2014 US media plan named the Boston Globe by name in its blocking chart: 4-color half-pages in Sunday Travel, 2 full-page Sunday Travel placements, a full-page in the Globe Magazine Spring Travel edition (March 16), and 4 half-pages in daily News or Sports sections. Boston.com was listed alongside YouTube, Google Display, Facebook, BostonHerald.com, AOL, Tremor Media, and Exchange Lab as core digital placements. This was Jeff's direct account territory — the Nova Scotia account was a living proof point of what BGM's sports and travel media could accomplish for a destination client.</p>
+      <div class="pills"><span class="pill">Boston Globe Sunday Travel</span><span class="pill">Globe Magazine Spring Travel</span><span class="pill">Boston.com Digital</span><span class="pill">Boston Herald Full Pages</span></div>
+    </div>
+    <div class="card">
+      <div class="ctag">Sports TV Strategy</div>
+      <h3>NESN + CSNNE as Tourism Media</h3>
+      <div class="csub">Boston Sports Networks as Primary TV Buy · 2014</div>
+      <p>NSTA named NESN (Red Sox, Bruins) and CSNNE (Celtics, Revolution) as primary Boston television partners — alongside network stations WBZ, WCVB, WHDH, WFXT, and WSBK — with 60% of TV spend in primetime and news, targeting adults 35–65. NESN specifically ran live pre-game segments from Nova Scotia Light at Faneuil Hall and promoted Nova Scotia Day at Fenway on the Yawkey Way pre-game show. This perfectly mirrors the NESN/BGM barter relationship Jeff managed with the Red Sox — sports networks as a shared commercial ecosystem for both local sports teams and non-endemic destination advertisers.</p>
+      <div class="pills"><span class="pill">NESN · Red Sox + Bruins</span><span class="pill">CSNNE · Celtics + Revolution</span><span class="pill">1,000 GRPs Boston</span><span class="pill">Live NESN Fenway Segments</span></div>
+    </div>
+    <div class="card">
+      <div class="ctag">Regional Sports Identity</div>
+      <h3>Bluenose BoSox — Sports as Cultural Bridge</h3>
+      <div class="csub">Red Sox Fandom Connecting Boston and Nova Scotia</div>
+      <p>The campaign used the shared Red Sox fandom between New Englanders and Maritimers as a two-way bridge. The "Bluenose BoSox Brotherhood" partnered on the World Series Trophy Tour into Nova Scotia. The regional plan included a "Bluenose BoSox Fan Weekend Promotion" — inviting Nova Scotians, New Brunswickers, and PEI residents to travel to Boston via the Nova Star Cruises ferry, stay 2 nights, and attend Nova Scotia Day at Fenway. "Sox Fan Weekend" promotional ads ran in Maritime papers showing Fenway seats reserved with Nova Scotia branding. This positioned Nova Scotia not as a distant destination but as the home of Red Sox Nation North.</p>
+      <div class="pills"><span class="pill">Bluenose BoSox Brotherhood</span><span class="pill">Nova Star Cruises Ferry</span><span class="pill">Maritimes → Fenway</span><span class="pill">Two-Way Sports Tourism</span></div>
+    </div>
+  </div>
+
+  <div class="pq">
+    <blockquote>"Nova Scotia Day at Fenway Park — an official partnership with the Boston Red Sox, one of America's most recognized brands. Nationally televised on ESPN Sunday Night Baseball against the Detroit Tigers. Home plate signage for 10 games. A Nova Scotia fan section. Media reception. PR and media relations."</blockquote>
+    <cite>Nova Scotia Tourism Agency · 2014 Marketing Campaign Presentation · Tourism InnovatioNS Day, April 29, 2014</cite>
+  </div>
+
+
+
+  <!-- ══ CHAPTER DIVIDER ══ -->
+  <div id="media-alignment" style="margin:3.5rem 0 0;padding:1.4rem 2rem 1.2rem;background:var(--ink);border-left:4px solid var(--yellow);">
+    <div style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:.45rem;">Chapter 04</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--paper);margin-bottom:.4rem;">Sports Audience &amp; Media Alignment</div>
+    <div style="font-size:.83rem;color:#8a9aaa;max-width:680px;line-height:1.65;">GameDay at Fenway as a sports media platform in its own right — 175,000 game-day distributions, studio film integrations, Red Sox editorial adjacency. At National CineMedia, that same sports-audience thinking applied to cinema: targeting by DMA, by sports franchise geography, by family and young-adult demographics that fill both arenas and multiplexes.</div>
+  </div>
+
+  <!-- ══════════════ GAMEDAY AT FENWAY ══════════════ -->
+  <div id="gameday" class="sh"><h2>GameDay — "An Official Publication of the Boston Red Sox"</h2><div class="shr"></div></div>
+  <p class="si">GameDay was a free in-game program hand-distributed at Fenway Park — 25,000 copies per game through a 30-person street team — and the most strategically creative integration Jeff built: tying film studio release windows directly to the Red Sox home schedule to create game-day advertising packages that served Hollywood studios, local brands, and fans simultaneously.</p>
+
+  <div class="callout-box">
+    <div class="ctag">Integrated Marketing Program · 2006–2008 · Official Red Sox Publication</div>
+    <h3>GameDay at Fenway Park</h3>
+    <div class="csub" style="color:#9a8a72;">25,000 copies per game · 30-person street team · Distribution: Fenway Park + area sports bars · Series-based packages</div>
+    <div class="callout-inner">
+      <div>
+        <p>GameDay launched in 2006 as a free pre-game program distributed at every Red Sox home game, "An Official Publication of the Boston Red Sox." Content was fresh each game: player stats, key match-ups, profiles, top stories, MLB recaps, and a two-page scorecard. Jeff identified the opportunity to marry the program's hyper-engaged audience — Fenway's 34,000-seat sellout streak was the second-longest in baseball history — with Hollywood studio film-release windows.</p>
+        <p>He built a formal pitch framework for film studios: each package aligned a film's opening-weekend window with a specific Red Sox home series, giving studios 7-day runs of front-page strips, half-page verticals (4.91" × 11.12"), page 3 positions, and back-page takeovers. Investment started at $4,725 net for a 7-game schedule (175,000 total distribution). The program attracted Fox, DreamWorks, Buena Vista, Lionsgate, New Line, Universal, Sony, and Miramax.</p>
+        <div style="margin-top:.85rem;">
+          <a href="https://drive.google.com/file/d/1qXfTZ9naZyDedhUzFIMkFevJQPABZAT1" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">GameDay Sales Deck (2006) →</a>
+          <a href="https://drive.google.com/file/d/1mvjzWQwJv54GpF7R3Y3Ac1nao-a1JXuI" class="cl" target="_blank" style="color:var(--yellow);border-color:rgba(212,168,42,.4);">Movie Opportunity Matrix →</a>
+        </div>
+      </div>
+      <div class="callout-col">
+        <h4>The GameDay Value Proposition</h4>
+        <ul>
+          <li><strong>Distribution:</strong> 25,000 per game, 175,000 per 7-game package</li>
+          <li><strong>Audience:</strong> Captive, self-selected sports fans with high engagement — Fenway sold out 225+ consecutive games</li>
+          <li><strong>Street Team:</strong> 30-person distribution crew reaching Fenway Park gates + area sports bars</li>
+          <li><strong>Entry Price:</strong> $4,725 net for full-color ½-page over 7 games; $3,375 for 3-game package</li>
+          <li><strong>Content Alignment:</strong> Fresh editorial every game meant advertisers never ran in a static environment</li>
+        </ul>
+        <h4 style="margin-top:1rem;">Studio Partners (2006–2007)</h4>
+        <ul>
+          <li><strong>Buena Vista / Disney</strong> — Cars, Invincible, Step Up, Pirates of the Caribbean</li>
+          <li><strong>20th Century Fox</strong> — X-Men 3, The Omen, Garfield 2, Simpsons Movie, Pathfinder</li>
+          <li><strong>DreamWorks</strong> — Over the Hedge (with Fenway activation)</li>
+          <li><strong>Sony, New Line, Lionsgate, Universal, Miramax</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="g3">
+    <div class="card">
+      <div class="ctag">GameDay Execution</div>
+      <h3>Ad Position Management</h3>
+      <div class="csub">2007 Full Season · Position Tracker</div>
+      <p>Jeff maintained a full-season position availability tracker: front-page banner, sixth-page verticals (3 positions), half-page verticals, page 9 sixths, inside back cover, back page, and SuDoku sponsorship. Positions were booked game-by-game; the tracker showed Allied Advertising (film rep) inventory versus open positions through every home series vs. Yankees, Angels, Oakland, Toronto, KC, Tampa, and more.</p>
+      <a href="https://drive.google.com/file/d/1jvYjYPpjWVZqgqttRP0nNHIPfRHSNggS" class="cl" target="_blank">Position Tracker →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">GameDay · Fox Studios</div>
+      <h3>Fox Film Opportunity Analysis</h3>
+      <div class="csub">2007 Season · Strategic Pitch Document</div>
+      <p>A studio-specific analysis matching every 2007 Fox film release to the ideal Red Sox home series. Films mapped included Pathfinder, Fantastic Four 2, Live Free or Die Hard, The Simpsons Movie, and The Comebacks — each with specific game dates, a pitch narrative (e.g., "tag The Comebacks: 'from director Tom Brady comes one of the greatest sports movies of all time'"), and series context including Barry Bonds and SF Giants games as audience hooks for that week's sports editorial.</p>
+      <a href="https://drive.google.com/file/d/1N3DeEbIoDuZdzLKNL5a_W6BsL4CiNQHi" class="cl" target="_blank">Fox Opportunity Memo →</a>
+    </div>
+    <div class="card">
+      <div class="ctag">GameDay Studio Planning · 2006</div>
+      <h3>Film × Red Sox Schedule — Full Season Matrix</h3>
+      <div class="csub">Full 2006 Season · All Major Studios · Mapped to Home Series</div>
+      <p>A full-season planning tool mapping every 2006 summer–fall film release to the optimal Red Sox home series window. The matrix covered 20+ films — Buena Vista/Disney (Cars, Invincible, Pirates 2), Fox (X-Men 3, Garfield 2, My Super Ex-Girlfriend), Lionsgate, MGM, New Line, Sony, Universal — each with specific game opponents, series highlights, and distribution rationale tied to the Red Sox home schedule. The Red Sox schedule was the organizing spine of the entire studio sales program.</p>
+      <a href="https://drive.google.com/file/d/11GvGxdreW0ywvyIYg41IctxTZmKmPYf3" class="cl" target="_blank">2006 Movie × Schedule Matrix →</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ NCM AUTOMOTIVE ══════════════ -->
+  <div id="ncm" class="sh"><h2>National CineMedia — Cinema Audience Data &amp; New England Sports Crossover</h2><div class="shr"></div></div>
+  <p class="si">At National CineMedia (2016–2019), Jeff sold first-party cinema audience data — built from 769M+ annual ticket purchases, loyalty behavior, mobile geo-location, and beacon networks across 20,000+ screens — to regional clients in New England. The overlap with sports marketing is direct: NCM's engagement index outperforms NFL Sunday Night Football among adults 18–34, and automotive dealers (a core vertical) use sports-adjacent media to reach car-buying households. Jeff was selected to the 2019 NCM Panel of Excellence — one of six from 240 professionals nationally, and the least-tenured member.</p>
+
+  <div class="g2">
+    <div class="card gld">
+      <div class="ctag">National CineMedia · 2016–2019 · New England Territory</div>
+      <h3>Cinema Audience Data as Sports-Adjacent Media</h3>
+      <div class="csub">30% Territory Revenue Growth · 60%+ Close Rate · NCM Panel of Excellence 2019</div>
+      <p>NCM's core pitch to automotive dealers and brand advertisers was audience data that outperformed traditional sports buys on engagement metrics. Adults 18–34 attending movies show higher engagement indices than NFL Sunday Night Football viewers — a credible challenge to the most expensive sports inventory in media. Jeff built a New England territory from near-scratch, delivering 30% revenue growth and a 60%+ close rate by translating first-party audience intelligence (ticket purchases, loyalty membership, geo-location, beacon networks) into strategic buying recommendations for automotive dealers, healthcare systems, and financial institutions.</p>
+      <div class="pills">
+        <span class="pill">769M Annual Cinema Attendees</span>
+        <span class="pill">First-Party Audience Data</span>
+        <span class="pill">Outperforms NFL SNF (A18-34)</span>
+        <span class="pill">Automotive Dealer Vertical</span>
+        <span class="pill">NCM Panel of Excellence 2019</span>
+      </div>
+    </div>
+    <div class="card gld">
+      <div class="ctag">BGM → NCM · Through-Line</div>
+      <h3>The BGM Sports Foundation Applied at NCM</h3>
+      <div class="csub">Entertainment Audience Intelligence Across Two Platforms</div>
+      <p>The through-line from BGM to NCM is direct: at BGM, sports teams advertised alongside film studios and live entertainment in an integrated audience environment. At NCM, the pitch to those same sports-oriented automotive brands was the same logic — captive, self-selected, engaged audiences with measurable demographic profiles and first-party behavioral data. The automotive dealer clients Jeff developed at NCM were the same household-income, new-vehicle-purchase segment that teams and studios had always competed for. The sports media fluency from BGM made the NCM narrative faster to execute and more credible to clients who recognized the overlap.</p>
+      <div class="pills">
+        <span class="pill">Automotive Dealers</span>
+        <span class="pill">Healthcare · Finance · Education</span>
+        <span class="pill">New England Territory Hunter</span>
+        <span class="pill">Salesforce CRM</span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ══════════════ OVERVIEW ══════════════ -->
+  <div id="overview" class="sh"><h2>Sports Revenue Overview</h2><div class="shr"></div></div>
+  <p class="si">A snapshot of Jeff's sports marketing revenue contribution across key programs and accounts at Boston Globe Media.</p>
+
+  <div class="tl">
+    <div class="ti">
+      <div class="ty">2008</div>
+      <div class="tc">
+        <h4>Celtics 2008 Championship — $156,698 personal revenue</h4>
+        <p>Highest individual AE total in the Celtics Playoffs/Commemorative program. Accounts included Patriots (congratulatory ad), Red Sox (barter), NESN, TD Banknorth Garden, and major retailers.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">2010</div>
+      <div class="tc">
+        <h4>Red Sox 2010 — $516,203 net barter value managed</h4>
+        <p>Largest single-account media management: coordinating print half-pages in the Globe Sports section + Boston.com digital campaigns across 15 placements from January through December.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">2011</div>
+      <div class="tc">
+        <h4>Bruins Stanley Cup + Red Sox + Deutsche Bank — $365,000+ combined</h4>
+        <p>Managed the $315,000 Red Sox/Deutsche Bank barter contract + $156,698 from Bruins Commemorative as lead AE. Also built the Fall Sports Calendar package for NFL/NHL/MLB simultaneous activation.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">2006–08</div>
+      <div class="tc">
+        <h4>GameDay Film Program — $4,725–$10,000+ per studio per series</h4>
+        <p>Built and sold the entire GameDay integrated film-studio model, generating recurring revenue from Fox, Disney/BV, DreamWorks, New Line, Lionsgate, Universal, Sony, and Miramax against the Red Sox home schedule.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">Awards</div>
+      <div class="tc">
+        <h4>BGM MICA Award — Most Innovative Campaign — Two-Time Winner</h4>
+        <p>2011: Focus Features / <em>The Kids Are All Right</em> — "Love Letters" editorial-advertising integration (inaugural award). 2014: Nova Scotia Tourism "Boston Takeover" — custom interactive Peggy's Cove lighthouse at Faneuil Hall, Fenway Park activation, NESN-televised sponsored first pitch with live broadcast integration. Also: Spirit Award (inaugural, 2007) · Taking Great Initiative Award (inaugural, March 2006; repeat July 2006). NCM Panel of Excellence 2019 — one of six from 240 professionals nationally.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pq">
+    <blockquote>"The Boston Globe's sports section is the preeminent sports section in the country — and Jeff's work built the commercial ecosystem around it: the partnerships, the activations, the creative integrations that made advertisers want to be part of it."</blockquote>
+    <cite>Composite · Boston Globe Media archive, 2005–2013</cite>
+  </div>
+
+  <div class="tl" style="margin-top:2rem;">
+    <div class="ti">
+      <div class="ty">Teams</div>
+      <div class="tc">
+        <h4>Boston Sports Team Partners</h4>
+        <p>Red Sox / Fenway Sports Group · New England Patriots · Boston Celtics (2008 NBA Champions) · Boston Bruins (2011 Stanley Cup Champions) · Deutsche Bank Championship (PGA Tour at TPC Boston)</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">Studio Partners</div>
+      <div class="tc">
+        <h4>Entertainment × Sports Crossover</h4>
+        <p>DreamWorks SKG (Over the Hedge) · 20th Century Fox (X-Men 3, Simpsons Movie, Pathfinder, The Marine, Fantastic Four 2) · Buena Vista/Disney (Cars, Invincible, Pirates of the Caribbean 2) · New Line Cinema · Lionsgate · Sony Pictures · Universal · Miramax · Warner Bros.</p>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="ty">Programs Built</div>
+      <div class="tc">
+        <h4>Signature Sports Marketing Programs</h4>
+        <p>GameDay ("An Official Publication of the Boston Red Sox") · Fenway 100: Spirit of Fenway Park · Bruins Stanley Cup Commemorative · Patriots Playoffs Special Sections · Red Sox Playoff Sponsorship · Fall Boston Sports Calendar · Snow Sports Multimedia (Chill + SnowSports + Expo) · "Simpsonize the Sox" digital campaign · Over the Hedge × Red Sox Family Fun Day · Super Bowl Sections (2004, 2005, 2008) · Nova Scotia Tourism "Boston Takeover" · Boston.com Sports Section Packages</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sn">
+    <strong>SOURCE NOTE —</strong> All work samples, rate cards, audience research, insertion orders, barter trackers, and activation documents referenced in this portfolio are drawn from Jeff Hurley's Boston Globe Media archive (2003–2013). Google Drive source files are available upon request. Revenue figures are drawn from internal account trackers and billing records.
+  </div>
+
+</main>
+<footer><strong>Jeff Hurley</strong> &nbsp;·&nbsp; Sports Marketing Portfolio &nbsp;·&nbsp; Boston Globe Media &nbsp;·&nbsp; National CineMedia &nbsp;·&nbsp; jeffphurley@icloud.com</footer>
+
+<script>
+function toggleAcc(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>    <div class="card">
+      <div class="ctag">Sports Section · 2006</div>
+      <h3>Boston.com Sports Section Packages</h3>
+      <div class="csub">Tiered Digital Packages · boston.com/sports</div>
+      <p>Jeff developed four-tiered digital sports advertising packages for boston.com — from a $1,000/month Tier 1 (166K impressions, ROS Leaderboard) to a $10,000/month Tier 4 ($250K impressions with floating rich media, sponsorship links, geo-targeted Big Ad). Combined print-digital "Sports Packages" bundled Globe Sunday, Daily, and Worcester insertions with boston.com tier presence — ranging from $14,698 (general/6×3) to $85,735 (general/full page with Tier 4 digital).</p>
+      <div class="pills">
+        <span class="pill">4-Tier Digital Structure</span>
+        <span class="pill">Print + Digital Bundle</span>
+        <span class="pill">Geo-Targeted Display</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1cCg5BwVL1PN3M_u78I-7TtsqF3IvkYph" class="cl" target="_blank">Sports Section Packages →</a>
+    </div>
+
